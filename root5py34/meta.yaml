@@ -7,7 +7,7 @@ source:
     url: https://root.cern.ch/download/root_v5.34.32.source.tar.gz
 build:
     number: 2
-    string: py27
+    string: py34
     
     detect_binary_files_with_prefix: True
     
@@ -44,7 +44,7 @@ build:
     
 requirements:
     build:
-        - python # [py27]
+        - python # [py34]
         - openssl
         - qt
         - sqlite
@@ -52,7 +52,7 @@ requirements:
         - pcre
         
     run:
-        - python # [py27]
+        - python # [py34]
         - openssl
         - qt
         - sqlite

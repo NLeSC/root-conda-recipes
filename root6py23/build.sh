@@ -26,8 +26,8 @@ LinuxInstallation() {
         --enable-python \
         --enable-roofit \
         --enable-xml \
-        --with-python-incdir=`python3.4-config --exec-prefix`/include/python3.4m \
-        --with-python-libdir=`python3.4-config --exec-prefix`/lib \
+        --with-python-incdir=`python-config --exec-prefix`/include/python3.4m \
+        --with-python-libdir=`python-config --exec-prefix`/lib \
         --etcdir=${PREFIX}/etc/root \
         --prefix=${PREFIX} \
          || return 1;

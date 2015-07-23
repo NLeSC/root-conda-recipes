@@ -31,9 +31,6 @@ LinuxInstallation() {
         --etcdir=${PREFIX}/etc/root \
         --prefix=${PREFIX} \
          || return 1;
-        #--enable-roofit \
-        # --enable-x11 \
-        #--enable-xml \
         # --prefix=${PREFIX} \
         #--enable-rpath \        
         # --enable-soversion \
