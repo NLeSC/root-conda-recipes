@@ -1,0 +1,68 @@
+package:
+    name: root5
+    version: 5.34.32
+
+source:
+    fn: root_v5.34.32.source.tar.gz
+    url: https://root.cern.ch/download/root_v5.34.32.source.tar.gz
+build:
+    number: 2
+    string: py34
+    
+    detect_binary_files_with_prefix: True
+    
+    has_prefix_files:
+        - bin/thisroot.csh
+        - bin/thisroot.sh
+    binary_has_prefix_files:
+        - bin/root
+      #  - bin/genmap
+      #  - bin/root-config
+      #  - bin/hadd
+      #  - bin/pq2
+      #  - bin/genreflex
+      #  - bin/proofserv
+      #  - bin/proofserv.exe
+      #  - bin/rmkdepend
+      #  - bin/root.exe
+      #  - bin/genreflex
+      #  - bin/hist2workspace
+      #  - bin/prepareHistFactory
+        - bin/rootcint
+      #  - bin/roots
+      #  - bin/genreflex-rootcint
+      #  - bin/memprobe
+        - bin/proofd
+      #  - bin/rlibmap
+        - bin/rootd
+      #  - bin/roots.exe
+      #  - bin/ssh2rpd
+      #  - bin/xpdtest
+      #  - "*so"
+      #  - "*dll"
+      #  - "*dylib"
+    
+requirements:
+    build:
+        - python # [py34]
+        - openssl
+        - qt
+        - sqlite
+        - fftw
+        - pcre
+        
+    run:
+        - python # [py34]
+        - openssl
+        - qt
+        - sqlite
+
+test:
+    imports:
+
+    commands:
+
+about:
+    home: http://root.cern.ch/
+    license: LGPL v2.1
+
