@@ -1,0 +1,82 @@
+package:
+  name: rootpy
+  version: !!str 0.7.2
+
+source:
+  git_url: https://github.com/rootpy/rootpy.git
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+build:
+  #preserve_egg_dir: True
+  entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - rootpy = rootpy:main
+    #
+    # Would create an entry point called rootpy that calls rootpy.main()
+
+    - root2hdf5 = rootpy.root2hdf5:main
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  number: 2
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - pytables
+    - root
+
+  run:
+    - python
+    - setuptools
+    - pytables
+    - root
+
+test:
+  # Python imports
+  imports:
+    - rootpy
+    - rootpy.batch
+    - rootpy.compiled
+    - rootpy.extern
+    - rootpy.extern.byteplay
+    - rootpy.extern.hep
+    - rootpy.extern.lockfile
+    - rootpy.extern.progressbar
+    - rootpy.extern.tabulartext
+    - rootpy.interactive
+    - rootpy.io
+    - rootpy.logger
+    - rootpy.memory
+    - rootpy.plotting
+    - rootpy.plotting.style
+    - rootpy.plotting.style.atlas
+    - rootpy.plotting.style.tests
+    - rootpy.tree
+
+  #commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+  #  - root2hdf5 --help
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: http://rootpy.github.com/rootpy
+  license:  GNU General Public License (GPL)
+  summary: "A pythonic layer on top of the ROOT framework's PyROOT bindings."
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

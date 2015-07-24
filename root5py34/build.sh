@@ -6,7 +6,8 @@ export CFLAGS="-Wall -g -m64 -pipe -O2 -march=x86-64 -fPIC"
 export CXXLAGS="${CFLAGS}"
 export CPPFLAGS="-I${PREFIX}/include"
 export LDFLAGS="-L${PREFIX}/lib"
-
+echo 'gcc version' 
+gcc -v
 ARCH="$(uname 2>/dev/null)"
 
 LinuxInstallation() {
@@ -20,11 +21,10 @@ LinuxInstallation() {
 
     ./configure \
         ${ARCH,,*}x8664gcc \
-        --minimal \
         --enable-x11 \
         --enable-python \
-        --enable-roofit \
         --enable-xml \
+        --enable-rpath \
         --with-python-incdir=`python3.4-config --exec-prefix`/include/python3.4m \
         --with-python-libdir=`python3.4-config --exec-prefix`/lib \
         --etcdir=${PREFIX}/etc/root \

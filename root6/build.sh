@@ -6,6 +6,8 @@ export CFLAGS="-Wall -g -m64 -pipe -O2 -march=x86-64 -fPIC"
 export CXXLAGS="${CFLAGS}"
 export CPPFLAGS="-I${PREFIX}/include"
 export LDFLAGS="-L${PREFIX}/lib"
+echo 'gcc version' 
+gcc -v
 
 ARCH="$(uname 2>/dev/null)"
 
@@ -23,7 +25,6 @@ LinuxInstallation() {
         --minimal \
         --enable-x11 \
         --enable-python \
-        --enable-roofit \
         --enable-xml \
         --with-python-incdir=`python3.4-config --exec-prefix`/include/python3.4m \
         --with-python-libdir=`python3.4-config --exec-prefix`/lib \
@@ -51,7 +52,6 @@ LinuxInstallation() {
         #--with-python-incdir=${PREFIX}/include/python${PY_VER}/ \
         #--with-python-libdir=${PREFIX}/lib/ \
         #--with-x11-libdir=${PREFIX}/lib/ \
-
     make || return 1;
     make install || return 1;
 
