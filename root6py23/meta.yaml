@@ -1,11 +1,11 @@
 package:
     name: root6
-    version: master
+    version: 6.04.02
 source:
     #fn: root_v6.04.02.source.tar.gz
     #url: https://root.cern.ch/download/root_v6.04.02.source.tar.gz
     git_url: https://github.com/root-mirror/root
-    git_branch: master
+    git_tag: v6-04-02
 build:
     number: 2
     string: py27_gcc5

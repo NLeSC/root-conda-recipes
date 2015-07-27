@@ -29,6 +29,8 @@ LinuxInstallation() {
         --with-python-incdir=`python-config --exec-prefix`/include/python2.7 \
         --with-python-libdir=`python-config --exec-prefix`/lib \
         --etcdir=${PREFIX}/etc/root \
+        --enable-shared \
+        --enable-rpath \
         --prefix=${PREFIX} \
          || return 1;
         #--enable-roofit \
