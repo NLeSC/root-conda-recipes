@@ -26,11 +26,13 @@ LinuxInstallation() {
     ./configure \
         --etcdir=${PREFIX}/etc/root \
         --libdir=${PREFIX}/lib \
+        --enable-rpath \
+        --with-python-incdir=`python-config --exec-prefix`/include/python2.7 \
+        --with-python-libdir=`python-config --exec-prefix`/lib \
         --prefix=${PREFIX} \
-		--all \
 		|| return 1;
 
-    make -j8 || return 1;
+    make -j2 || return 1;
     make install || return 1;
 
     mv ${PREFIX}/lib/{ROOT.py,libPyROOT.so} ${PREFIX}/lib/python${PY_VER}/site-packages

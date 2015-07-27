@@ -5,7 +5,9 @@ echo $PREFIX
 export CFLAGS="-Wall -g -m64 -pipe -O2 -march=x86-64 -fPIC"
 export CXXLAGS="${CFLAGS}"
 export CPPFLAGS="-I${PREFIX}/include"
-export LDFLAGS="-L${PREFIX}/lib"
+export LDFLAGS="-L${PREFIX}/lib -Wl,--no-as-needed --allow-shlib-undefined"
+#export LDFLAGS="-Wl,--no-as-needed"
+
 echo 'gcc version' 
 gcc -v
 
@@ -20,9 +22,8 @@ LinuxInstallation() {
 
     make distclean;
 
-    ./configure \
+        ./configure \
         ${ARCH,,*}x8664gcc \
-        --minimal \
         --enable-x11 \
         --enable-python \
         --enable-xml \
