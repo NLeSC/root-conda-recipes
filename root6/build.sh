@@ -5,7 +5,7 @@ echo $PREFIX
 export CFLAGS="-Wall -g -m64 -pipe -O2 -march=x86-64 -fPIC"
 export CXXLAGS="${CFLAGS}"
 export CPPFLAGS="-I${PREFIX}/include"
-export LDFLAGS="-L${PREFIX}/lib"
+export LDFLAGS="-L${PREFIX}/lib -Wl,--no-as-needed --allow-shlib-undefined"
 echo 'gcc version' 
 gcc -v
 
@@ -17,7 +17,7 @@ LinuxInstallation() {
     # - libX11-devel
 
     chmod +x configure;
-
+    
     make distclean;
 
     ./configure \

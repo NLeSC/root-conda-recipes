@@ -51,13 +51,13 @@ requirements:
         - sqlite
         - fftw
         - pcre
-        - gcc >=4.8  
+        #- gcc >=4.8  
     run:
         - python # [py34]
         - openssl
         - qt
         - sqlite
-        - libgcc >=4.8
+        #- libgcc >=4.8
 
 test:
     imports:
