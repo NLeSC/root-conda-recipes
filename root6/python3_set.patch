@@ -1,0 +1,13 @@
+diff --git a/build/unix/makepchinput.py b/build/unix/makepchinput.py
+index 646b16f..589e15cd 100755
+--- a/build/unix/makepchinput.py
++++ b/build/unix/makepchinput.py
+@@ -448,7 +448,7 @@ def makePCHInput():
+ 
+    # Loop over the dictionaries, ROOT modules
+    dictNames = getDictNames(modules)
+-   selModules = Set([])
++   selModules = set([])
+    allIncPathsList = []
+    for dictName in dictNames:
+       dirName = getDirName(dictName)

@@ -1,16 +1,17 @@
 package:
   name: rootpy
-  version: !!str 0.7.2
+  version: master
 
 source:
   git_url: https://github.com/rootpy/rootpy.git
+  git_tag: master
 #  patches:
    # List any patch files here
    # - fix.patch
 
 build:
   #preserve_egg_dir: True
-  entry_points:
+  #entry_points:
     # Put any entry points (scripts to be generated automatically) here. The
     # syntax is module:function.  For example
     #
@@ -18,27 +19,31 @@ build:
     #
     # Would create an entry point called rootpy that calls rootpy.main()
 
-    - root2hdf5 = rootpy.root2hdf5:main
+   # - root2hdf5 = rootpy.root2hdf5:main
 
   # If this is a new build for the same version, increment the build
   # number. If you do not include this key, it defaults to 0.
-  number: 2
+  number: 3
+  detect_binary_files_with_prefix: True
 
 requirements:
   build:
-    - python
-    - setuptools
+    - python >=3.4
+    - setuptools 
     - pytables
-    - root
+    - root6
+    #- pcre
 
   run:
-    - python
+    - python >=3.4
     - setuptools
     - pytables
-    - root
-
+    - root6
+    #- root_numpy
+    #- pcre
+    #- libgcc >=4.8
 test:
-  # Python imports
+    
   imports:
     - rootpy
     - rootpy.batch
@@ -59,11 +64,12 @@ test:
     - rootpy.plotting.style.tests
     - rootpy.tree
 
+      # Python imports
   #commands:
+  #  - source bin/thisroot.sh
     # You can put test commands to be run here.  Use this to test that the
     # entry points work.
-
-  #  - root2hdf5 --help
+    #  - root2hdf5 --help
 
   # You can also put a file called run_test.py in the recipe that will be run
   # at test time.

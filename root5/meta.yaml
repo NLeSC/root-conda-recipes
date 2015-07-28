@@ -51,7 +51,6 @@ requirements:
         - fftw
         - pcre
        # - gcc >=4.8
-        
     run:
         - python # [py27]
         - openssl

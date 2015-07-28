@@ -1,0 +1,19 @@
+commit 3785a2780478971ccce7fa663660cf2e7bc98fc8
+Author: daniela <remenska@gmail.com>
+Date:   Tue Jul 28 14:02:29 2015 +0200
+
+    Set -> set
+
+diff --git a/build/unix/makepchinput.py b/build/unix/makepchinput.py
+index 646b16f..589e15cd 100755
+--- a/build/unix/makepchinput.py
++++ b/build/unix/makepchinput.py
+@@ -448,7 +448,7 @@ def makePCHInput():
+ 
+    # Loop over the dictionaries, ROOT modules
+    dictNames = getDictNames(modules)
+-   selModules = Set([])
++   selModules = set([])
+    allIncPathsList = []
+    for dictName in dictNames:
+       dirName = getDirName(dictName)
