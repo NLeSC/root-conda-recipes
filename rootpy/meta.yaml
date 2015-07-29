@@ -31,17 +31,14 @@ requirements:
     - python >=3.4
     - setuptools 
     - pytables
-    - root6
-    #- pcre
+    - root 6.*
 
   run:
     - python >=3.4
     - setuptools
     - pytables
-    - root6
-    #- root_numpy
-    #- pcre
-    #- libgcc >=4.8
+    - root 6.*
+
 test:
     
   imports:
