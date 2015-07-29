@@ -6,32 +6,36 @@ export CFLAGS="-Wall -g -m64 -pipe -O2 -march=x86-64 -fPIC"
 export CXXLAGS="${CFLAGS}"
 export CPPFLAGS="-I${PREFIX}/include"
 export LDFLAGS="-L${PREFIX}/lib"
-echo $PREFIX
 echo 'gcc version' 
 gcc -v
 
 ARCH="$(uname 2>/dev/null)"
+
 
 LinuxInstallation() {
     # Build dependencies:
     # - libXpm-devel
     # - libX11-devel
 
+    
     chmod +x configure;
-
+    
     make distclean;
 
-    ./configure \
-        ${ARCH,,*}x8664gcc \
-        --minimal \
-        --enable-x11 \
-        --enable-python \
-        --enable-xml \
-        --with-python-incdir=`python-config --exec-prefix`/include/python2.7 \
-        --with-python-libdir=`python-config --exec-prefix`/lib \
-        --etcdir=${PREFIX}/etc/root \
-        --prefix=${PREFIX} \
-         || return 1;
+  #  ./configure \
+  #      ${ARCH,,*}x8664gcc \
+  #      --minimal \
+  #      --enable-x11 \
+  #      --enable-python \
+  #      --enable-xml \
+  #      --with-python-incdir=`python3.4-config --exec-prefix`/include/python3.4m \
+  #      --with-python-libdir=`python3.4-config --exec-prefix`/lib \
+  #      --etcdir=${PREFIX}/etc/root \
+  #      --prefix=${PREFIX} \
+   #      || return 1;
+        #--enable-roofit \
+        # --enable-x11 \
+        #--enable-xml \
         # --prefix=${PREFIX} \
         #--enable-rpath \        
         # --enable-soversion \
@@ -50,8 +54,19 @@ LinuxInstallation() {
         #--with-python-incdir=${PREFIX}/include/python${PY_VER}/ \
         #--with-python-libdir=${PREFIX}/lib/ \
         #--with-x11-libdir=${PREFIX}/lib/ \
+        
+    mkdir workdir
+    cd workdir
 
-    make || return 1;
+    cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
+    -Dbuiltin_pcre=ON \
+    -Dbuiltin_gsl=ON \
+    -Dbuiltin_llvm=ON \
+    -Dcxx11=ON \
+    -Drpath=ON \
+    || return 1;     
+
+    make -j4 || return 1;
     make install || return 1;
 
     return 0;

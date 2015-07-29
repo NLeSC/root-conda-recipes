@@ -23,43 +23,43 @@ build:
 
   # If this is a new build for the same version, increment the build
   # number. If you do not include this key, it defaults to 0.
-  number: 3
+  number: 7
   detect_binary_files_with_prefix: True
 
 requirements:
   build:
-    - python >=3.4
+    - python
     - setuptools 
     - pytables
-    - root 6.*
+    - root 5.34.32|6.*
 
   run:
-    - python >=3.4
+    - python
     - setuptools
     - pytables
-    - root 6.*
+    - root 5.34.32|6.*
 
 test:
     
   imports:
-    - rootpy
-    - rootpy.batch
-    - rootpy.compiled
-    - rootpy.extern
-    - rootpy.extern.byteplay
-    - rootpy.extern.hep
-    - rootpy.extern.lockfile
-    - rootpy.extern.progressbar
-    - rootpy.extern.tabulartext
-    - rootpy.interactive
-    - rootpy.io
-    - rootpy.logger
-    - rootpy.memory
-    - rootpy.plotting
-    - rootpy.plotting.style
-    - rootpy.plotting.style.atlas
-    - rootpy.plotting.style.tests
-    - rootpy.tree
+    #  - rootpy
+    #- rootpy.batch
+    #- rootpy.compiled
+    #- rootpy.extern
+    #- rootpy.extern.byteplay
+    #- rootpy.extern.hep
+    #- rootpy.extern.lockfile
+    #- rootpy.extern.progressbar
+    #- rootpy.extern.tabulartext
+    #- rootpy.interactive
+    #- rootpy.io
+    #- rootpy.logger
+    #- rootpy.memory
+    #- rootpy.plotting
+    #- rootpy.plotting.style
+    #- rootpy.plotting.style.atlas
+    #- rootpy.plotting.style.tests
+    #- rootpy.tree
 
       # Python imports
   #commands:
