@@ -64,6 +64,7 @@ LinuxInstallation() {
     -Dbuiltin_llvm=ON \
     -Dcxx11=ON \
     -Drpath=ON \
+    -Droofit=ON \
     || return 1;     
 
     make -j4 || return 1;

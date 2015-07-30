@@ -1,13 +1,12 @@
-package:
-  name: rootpy
-  version: master
-
 source:
   git_url: https://github.com/rootpy/rootpy.git
   git_tag: master
 #  patches:
    # List any patch files here
    # - fix.patch
+package:
+  name: rootpy
+  version: master
 
 build:
   #preserve_egg_dir: True
@@ -23,18 +22,18 @@ build:
 
   # If this is a new build for the same version, increment the build
   # number. If you do not include this key, it defaults to 0.
-  number: 7
+  number: 8
   detect_binary_files_with_prefix: True
-
+  string: py{{ environ.get('PY_VER','') }}
 requirements:
   build:
-    - python
+    - python # [{{ environ.get('PY_VER') }}]
     - setuptools 
     - pytables
     - root 5.34.32|6.*
 
   run:
-    - python
+    - python # [{{ environ.get('PY_VER') }}]
     - setuptools
     - pytables
     - root 5.34.32|6.*

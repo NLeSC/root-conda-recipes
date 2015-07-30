@@ -1,6 +1,7 @@
 package:
     name: root
     version: 6.04.02
+    #version: {{ environ.get('GIT_DESCRIBE_TAG', '') }} # bug, doesn't work for now: https://github.com/conda/conda-build/issues/357
 source:
     #fn: root_v6.04.02.source.tar.gz
     #url: https://root.cern.ch/download/root_v6.04.02.source.tar.gz
@@ -11,14 +12,13 @@ source:
     #    - python3_set.patch
     #path: /home/daniela/anaconda_backup/anaconda/root-6.04.02
 build:
-    number: 10
-    string: py34_gcc4.8
-    
+    number: 11
+    string: py{{ environ.get('PY_VER','') }}_gcc4.8
     detect_binary_files_with_prefix: True
 
 requirements:
     build:
-        - python 3.4*
+        - python  # [{{ environ.get('PY_VER') }}]
         - openssl
         - qt
         - sqlite
@@ -29,7 +29,7 @@ requirements:
         - cmake >=3.2.3
         #- gcc >=4.8  
     run:
-        - python 3.4*
+        - python  # [{{ environ.get('PY_VER') }}]
         - openssl
         - qt
         - sqlite

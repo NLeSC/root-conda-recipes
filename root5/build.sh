@@ -8,7 +8,6 @@ export CPPFLAGS="-I${PREFIX}/include"
 export LDFLAGS="-L${PREFIX}/lib"
 echo 'gcc version' 
 gcc -v
-
 ARCH="$(uname 2>/dev/null)"
 
 
@@ -57,6 +56,7 @@ LinuxInstallation() {
         
     mkdir workdir
     cd workdir
+    git describe --tags > __conda_buildstr__.txt
 
     cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -Dbuiltin_pcre=ON \
@@ -64,6 +64,7 @@ LinuxInstallation() {
     -Dbuiltin_llvm=ON \
     -Dcxx11=ON \
     -Drpath=ON \
+    -Droofit=ON \
     || return 1;     
 
     make -j4 || return 1;
