@@ -60,12 +60,12 @@ LinuxInstallation() {
 
     cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -Dbuiltin_pcre=ON \
-    -Dbuiltin_gsl=ON \
     -Dbuiltin_llvm=ON \
     -Dcxx11=ON \
     -Drpath=ON \
     -Droofit=ON \
     || return 1;     
+    #-Dbuiltin_gsl=ON \
 
     make -j4 || return 1;
     make install || return 1;
