@@ -18,7 +18,8 @@ build:
 
 requirements:
     build:
-        - python  # [{{ environ.get('PY_VER') }}]      
+        - python  # [{{ environ.get('PY_VER') }}]     
+        - gcc 4.8.4*
         - openssl
         - qt
         - sqlite
