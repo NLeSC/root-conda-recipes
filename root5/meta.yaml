@@ -19,7 +19,7 @@ build:
 requirements:
     build:
         - python  # [{{ environ.get('PY_VER') }}]     
-        - gcc 4.8.4*
+        - gcc_49 4.9*
         #- libgcc >=4.8.4
         #- glibc 2.19*
         - openssl
@@ -33,7 +33,7 @@ requirements:
         - gsl 1.16
         #- gcc >=4.8  
     run:
-        - glibc 2.19*
+        #- glibc 2.19*
         - python  # [{{ environ.get('PY_VER') }}]
         - openssl
         - qt
@@ -43,6 +43,7 @@ requirements:
         - fftw
         - pcre
         - libgcc >=4.8.4
+        - gsl 1.16
 
 test:
     imports:
