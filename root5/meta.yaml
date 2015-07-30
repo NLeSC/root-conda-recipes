@@ -13,7 +13,7 @@ source:
     #path: /home/daniela/anaconda_backup/anaconda/root-6.04.02
 build:
     number: 5
-    string: py{{ environ.get('PY_VER','') }}_gcc4.8
+    string: py{{ environ.get('PY_VER','') }}_gcc4.9
     detect_binary_files_with_prefix: True
 
 requirements:
@@ -33,7 +33,7 @@ requirements:
         - gsl 1.16
         #- gcc >=4.8  
     run:
-        #- glibc 2.19*
+        - glibc 2.19*
         - python  # [{{ environ.get('PY_VER') }}]
         - openssl
         - qt

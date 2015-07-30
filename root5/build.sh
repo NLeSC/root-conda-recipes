@@ -66,8 +66,11 @@ LinuxInstallation() {
     -Dcxx11=ON \
     -Drpath=ON \
     -Droofit=ON \
+    -DCMAKE_C_COMPILER=$PREFIX/bin/gcc-4.9 \
+    -DCMAKE_CXX_COMPILER=$PREFIX/bin/c++-4.9 \
     || return 1;     
     #-Dbuiltin_gsl=ON \
+    #-Dcc=`which gcc-4.9` \
     
     make -j4 || return 1;
     make install || return 1;
