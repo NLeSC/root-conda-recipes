@@ -17,9 +17,10 @@ conda config --add channels defaults
 conda config --add channels https://conda.binstar.org/jsw-fnal
 conda config --add channels https://conda.binstar.org/serge-sans-paille
 conda install --yes -q conda-build
-conda install --yes jinja2 gcc_49
+conda install --yes jinja2
 #conda install --yes glibc=2.19 gcc=4.8.4
 conda install --yes conda-server
+conda install --yes anaconda-client
 #conda install --y serge-sans-paille pythran
 # if [ $ROOT = 5 && $PYTHON = 3 ]; then
 #    PY=py34
@@ -31,8 +32,7 @@ conda install --yes conda-server
 
 #conda build --yes -q root$ROOT$PY
 
-CONDA_PY=$CONDA_PY conda build ~/git/conda-recipes/root$ROOT
-#TODO do this only if all else passes
+CONDA_PY=$CONDA_PY conda build ~/git/conda-recipes/root$ROOT || { echo 'Compiling ROOT failed.' ; exit 1; }
 binstar upload conda/conda-bld/*/root-$ROOT*.tar.bz2 --force
 #binstar -t $BINSTAR_TOKEN upload --force -u omnia -p yank-dev conda/conda-bld/*/root-$ROOT*.tar.bz2
 #binstar upload /data/workspace/root-mirror/PYTHON/2/ROOT/5/conda/conda-bld/linux-64/root-5.34.32-py27_gcc4.8.tar.bz2
