@@ -70,6 +70,7 @@ LinuxInstallation() {
     -DCMAKE_CXX_COMPILER=$PREFIX/bin/c++-4.9 \
     || return 1;     
     #-Dbuiltin_gsl=ON \
+    #-Dcc=`which gcc-4.9` \
     
     make -j4 || return 1;
     make install || return 1;

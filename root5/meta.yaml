@@ -20,6 +20,7 @@ requirements:
     build:
         - python  # [{{ environ.get('PY_VER') }}]     
         - gcc_49 4.9*
+        #- gcc 4.8.4*
         #- libgcc >=4.8.4
         #- glibc 2.19*
         - openssl
@@ -42,7 +43,7 @@ requirements:
         - libxml2
         - fftw
         - pcre
-        - libgcc >=4.8.4
+        - libgcc-5 5.*
         - gsl 1.16
 
 test:
