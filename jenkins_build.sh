@@ -9,13 +9,14 @@ bash Miniconda-latest-Linux-x86_64.sh -b -p conda
 conda update --yes -q conda
 conda update --yes --all
 conda config --add channels https://conda.binstar.org/remenska
-conda config --add channels https://conda.binstar.org/ostrokach #new
-conda config --add channels https://conda.binstar.org/richli
-conda config --add channels https://conda.binstar.org/asmeurer
-conda config --add channels https://conda.binstar.org/mhworth #new 
+conda config --add channels https://conda.binstar.org/auto
+#conda config --add channels https://conda.binstar.org/ostrokach #new
+#conda config --add channels https://conda.binstar.org/richli
+#conda config --add channels https://conda.binstar.org/asmeurer
+#conda config --add channels https://conda.binstar.org/mhworth #new 
 conda config --add channels defaults
-conda config --add channels https://conda.binstar.org/jsw-fnal
-conda config --add channels https://conda.binstar.org/serge-sans-paille
+#conda config --add channels https://conda.binstar.org/jsw-fnal
+#conda config --add channels https://conda.binstar.org/serge-sans-paille
 conda install --yes -q conda-build
 conda install --yes jinja2
 #conda install --yes glibc=2.19 gcc=4.8.4
