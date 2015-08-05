@@ -33,7 +33,7 @@ conda install --yes anaconda-client
 
 #conda build --yes -q root$ROOT$PY
 
-CONDA_PY=$CONDA_PY conda build ~/git/conda-recipes/root$ROOT || { echo 'Compiling ROOT failed.' ; }
+CONDA_PY=$CONDA_PY conda build ./root$ROOT || { echo 'Compiling ROOT failed.' ; exit 1;}
 binstar upload conda/conda-bld/*/root-$ROOT*.tar.bz2 --force
 #binstar -t $BINSTAR_TOKEN upload --force -u omnia -p yank-dev conda/conda-bld/*/root-$ROOT*.tar.bz2
 #binstar upload /data/workspace/root-mirror/PYTHON/2/ROOT/5/conda/conda-bld/linux-64/root-5.34.32-py27_gcc4.8.tar.bz2
