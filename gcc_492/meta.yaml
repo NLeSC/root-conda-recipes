@@ -1,0 +1,32 @@
+package:
+  name: gcc
+  version: 4.9.2
+
+source:
+  fn: gcc-4.9.2.tar.bz2
+  url: http://www.netgull.com/gcc/releases/gcc-4.9.2/gcc-4.9.2.tar.bz2
+  md5: 4df8ee253b7f3863ad0b86359cd39c43
+
+build:
+  detect_binary_files_with_prefix: true
+  number: 7
+
+requirements:
+  build:
+    # These are taken from the output of the configure scripts
+    - gmp >=4.3.2
+    - mpfr >=2.4.2
+    - mpc >=0.8.1
+    - isl 0.12.2
+    - cloog 0.18.1
+  run:
+    - gmp >=4.3.2
+    - mpfr >=2.4.2
+    - mpc >=0.8.1
+    - isl 0.12.2
+    - cloog 0.18.1
+
+about:
+  home: http://gcc.gnu.org/
+  summary: The GNU Compiler Collection
+  license: GPL
