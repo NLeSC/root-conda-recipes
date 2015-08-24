@@ -12,14 +12,14 @@ source:
     #    - python3_set.patch
     #path: /home/daniela/anaconda_backup/anaconda/root-6.04.02
 build:
-    number: 12
-    string: py{{ environ.get('PY_VER','') }}_gcc4.9
+    number: 14
+    string: py{{ environ.get('PY_VER','') }}_gcc4.9.2
     detect_binary_files_with_prefix: True
 
 requirements:
     build:
         - python  # [{{ environ.get('PY_VER') }}]     
-        - gcc_49 4.9*
+        - gcc 4.9.2
         #- libgcc >=4.8.4
         #- glibc 2.19*
         - openssl

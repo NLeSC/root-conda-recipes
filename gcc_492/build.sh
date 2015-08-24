@@ -1,6 +1,7 @@
 if [ `uname` == Darwin ]; then
     ./configure \
         --prefix=$PREFIX \
+        --libdir="$PREFIX/lib" \
         --with-gmp=$PREFIX \
         --with-mpfr=$PREFIX \
         --with-mpc=$PREFIX \
@@ -12,11 +13,13 @@ if [ `uname` == Darwin ]; then
 else
     ./configure \
         --prefix=$PREFIX \
+        --libdir="$PREFIX/lib" \
         --with-gmp=$PREFIX \
         --with-mpfr=$PREFIX \
         --with-mpc=$PREFIX \
         --with-isl=$PREFIX \
         --with-cloog=$PREFIX \
+        --enable-checking=release \
         --disable-multilib \
 	--enable-languages=c,c++ 
         #--program-suffix=-4.9
@@ -25,3 +28,7 @@ fi
 
 make -j3
 make install
+
+rm "$PREFIX"/lib64
+
+(cd "$PREFIX"/bin && ln -s gcc cc)
