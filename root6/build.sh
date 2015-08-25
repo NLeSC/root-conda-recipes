@@ -61,6 +61,7 @@ LinuxInstallation() {
     cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -Dbuiltin_pcre=ON \
     -Dbuiltin_llvm=ON \
+    -Dbuiltin-lzma=ON \
     -Dcxx11=ON \
     -Drpath=ON \
     -Droofit=ON \

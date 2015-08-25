@@ -1,5 +1,5 @@
 mkdir build
 cd build
 ../configure --prefix=$PREFIX
-make
+make -j4
 make install
