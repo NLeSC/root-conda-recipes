@@ -31,7 +31,7 @@ requirements:
         - libxml2
         - graphviz
         - cmake >=3.2.3
-        - glibc 2.21
+        #- glibc 2.21
         - gsl 1.16
         #- gcc >=4.8  
     run:

@@ -31,7 +31,7 @@ requirements:
         - graphviz
         - cmake >=3.2.3
         - gsl 1.16
-        - glibc 2.21
+        # - glibc 2.21
     run:
         #- glibc 2.19* ? really? maybe only for older linux/ubuntu distros
         - python  # [{{ environ.get('PY_VER') }}]
