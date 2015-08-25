@@ -35,7 +35,6 @@ requirements:
         - gsl 1.16
         #- gcc >=4.8  
     run:
-        #- glibc 2.19* ? really?
         - python  # [{{ environ.get('PY_VER') }}]
         - openssl
         - qt
