@@ -1,0 +1,15 @@
+package:
+  name: glibc
+  version: 2.21
+
+build:
+  number: 1
+source:
+  fn: glibc-2.21.tar.xz
+  url: http://ftpmirror.gnu.org/libc/glibc-2.21.tar.xz
+  sha1: 1157be3fe63baa81b7ba104a103337775a6ed06f
+
+about:
+  home: http://www.gnu.org/software/libc/
+  license: LGPL
+  summary: "Any Unix-like operating system needs a C library: the library which defines the ``system calls'' and other basic facilities such as open, malloc, printf, exit..."

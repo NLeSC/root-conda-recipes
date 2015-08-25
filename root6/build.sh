@@ -64,9 +64,10 @@ LinuxInstallation() {
     -Dcxx11=ON \
     -Drpath=ON \
     -Droofit=ON \
-    -DCMAKE_C_COMPILER=$PREFIX/bin/gcc \
-    -DCMAKE_CXX_COMPILER=$PREFIX/bin/c++ \
     || return 1;     
+    
+    #-DCMAKE_C_COMPILER=$PREFIX/bin/gcc \
+    #-DCMAKE_CXX_COMPILER=$PREFIX/bin/c++ \
     #-Dbuiltin_gsl=ON \
 
     make -j4 || return 1;
