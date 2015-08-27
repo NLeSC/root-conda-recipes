@@ -6,8 +6,11 @@ export CFLAGS="-Wall -g -m64 -pipe -O2 -march=x86-64 -fPIC"
 export CXXLAGS="${CFLAGS}"
 export CPPFLAGS="-I${PREFIX}/include"
 export LDFLAGS="-L${PREFIX}/lib"
+# export LDFLAGS="-B${PREFIX}/lib/ -Wl,-rpath-link,${PREFIX}/lib"
 echo 'gcc version' 
 gcc -v
+# -Wl,-dynamic-linker,/path/to/alternate/ld-linux.so.2
+# LDFLAGS = -B/usr/i386-mylib-linux/lib/ -Wl,-rpath-link,/usr/i386-mylib-linux/lib
 
 ARCH="$(uname 2>/dev/null)"
 
@@ -68,6 +71,8 @@ LinuxInstallation() {
     -DCMAKE_C_COMPILER=$PREFIX/bin/gcc \
     -DCMAKE_CXX_COMPILER=$PREFIX/bin/c++ \
     || return 1;     
+
+   
     
     #-Dbuiltin_gsl=ON \
 

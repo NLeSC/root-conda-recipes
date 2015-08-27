@@ -1,7 +1,9 @@
+ln -s $PREFIX/lib $PREFIX/lib64
+
 if [ `uname` == Darwin ]; then
     ./configure \
         --prefix=$PREFIX \
-        --libdir="$PREFIX/lib" \
+        --libdir=$PREFIX/lib \
         --with-gmp=$PREFIX \
         --with-mpfr=$PREFIX \
         --with-mpc=$PREFIX \
@@ -13,7 +15,7 @@ if [ `uname` == Darwin ]; then
 else
     ./configure \
         --prefix=$PREFIX \
-        --libdir="$PREFIX/lib" \
+        --libdir=$PREFIX/lib \
         --with-gmp=$PREFIX \
         --with-mpfr=$PREFIX \
         --with-mpc=$PREFIX \
@@ -26,9 +28,10 @@ else
 fi
 #cp /usr/lib/*.o $PREFIX/lib/
 
-make -j3
+make -j4
 make install
 
-rm "$PREFIX"/lib64
+rm $PREFIX/lib64
+#mv $PREFIX/lib64/* $PREFIX/lib/
 
-(cd "$PREFIX"/bin && ln -s gcc cc)
+#(cd "$PREFIX"/bin && ln -s gcc cc)
