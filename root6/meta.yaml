@@ -21,7 +21,7 @@ requirements:
         - python  # [{{ environ.get('PY_VER') }}]     
         - gcc 4.8.2
         #- libgcc >=4.8.4
-        #- glibc 2.19*
+        - glibc 2.19*
         - openssl
         - qt
         - sqlite
@@ -37,7 +37,7 @@ requirements:
     run:
         - python  # [{{ environ.get('PY_VER') }}]
         - openssl
-        - gcc 4.8.2
+        #- gcc 4.8.2
         - qt
         - sqlite
         - graphviz
@@ -48,7 +48,7 @@ requirements:
         - gcc 4.8.2
         #- zlib 1.2.*
         #- libgcc-5 5.*
-        #- glibc 2.19
+        - glibc 2.19
 
 test:
     imports:

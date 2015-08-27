@@ -65,13 +65,14 @@ LinuxInstallation() {
     -Dbuiltin_pcre=ON \
     -Dbuiltin_llvm=ON \
     -Dbuiltin-lzma=ON \
+    -Dbuiltin_zlib=ON \
+    -Dbuiltin_freetype=ON \
     -Dcxx11=ON \
     -Drpath=ON \
     -Droofit=ON \
-    -DCMAKE_C_COMPILER=$PREFIX/bin/gcc \
-    -DCMAKE_CXX_COMPILER=$PREFIX/bin/c++ \
     || return 1;     
-
+    #-DCMAKE_C_COMPILER=$PREFIX/bin/gcc \
+    #-DCMAKE_CXX_COMPILER=$PREFIX/bin/c++ \
    
     
     #-Dbuiltin_gsl=ON \
