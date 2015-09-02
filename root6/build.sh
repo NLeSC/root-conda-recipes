@@ -70,6 +70,8 @@ LinuxInstallation() {
     -Dcxx11=ON \
     -Drpath=ON \
     -Droofit=ON \
+    -Dopengl=OFF \
+    -Dgviz=OFF \
     || return 1;     
     #-DCMAKE_C_COMPILER=$PREFIX/bin/gcc \
     #-DCMAKE_CXX_COMPILER=$PREFIX/bin/c++ \
@@ -77,7 +79,7 @@ LinuxInstallation() {
     
     #-Dbuiltin_gsl=ON \
 
-    make -j4 || return 1;
+    make || return 1;
     make install || return 1;
 
     return 0;
