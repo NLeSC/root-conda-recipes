@@ -72,7 +72,7 @@ LinuxInstallation() {
     #-DCMAKE_CXX_COMPILER=$PREFIX/bin/c++-4.9 \
     #-Dbuiltin_gsl=ON \
     
-    make -j4 || return 1;
+    make  || return 1;
     make install || return 1;
 
     return 0;

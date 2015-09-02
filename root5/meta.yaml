@@ -12,8 +12,8 @@ source:
     #    - python3_set.patch
     #path: /home/daniela/anaconda_backup/anaconda/root-6.04.02
 build:
-    number: 9
-    string: py{{ environ.get('PY_VER','') }}_gcc4.9.2
+    number: 16
+    string: py{{ environ.get('PY_VER','') }}_gcc4.4
     detect_binary_files_with_prefix: True
 
 requirements:
@@ -28,8 +28,8 @@ requirements:
         - fftw
         - pcre
         - libxml2
-        - graphviz
-        - cmake >=3.2.3
+        #- graphviz
+        #- cmake >=3.2.3
         - gsl 1.16
         #- glibc 2.21
         # - glibc 2.21
@@ -38,13 +38,13 @@ requirements:
         - openssl
         - qt
         - sqlite
-        - graphviz
+        #- graphviz
         - libxml2
         - fftw
         - pcre
         - gsl 1.16
-        - gcc 4.9.2
-        - libgcc-5 5.*
+        #- gcc 4.9.2
+        #- libgcc-5 5.*
         #- glibc 2.21
 
 test:
