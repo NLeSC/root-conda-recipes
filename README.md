@@ -21,6 +21,15 @@ If you have other channels in your conda configuration (besides the defaults one
 (You may need to set ``` conda config --set show_channel_urls yes ```).
 ```
 ....
+    fftw:       3.3.4-0                https://conda.binstar.org/NLeSC/linux-64/
+    gmp:        5.1.2-2                https://conda.binstar.org/NLeSC/linux-64/
+    graphviz:   2.38.0-3               https://conda.binstar.org/NLeSC/linux-64/
+    gsl:        1.16-1                 https://conda.binstar.org/NLeSC/linux-64/
+    isl:        0.12.2-0               https://conda.binstar.org/NLeSC/linux-64/
+    mpc:        1.0.1-0                https://conda.binstar.org/NLeSC/linux-64/
+    mpfr:       3.1.2-0                https://conda.binstar.org/NLeSC/linux-64/
+    ncurses:    5.9-5                  https://conda.binstar.org/NLeSC/linux-64/
+    pcre:       8.35-0                 https://conda.binstar.org/NLeSC/linux-64/
     gcc:        4.8.2-20               https://conda.binstar.org/NLeSC/linux-64/
     readline:   6.2.5-11               https://conda.binstar.org/NLeSC/linux-64/
 ....
