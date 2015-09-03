@@ -21,12 +21,12 @@ build:
     # - rootpy = rootpy:main
     #
     # Would create an entry point called rootpy that calls rootpy.main()
-
+  string: root{{ environ.get('ROOT_VERSION','') }}_py{{ environ.get('PY_VER','') }}
 
   # If this is a new build for the same version, increment the build
   # number. If you do not include this key, it defaults to 0.
   # number: 1
-  number: 2
+  number: 3
   detect_binary_files_with_prefix: True
   
 requirements:
@@ -34,13 +34,14 @@ requirements:
     - python
     - setuptools
     - pytables
-    - root 5.34.32
+    - root {{ environ.get('ROOT_VERSION') }}
 
   run:
     - python
     - setuptools
     - pytables
-    - root 5.34.32
+    - root {{ environ.get('ROOT_VERSION') }}
+
 test:
   # Python imports
   imports:
