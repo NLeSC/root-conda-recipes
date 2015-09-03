@@ -30,13 +30,17 @@ requirements:
     - python # [{{ environ.get('PY_VER') }}]
     - setuptools 
     - pytables
-    - root 5.34.32|6.*
+    - root_numpy
+    - matplotlib >=1.2
+    - numpy >=1.6.1
 
   run:
     - python # [{{ environ.get('PY_VER') }}]
     - setuptools
     - pytables
-    - root 5.34.32|6.*
+    - root_numpy
+    - matplotlib >=1.2
+    - numpy >=1.6.1
 
 test:
     
