@@ -12,7 +12,7 @@ source:
     #    - python3_set.patch
     #path: /home/daniela/anaconda_backup/anaconda/root-6.04.02
 build:
-    number: 27
+    number: 28
     string: py{{ environ.get('PY_VER','') }}_gcc4.8.2
     detect_binary_files_with_prefix: True
 
@@ -39,6 +39,7 @@ requirements:
         - fftw
         - pcre
         - gsl 1.16
+        - gcc 4.8.2
 
 
 test:

@@ -6,10 +6,12 @@ export CFLAGS="-Wall -g -m64 -pipe -O2 -march=x86-64 -fPIC"
 export CXXLAGS="${CFLAGS}"
 export CPPFLAGS="-I${PREFIX}/include"
 export LDFLAGS="-L${PREFIX}/lib"
+# export LDFLAGS="-B${PREFIX}/lib/ -Wl,-rpath-link,${PREFIX}/lib"
 echo 'gcc version' 
 gcc -v
-which gcc
-which ld
+# -Wl,-dynamic-linker,/path/to/alternate/ld-linux.so.2
+# LDFLAGS = -B/usr/i386-mylib-linux/lib/ -Wl,-rpath-link,/usr/i386-mylib-linux/lib
+
 ARCH="$(uname 2>/dev/null)"
 
 
@@ -58,21 +60,26 @@ LinuxInstallation() {
         
     mkdir workdir
     cd workdir
-    git describe --tags > __conda_buildstr__.txt
 
     cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -Dbuiltin_pcre=ON \
     -Dbuiltin_llvm=ON \
     -Dbuiltin-lzma=ON \
+    -Dbuiltin_zlib=ON \
+    -Dbuiltin_freetype=ON \
     -Dcxx11=ON \
     -Drpath=ON \
     -Droofit=ON \
+    -Dopengl=OFF \
+    -Dgviz=OFF \
     || return 1;     
-    #-DCMAKE_C_COMPILER=$PREFIX/bin/gcc-4.9 \
-    #-DCMAKE_CXX_COMPILER=$PREFIX/bin/c++-4.9 \
-    #-Dbuiltin_gsl=ON \
+    #-DCMAKE_C_COMPILER=$PREFIX/bin/gcc \
+    #-DCMAKE_CXX_COMPILER=$PREFIX/bin/c++ \
+   
     
-    make  || return 1;
+    #-Dbuiltin_gsl=ON \
+
+    make || return 1;
     make install || return 1;
 
     return 0;
