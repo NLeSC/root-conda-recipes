@@ -1,0 +1,25 @@
+about: {home: 'http://github.com/andrix/python-snappy', license: BSD License, summary: Python
+    library for the snappy compression library from Google}
+build:
+  entry_points: []
+  features: []
+  string: ''
+  track_features: []
+package: {name: python-snappy, version: '0.5'}
+requirements:
+  build: [python]
+  conflicts: []
+  run: [python]
+source:
+  fn: python-snappy-0.5.tar.gz
+  git_branch: ''
+  git_tag: ''
+  md5: 044fb0ac21888c0b4eee0c4f15e75504
+  patches: []
+  svn_rev: ''
+  url: https://pypi.python.org/packages/source/p/python-snappy/python-snappy-0.5.tar.gz
+test:
+  commands: []
+  files: []
+  imports: []
+  requires: []
