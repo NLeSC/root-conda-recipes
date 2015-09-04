@@ -1,16 +1,16 @@
 package:
   name: root_pandas
-  version: master
+  version: python3
 
 source:
-  git_url: https://github.com/ibab/root_pandas.git
-  git_tag: master
+  git_url: https://github.com/remenska/root_pandas.git
+  git_tag: python3
 #  patches:
    # List any patch files here
    # - fix.patch
 
 build:
-  number: 1
+  number: 2
   detect_binary_files_with_prefix: True
 
 requirements:
@@ -43,8 +43,7 @@ test:
     # - nose
 
 about:
-  home: http://github.com/andrix/python-snappy
-  license: BSD License
+  home: http://github.com/ibab/root_pandas
   summary: ' A Python module for conveniently loading/saving ROOT files as pandas DataFrames'
 
 # See
