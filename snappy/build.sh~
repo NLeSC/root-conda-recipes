@@ -1,7 +1,6 @@
 echo 'gcc version' 
 gcc -v
-
-    ./configure \
+   ./configure \
         --prefix=$PREFIX \
 	--libexecdir=$PREFIX/lib \
 	--libdir=$PREFIX/lib \
