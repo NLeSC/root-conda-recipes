@@ -136,7 +136,7 @@ MacInstallation() {
     cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -Dbuiltin_llvm=ON \
     -Dbuiltin_zlib=ON \
-    -Dbuiltin_freetype=ON \
+    -Dbuiltin_freetype=OFF \
     -Dcxx11=ON \
     -Drpath=ON \
     -Droofit=ON \
