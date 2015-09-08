@@ -145,6 +145,7 @@ MacInstallation() {
     -Droofit=ON \
     -Dopengl=OFF \
     -Dgviz=OFF \
+    -Dsqlite=OFF \
     || return 1;     
     #-DCMAKE_C_COMPILER=/usr/bin/llvm-gcc \
     #-DCMAKE_CXX_COMPILER=/usr/bin/llvm-g++ \
