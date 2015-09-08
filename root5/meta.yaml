@@ -21,7 +21,7 @@ requirements:
         - python  # [{{ environ.get('PY_VER') }}]     
         - openssl
         #- qt
-        - sqlite
+        #- sqlite
         - fftw
         - pcre
         - libxml2
@@ -36,7 +36,7 @@ requirements:
         - python  # [{{ environ.get('PY_VER') }}]
         - openssl
         #- qt
-        - sqlite
+        #- sqlite
         #- graphviz
         - libxml2
         - fftw
