@@ -86,14 +86,14 @@ LinuxInstallation() {
 }
 
 MacInstallation() {
-    export CPPFLAGS=“-I${PREFIX}/include”
-    export CPATH=“${PREFIX}/include”
-    export LIBPATH=“${PREFIX}/lib”
+    export CPPFLAGS=-I${PREFIX}/include
+    export CPATH=$PREFIX/include
+    export LIBPATH=PREFIX/lib
     export CMAKE_OSX_DEPLOYMENT_TARGET=
     export MACOSX_DEPLOYMENT_TARGET=
     export DYLD_FALLBACK_LIBRARY_PATH=${PREFIX}/lib
     chmod +x configure;
-    export CC=clang
+    #export CC=clang
 
     make distclean;
 
@@ -136,21 +136,26 @@ MacInstallation() {
     cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -Dbuiltin_llvm=ON \
     -Dbuiltin_zlib=ON \
-    -Dbuiltin_freetype=OFF \
+    -Dbuiltin_pcre=ON \
+    -Dbuiltin-lzma=ON \
     -Dcxx11=ON \
     -Drpath=ON \
     -Droofit=ON \
     -Dopengl=OFF \
     -Dgviz=OFF \
+    -DFREETYPE_INCLUDE_DIR=$PREFIX/include \
+    -DFREETYPE_LIBRARY=$PREFIX/lib \
+    -DFREETYPE_INCLUDE_DIR_freetype2=$PREFIX/include \
+    -DJPEG_INCLUDE_DIR=$PREFIX/include \
+    -DJPEG_LIBRARY=$PREFIX/lib \
     || return 1;     
     #-DCMAKE_C_COMPILER=/usr/bin/llvm-gcc \
     #-DCMAKE_CXX_COMPILER=/usr/bin/llvm-g++ \
- 
-   
-    
+
+        
     #-Dbuiltin_gsl=ON \
 
-    make || return 1;
+    make -j2 || return 1;
     make install || return 1;
 
     return 0;

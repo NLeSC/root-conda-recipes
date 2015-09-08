@@ -28,8 +28,9 @@ requirements:
         - graphviz
         #- cmake >=3.2.3
         - gsl 1.16
-        - xz
-        - freetype
+        - xz # [osx]
+        - freetype # [osx]
+        - krb5 # [osx]
 
     run:
         - python  # [{{ environ.get('PY_VER') }}]
@@ -42,8 +43,9 @@ requirements:
         - pcre
         - gsl 1.16
         - gcc 4.8.2
-        - xz
-        - freetype
+        - xz # [osx]
+        - freetype # [osx]
+        - krb5 # [osx]
 
 test:
     imports:

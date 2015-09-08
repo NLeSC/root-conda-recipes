@@ -1,27 +1,27 @@
-about: {home: 'https://github.com/neovim/neovim.git', summary: Neovim is a project
-    that seeks to aggressively refactor Vim.}
-build:
-  entry_points: []
-  features: []
-  number: 1
-  script_env: []
-  string: ''
-  track_features: []
-package: {name: cmake, version: 3.2.3}
-requirements:
-  build: [system, gcc, libtool, autoconf, automake, pkg-config, python]
-  conflicts: []
-  run: [python]
+package:
+  name: cmake
+  version: "3.2.3"
+
 source:
   fn: cmake-3.2.3.tar.gz
-  git_rev: ''
-  md5: ''
-  patches: []
-  path: ''
-  svn_rev: ''
   url: http://www.cmake.org/files/v3.2/cmake-3.2.3.tar.gz
-test:
-  commands: []
-  files: []
-  imports: []
-  requires: []
+
+build:
+  number: 1
+  detect_binary_files_with_prefix: True
+
+requirements:
+  build:
+    - system
+    - gcc
+    - libtool
+    - autoconf
+    - automake
+    - pkg-config
+    - python
+  run:
+    - python
+
+about:
+  home: https://github.com/neovim/neovim.git
+  summary: Neovim is a project that seeks to aggressively refactor Vim.
