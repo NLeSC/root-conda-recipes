@@ -20,29 +20,32 @@ requirements:
     build:
         - python  # [{{ environ.get('PY_VER') }}]     
         - openssl
-        - qt
+        #- qt
+        - sqlite
         - fftw
         - pcre
         - libxml2
+        #- graphviz
         #- cmake >=3.2.3
         - gsl 1.16
         - xz # [osx]
-        - freetype # [osx]
+        #- freetype # [osx]
         - krb5 # [osx]
-    
+
     run:
         - python  # [{{ environ.get('PY_VER') }}]
         - openssl
-        - qt
+        #- qt
+        - sqlite
+        #- graphviz
         - libxml2
         - fftw
         - pcre
         - gsl 1.16
         - gcc 4.8.2
         - xz # [osx]
-        - freetype # [osx]
+        #- freetype # [osx]
         - krb5 # [osx]
-
 test:
     imports:
 
