@@ -94,6 +94,7 @@ MacInstallation() {
     export DYLD_FALLBACK_LIBRARY_PATH=${PREFIX}/lib
     chmod +x configure;
     #export CC=clang
+    CFLAGS =$CFLAGS -D_DARWIN_SOURCE    
 
     make distclean;
 

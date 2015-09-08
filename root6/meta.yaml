@@ -21,11 +21,9 @@ requirements:
         - python  # [{{ environ.get('PY_VER') }}]     
         - openssl
         - qt
-        #- sqlite
         - fftw
         - pcre
         - libxml2
-        #- graphviz
         #- cmake >=3.2.3
         - gsl 1.16
         - xz # [osx]
@@ -36,8 +34,6 @@ requirements:
         - python  # [{{ environ.get('PY_VER') }}]
         - openssl
         - qt
-        #- sqlite
-        #- graphviz
         - libxml2
         - fftw
         - pcre
