@@ -20,12 +20,12 @@ requirements:
     build:
         - python  # [{{ environ.get('PY_VER') }}]     
         - openssl
-        - qt
+        #- qt
         - sqlite
         - fftw
         - pcre
         - libxml2
-        - graphviz
+        #- graphviz
         #- cmake >=3.2.3
         - gsl 1.16
         - xz # [osx]
@@ -35,9 +35,9 @@ requirements:
     run:
         - python  # [{{ environ.get('PY_VER') }}]
         - openssl
-        - qt
+        #- qt
         - sqlite
-        - graphviz
+        #- graphviz
         - libxml2
         - fftw
         - pcre
