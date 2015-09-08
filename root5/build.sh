@@ -88,13 +88,13 @@ LinuxInstallation() {
 MacInstallation() {
     export CPPFLAGS="-I${PREFIX}/include"
     export CPATH="${PREFIX}/include"
-    export LIBPATH=“${PREFIX}/lib"
+    export LIBPATH="${PREFIX}/lib"
     export CMAKE_OSX_DEPLOYMENT_TARGET=
     export MACOSX_DEPLOYMENT_TARGET=
     export DYLD_FALLBACK_LIBRARY_PATH="${PREFIX}/lib"
     chmod +x configure;
     #export CC=clang
-    export CFLAGS=“${CFLAGS} -D_DARWIN_SOURCE"
+    export CFLAGS="${CFLAGS} -D_DARWIN_SOURCE"
 
 
     make distclean;
