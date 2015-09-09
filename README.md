@@ -38,6 +38,8 @@ ROOT is dynamically linked against glibc. If you experience errors like the foll
 
 ``` root: /lib64/libc.so.6: version `GLIBC_2.{some_old_version}' not found 
 (required by /anaconda/envs/testenv100/bin/../lib/libstdc++.so.6) ```
+or 
+``` ImportError: /home/adminuser/miniconda/envs/testenv101/lib/libPyROOT.so: ELF file OS ABI invalid ```
 
 this means that you deployed ROOT on a machine with a very old glibc version, and you need to upgrade your distro. 
 
