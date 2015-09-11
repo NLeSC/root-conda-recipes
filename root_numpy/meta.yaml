@@ -34,13 +34,13 @@ requirements:
     - python
     - setuptools
     - pytables
-    - root {{ environ.get('ROOT_VERSION') }}
+    - root {{ environ.get('ROOT_VERSION') }}.*
 
   run:
     - python
     - setuptools
     - pytables
-    - root {{ environ.get('ROOT_VERSION') }}
+    - root {{ environ.get('ROOT_VERSION') }}.*
 
 test:
   # Python imports
