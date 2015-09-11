@@ -42,7 +42,7 @@ requirements:
         - fftw
         - pcre
         - gsl 1.16
-        - gcc 4.8.2 # [unix]
+        - gcc 4.8.2 # [linux]
         - xz # [osx]
         #- freetype # [osx]
         - krb5 # [osx]
