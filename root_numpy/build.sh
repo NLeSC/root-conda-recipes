@@ -29,7 +29,6 @@ MacInstallation() {
     export CMAKE_OSX_DEPLOYMENT_TARGET=
     export MACOSX_DEPLOYMENT_TARGET=
     export DYLD_FALLBACK_LIBRARY_PATH="${PREFIX}/lib"
-    chmod +x configure;
     #export CC=clang
     export CFLAGS="${CFLAGS} -D_DARWIN_SOURCE"
     $PYTHON setup.py install || return 1;
