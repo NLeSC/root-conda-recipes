@@ -31,13 +31,13 @@ build:
   
 requirements:
   build:
-    - python
+    - python  # [{{ environ.get('PY_VER') }}]
     - setuptools
     - pytables
     - root {{ environ.get('ROOT_VERSION') }}.*
 
   run:
-    - python
+    - python  # [{{ environ.get('PY_VER') }}]
     - setuptools
     - pytables
     - root {{ environ.get('ROOT_VERSION') }}.*
