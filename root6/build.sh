@@ -79,7 +79,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 
 #-Dbuiltin_gsl=ON \
 
-make || return 1;
+make -j2 || return 1;
 make install || return 1;
 
 return 0;
@@ -95,7 +95,6 @@ export DYLD_FALLBACK_LIBRARY_PATH="${PREFIX}/lib"
 chmod +x configure;
 #export CC=clang
 export CFLAGS="${CFLAGS} -D_DARWIN_SOURCE"
-
 
 make distclean;
 
@@ -147,8 +146,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dgviz=OFF \
 -Dsqlite=OFF \
 || return 1;
-#-DCMAKE_C_COMPILER=/usr/bin/llvm-gcc \
-#-DCMAKE_CXX_COMPILER=/usr/bin/llvm-g++ \
+
 #-DFREETYPE_INCLUDE_DIR=$PREFIX/include \
 #-DFREETYPE_LIBRARY=$PREFIX/lib \
 #-DFREETYPE_INCLUDE_DIR_freetype2=$PREFIX/include \

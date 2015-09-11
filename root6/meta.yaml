@@ -1,19 +1,19 @@
 package:
     name: root
-    version: 6.04.02
+    version: 6.04
     #version: {{ environ.get('GIT_DESCRIBE_TAG', '') }} # bug, doesn't work for now: https://github.com/conda/conda-build/issues/357
 source:
     #fn: root_v6.04.02.source.tar.gz
     #url: https://root.cern.ch/download/root_v6.04.02.source.tar.gz
-    git_url: https://github.com/remenska/root
-    git_tag: python3fixes
+    git_url: https://github.com/root-mirror/root
+    git_tag: v6-04-00-patches
     #patches:
     #    - python3.patch
     #    - python3_set.patch
     #path: /home/daniela/anaconda_backup/anaconda/root-6.04.02
 build:
-    number: 28
-    string: py{{ environ.get('PY_VER','') }}_gcc4.8.2
+    number: 30
+    string: py{{ environ.get('PY_VER','') }}_clang503
     detect_binary_files_with_prefix: True
 
 requirements:
@@ -42,7 +42,7 @@ requirements:
         - fftw
         - pcre
         - gsl 1.16
-        - gcc 4.8.2
+        - gcc 4.8.2 # [unix]
         - xz # [osx]
         #- freetype # [osx]
         - krb5 # [osx]

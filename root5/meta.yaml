@@ -12,8 +12,8 @@ source:
     #    - python3_set.patch
     #path: /home/daniela/anaconda_backup/anaconda/root-6.04.02
 build:
-    number: 28
-    string: py{{ environ.get('PY_VER','') }}_gcc4.8.2
+    number: 30
+    string: py{{ environ.get('PY_VER','') }}_clang503
     detect_binary_files_with_prefix: True
 
 requirements:
