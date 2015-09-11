@@ -89,8 +89,8 @@ MacInstallation() {
     export CPPFLAGS="-I${PREFIX}/include"
     export CPATH="${PREFIX}/include"
     export LIBPATH="${PREFIX}/lib"
-    export CMAKE_OSX_DEPLOYMENT_TARGET=
-    export MACOSX_DEPLOYMENT_TARGET=
+    export CMAKE_OSX_DEPLOYMENT_TARGET=10.8
+    export MACOSX_DEPLOYMENT_TARGET=10.8
     export DYLD_FALLBACK_LIBRARY_PATH="${PREFIX}/lib"
     chmod +x configure;
     #export CC=clang
