@@ -1,5 +1,12 @@
 #!/bin/bash
 set -x
+echo $PREFIX
+export CFLAGS="-Wall -g -m64 -pipe -O2 -march=x86-64 -fPIC"
+export CXXLAGS="${CFLAGS}"
+export CPPFLAGS="-I${PREFIX}/include"
+export LDFLAGS="-L${PREFIX}/lib"
+
+ARCH="$(uname 2>/dev/null)"
 
 ROOTSYS=$(root-config --prefix)
 pushd $ROOTSYS
@@ -8,7 +15,43 @@ popd
 #$PYTHON -c "import ROOT"
 echo $ROOTSYS
 
-$PYTHON setup.py install
+LinuxInstallation() {
+
+  $PYTHON setup.py install || return 1;
+  return 0;
+  
+}
+
+MacInstallation() {
+    export CPPFLAGS="-I${PREFIX}/include"
+    export CPATH="${PREFIX}/include"
+    export LIBPATH="${PREFIX}/lib"
+    export CMAKE_OSX_DEPLOYMENT_TARGET=
+    export MACOSX_DEPLOYMENT_TARGET=
+    export DYLD_FALLBACK_LIBRARY_PATH="${PREFIX}/lib"
+    chmod +x configure;
+    #export CC=clang
+    export CFLAGS="${CFLAGS} -D_DARWIN_SOURCE"
+    $PYTHON setup.py install || return 1;
+    return 0;
+}
+    
+    
+case ${ARCH} in
+    'Linux')
+        LinuxInstallation || exit 1;
+        ;;
+    'Darwin')
+        MacInstallation || exit 1;
+        ;;
+    *)
+        echo -e "Unsupported machine type: ${ARCH}";
+        exit 1;
+        ;;
+esac
+
+
+
 
 # Add more build steps here, if they are necessary.
 
