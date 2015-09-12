@@ -1,6 +1,6 @@
 #!/bin/bash
 mkdir -p $PREFIX/lib
-/bin/cp -r /opt/X11/lib/* $PREFIX/lib/
+/bin/cp -P /opt/X11/lib/* $PREFIX/lib/
 # /bin/ln -s libX11.so.6.3.0 $PREFIX/lib/libX11.so.6
 # /bin/ln -s libX11.so.6.3.0 $PREFIX/lib/libX11.so
 
