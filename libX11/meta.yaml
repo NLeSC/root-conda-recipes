@@ -1,6 +1,6 @@
 package:
   name: libx11
-  version: 2.2.7
+  version: 2.7.7
 
 build:
     number: 1

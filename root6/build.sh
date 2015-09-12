@@ -72,7 +72,6 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Droofit=ON \
 -Dopengl=OFF \
 -Dgviz=OFF \
--Daspng=OF \
 || return 1;
 #-DCMAKE_C_COMPILER=$PREFIX/bin/gcc \
 #-DCMAKE_CXX_COMPILER=$PREFIX/bin/c++ \
@@ -146,6 +145,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dopengl=OFF \
 -Dgviz=OFF \
 -Dsqlite=OFF \
+-DLIBPNG=$PREFIX/lib \
 || return 1;
 
 #-DFREETYPE_INCLUDE_DIR=$PREFIX/include \
