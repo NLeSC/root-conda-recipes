@@ -146,6 +146,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dgviz=OFF \
 -Dsqlite=OFF \
 -DLIBPNG=$PREFIX/lib \
+-Daspng=OFF \
 || return 1;
 
 #-DFREETYPE_INCLUDE_DIR=$PREFIX/include \
