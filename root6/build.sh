@@ -145,10 +145,6 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dopengl=OFF \
 -Dgviz=OFF \
 -Dsqlite=OFF \
--DLIBPNG=$PREFIX/lib \
--Daspng=OFF \
--Dx11=OFF \
--DX11=OFF \
 || return 1;
 
 #-DFREETYPE_INCLUDE_DIR=$PREFIX/include \
