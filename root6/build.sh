@@ -72,6 +72,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Droofit=ON \
 -Dopengl=OFF \
 -Dgviz=OFF \
+-DLIBPNG=$PREFIX/lib \
 || return 1;
 #-DCMAKE_C_COMPILER=$PREFIX/bin/gcc \
 #-DCMAKE_CXX_COMPILER=$PREFIX/bin/c++ \
