@@ -14,6 +14,7 @@ gcc -v
 
 ARCH="$(uname 2>/dev/null)"
 
+export TMPDIR=`conda info --root`/tmpdir
 
 LinuxInstallation() {
 # Build dependencies:
