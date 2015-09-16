@@ -6,7 +6,8 @@ source:
     #fn: root_v6.04.02.source.tar.gz
     #url: https://root.cern.ch/download/root_v6.04.02.source.tar.gz
     git_url: https://github.com/root-mirror/root
-    git_tag: v6-04-00-patches
+    git_tag: v6-04-00-patches # [{{ environ.get('ROOT_VERSION') }}=6]
+    git_tag: v5-34-32 # [{{ environ.get('ROOT_VERSION') }}=5]
     #patches:
     #    - python3.patch
     #    - python3_set.patch
