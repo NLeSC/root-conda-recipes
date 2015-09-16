@@ -14,6 +14,7 @@ gcc -v
 
 ARCH="$(uname 2>/dev/null)"
 
+export TMPDIR=`conda info --root`/tmpdir
 
 LinuxInstallation() {
 # Build dependencies:
@@ -89,8 +90,8 @@ MacInstallation() {
 export CPPFLAGS="-I${PREFIX}/include"
 export CPATH="${PREFIX}/include"
 export LIBPATH="${PREFIX}/lib"
-export CMAKE_OSX_DEPLOYMENT_TARGET=
-export MACOSX_DEPLOYMENT_TARGET=
+export CMAKE_OSX_DEPLOYMENT_TARGET=10.8
+export MACOSX_DEPLOYMENT_TARGET=10.8
 export DYLD_FALLBACK_LIBRARY_PATH="${PREFIX}/lib"
 chmod +x configure;
 #export CC=clang
@@ -145,6 +146,8 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dopengl=OFF \
 -Dgviz=OFF \
 -Dsqlite=OFF \
+-Dasimage=OFF \
+-Dbuiltin_afterimage=OFF \
 || return 1;
 
 #-DFREETYPE_INCLUDE_DIR=$PREFIX/include \
