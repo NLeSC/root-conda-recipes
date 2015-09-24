@@ -5,7 +5,7 @@ source:
    # List any patch files here
    # - fix.patch
 package:
-  name: rootpy
+  name: rootpy-develop
   version: master
 
 build:
