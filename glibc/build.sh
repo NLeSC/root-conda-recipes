@@ -1,14 +1,11 @@
 mkdir build
 cd build
 
-export CC=cc
-export CXX=c++
-export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig
-export CFLAGS="-m64 -pipe -O2"
-export CXXFLAGS="${CFLAGS}"
-export CPPFLAGS="-I$PREFIX/include"
-export LDFLAGS="-L$PREFIX/lib"
+../configure --prefix=$PREFIX  --build=$MACHTYPE --host=x86_64-linux-gnu --target=x86_64-linux-gnu --disable-multilib libc_cv_forced_unwind=yes
 
-../configure --prefix=$PREFIX
-make -j4
-make install
+make install-bootstrap-headers=yes install-header
+
+make -j2 csu/subdir_lib
+
+install csu/crt1.o csu/crti.o csu/crtn.o ${PREFIX}/lib
+
