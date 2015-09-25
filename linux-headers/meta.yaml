@@ -1,15 +1,16 @@
 package:
-  name: glibc
-  version: 2.12.2
+  name: linux-headers
+  version: 2.6.32
 
 build:
-  number: 3
+  number: 1
   detect_binary_files_with_prefix: True
 
 source:
-  fn: glibc-2.12.2.tar.gz
-  url: http://ftp.snt.utwente.nl/pub/software/gnu/glibc/glibc-2.12.2.tar.gz
-  sha1: 738ac9b88a7e89e2a9a419db13af8ee12a38f192
+  fn: linux-2.6.32.27.tar.xz
+  url: https://www.kernel.org/pub/linux/kernel/v2.6/linux-2.6.32.27.tar.xz
+  sha1: bbf9a89ad7ec034027765b88f8eddff038e05eef
+
 
 about:
   home: http://www.gnu.org/software/libc/
