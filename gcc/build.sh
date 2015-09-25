@@ -5,7 +5,7 @@ gcc -v
 
 #export TMPDIR=/media/osboxes/New/tmpdir
 
-./contrib/download_prerequisites
+#./contrib/download_prerequisites
 
 
 if [ "$(uname)" == "Darwin" ]; then
