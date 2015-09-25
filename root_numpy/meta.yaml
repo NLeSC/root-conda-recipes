@@ -34,14 +34,12 @@ requirements:
     - python  # [{{ environ.get('PY_VER') }}]
     - setuptools
     - pytables
-    - root {{ environ.get('ROOT_VERSION') }}* # [not osx]
-    - root {{ environ.get('ROOT_VERSION') }} # [osx]
+    - root {{ environ.get('ROOT_VERSION') }}
   run:
     - python  # [{{ environ.get('PY_VER') }}]
     - setuptools
     - pytables
-    - root {{ environ.get('ROOT_VERSION') }}* # [not osx]
-    - root {{ environ.get('ROOT_VERSION') }} # [osx]
+    - root {{ environ.get('ROOT_VERSION') }}
 test:
   # Python imports
   imports:
