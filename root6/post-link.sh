@@ -1,8 +1,8 @@
-#!/bin/bash
-#source $PREFIX/bin/thisroot.sh
+!/bin/bash
+source $PREFIX/bin/thisroot.sh
 
-#echo "ROOT has been sourced. Environment settings are ready. "
-#echo "ROOTSYS="${ROOTSYS}
+echo "ROOT has been sourced. Environment settings are ready. "
+echo "ROOTSYS="${ROOTSYS}
 
 
 
