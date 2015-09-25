@@ -4,6 +4,7 @@ echo 'gcc version'
 gcc -v
 
 #export TMPDIR=/media/osboxes/New/tmpdir
+export TMPDIR=/media/NewPartition/tmpdir
 
 #./contrib/download_prerequisites
 
