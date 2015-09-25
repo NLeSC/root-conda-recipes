@@ -26,6 +26,8 @@ requirements:
     - mpc >=0.8.0
     - isl
     - cloog 0.18.0
+    - glibc # [linux]
+    - linux-headers # [linux]
 
 about:
   home: http://gcc.gnu.org/
