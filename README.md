@@ -11,7 +11,6 @@ $ conda config --add channels https://conda.binstar.org/NLeSC
 $ conda create --name=testenv root=6 python=3
 $ source activate testenv
 $ root -b -q
-$ source {PATH_TO_YOUR_ANACONDA_DIR}/envs/testenv/bin/thisroot.sh
 $ python
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import ROOT
