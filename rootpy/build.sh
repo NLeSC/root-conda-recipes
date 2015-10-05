@@ -1,12 +1,12 @@
 #!/bin/bash
 set -x
 
-# ROOTSYS=$(root-config --prefix)
-# pushd $ROOTSYS
-# source bin/thisroot.sh
-# popd
-# #$PYTHON -c "import ROOT"
-# echo $ROOTSYS
+ROOTSYS=$(root-config --prefix)
+pushd $ROOTSYS
+source bin/thisroot.sh
+popd
+#$PYTHON -c "import ROOT"
+echo $ROOTSYS
 
 $PYTHON setup.py install
 
