@@ -24,7 +24,7 @@ build:
   # number. If you do not include this key, it defaults to 0.
   number: 8
   detect_binary_files_with_prefix: True
-  string: py{{ environ.get('PY_VER','') }}
+  root{{ environ.get('ROOT_VERSION','') }}_py{{ environ.get('PY_VER','') }}
 requirements:
   build:
     - python # [{{ environ.get('PY_VER') }}]
