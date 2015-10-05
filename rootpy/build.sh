@@ -8,7 +8,7 @@ popd
 #$PYTHON -c "import ROOT"
 echo $ROOTSYS
 
-$PYTHON setup.py develop
+$PYTHON setup.py install
 
 # Add more build steps here, if they are necessary.
 
