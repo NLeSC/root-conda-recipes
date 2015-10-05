@@ -8,12 +8,12 @@ export LDFLAGS="-L${PREFIX}/lib"
 
 ARCH="$(uname 2>/dev/null)"
 
-# ROOTSYS=$(root-config --prefix)
-# pushd $ROOTSYS
-# source bin/thisroot.sh
-# popd
-# #$PYTHON -c "import ROOT"
-# echo $ROOTSYS
+ROOTSYS=$(root-config --prefix)
+pushd $ROOTSYS
+source bin/thisroot.sh
+popd
+#$PYTHON -c "import ROOT"
+echo $ROOTSYS
 
 LinuxInstallation() {
 
