@@ -32,6 +32,7 @@ MacInstallation() {
     #export CC=clang
     export CFLAGS="${CFLAGS} -D_DARWIN_SOURCE"
     echo "DYLD_LIBRARY_PATH=" $DYLD_LIBRARY_PATH
+    unset DYLD_LIBRARY_PATH
     $PYTHON setup.py install || return 1;
     return 0;
 }
