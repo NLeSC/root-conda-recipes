@@ -16,7 +16,7 @@ popd
 echo $ROOTSYS
 
 LinuxInstallation() {
-
+  unset LD_LIBRARY_PATH
   $PYTHON setup.py install || return 1;
   return 0;
   
@@ -30,7 +30,6 @@ MacInstallation() {
     export MACOSX_DEPLOYMENT_TARGET=10.8
     export DYLD_FALLBACK_LIBRARY_PATH="${PREFIX}/lib"
     #export CC=clang
-    export CFLAGS="${CFLAGS} -D_DARWIN_SOURCE"
     unset DYLD_LIBRARY_PATH
 
     $PYTHON setup.py install || return 1;
