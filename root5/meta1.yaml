@@ -1,0 +1,58 @@
+package:
+    name: root
+    version: 5.34.32
+    #version: {{ environ.get('GIT_DESCRIBE_TAG', '') }} # bug, doesn't work for now: https://github.com/conda/conda-build/issues/357
+source:
+    #fn: root_v6.04.02.source.tar.gz
+    #url: https://root.cern.ch/download/root_v6.04.02.source.tar.gz
+    git_url: https://github.com/root-mirror/root
+    git_tag: v5-34-32
+    #patches:
+    #    - python3.patch
+    #    - python3_set.patch
+    #path: /home/daniela/anaconda_backup/anaconda/root-6.04.02
+build:
+    number: 11
+    string: py{{ environ.get('PY_VER','') }}_gcc4.6
+    detect_binary_files_with_prefix: True
+
+requirements:
+    build:
+        - python  # [{{ environ.get('PY_VER') }}]     
+        #- gcc 4.9.2
+        #- libgcc >=4.8.4
+        #- glibc 2.19*
+        - openssl
+        - qt
+        - sqlite
+        - fftw
+        - pcre
+        - libxml2
+        - graphviz
+        - cmake >=3.2.3
+        - gsl 1.16
+        #- glibc 2.21
+        # - glibc 2.21
+    run:
+        - python  # [{{ environ.get('PY_VER') }}]
+        - openssl
+        - qt
+        - sqlite
+        - graphviz
+        - libxml2
+        - fftw
+        - pcre
+        - gsl 1.16
+        - gcc 4.9.2
+        #- libgcc-5 5.*
+        #- glibc 2.21
+
+test:
+    imports:
+
+    commands:
+
+about:
+    home: http://root.cern.ch/
+    license: LGPL v2.1
+
