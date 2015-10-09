@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Unsetting ROOT environment variables.."
+echo "Deactivate:Unsetting ROOT environment variables.."
 
 if [ -n "${ROOTSYS}" ]; then
      unset ROOTSYS
