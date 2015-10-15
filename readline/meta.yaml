@@ -11,7 +11,7 @@ about:
   license: GPL 3
 
 build:
-  number: 11
+  number: 12
 
 requirements:
   build:
