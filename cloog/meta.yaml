@@ -7,7 +7,7 @@ source:
   url: http://www.bastoul.net/cloog/pages/download/count.php3?url=./cloog-0.18.1.tar.gz
 
 build:
-  number: 1
+  number: 2
   detect_binary_files_with_prefix: True
 
 requirements:

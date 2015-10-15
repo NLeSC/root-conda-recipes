@@ -11,8 +11,8 @@ source:
     - fix.patch
 
 build:
-  number: 5 # [linux]
-  number: 1 # [osx]
+  number: 6 # [linux]
+  number: 2 # [osx]
   detect_binary_files_with_prefix: true
 
 about:
