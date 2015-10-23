@@ -12,7 +12,7 @@ source:
     #    - python3_set.patch
     #path: /home/daniela/anaconda_backup/anaconda/root-6.04.02
 build:
-    number: 34
+    number: 35
     string: py{{ environ.get('PY_VER','') }}_clang503 # [osx]
     string: py{{ environ.get('PY_VER','') }}_gcc4.8.2 # [linux]
     detect_binary_files_with_prefix: True
