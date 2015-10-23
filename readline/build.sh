@@ -2,8 +2,8 @@
 
 set -e
 
-./configure --prefix=$PREFIX && \
-    make -j$(getconf _NPROCESSORS_ONLN) SHLIB_LIBS="-ltinfo -L$LD_RUN_PATH" && \
+./configure --prefix=$PREFIX
+    make 
     make install
 
 rm -rf $PREFIX/share/man
