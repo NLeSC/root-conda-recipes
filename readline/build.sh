@@ -2,6 +2,8 @@
 
 set -e
 
+export LDFLAGS="-L${PREFIX}/lib -lncurses"
+
 ./configure --prefix=$PREFIX
     make 
     make install
