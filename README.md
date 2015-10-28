@@ -49,7 +49,7 @@ So far only there is only support for Linux 64bit. OSX is uncharted territory fo
 
 *Please update your environment regularly, for new and more stable package releases*
 
-``` conda update --all ```
+```$ conda update --all ```
 
 Thanks upfront for any feedback!
 
