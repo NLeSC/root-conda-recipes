@@ -9,7 +9,7 @@ source:
 
 build:
   detect_binary_files_with_prefix: true
-  number: 21
+  number: 22
 
 requirements:
   build:
