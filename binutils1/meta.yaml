@@ -3,8 +3,12 @@ package:
   version: 2.25
   
 build:
-  number: 0
-  
+  number: 1
+
+requirements:
+  build:
+    - system # [not win]
+
 source:
   fn: binutils-2.25.tar.bz2
   url: http://ftp.gnu.org/gnu/binutils/binutils-2.25.tar.bz2
