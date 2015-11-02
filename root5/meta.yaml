@@ -12,7 +12,11 @@ source:
     #    - python3_set.patch
     #path: /home/daniela/anaconda_backup/anaconda/root-6.04.02
 build:
+<<<<<<< HEAD
     number: 35
+=======
+    number: 36
+>>>>>>> feda14fae98ff847fbbd032a2a11ee36c84a65a9
     string: py{{ environ.get('PY_VER','') }}_clang503 # [osx]
     string: py{{ environ.get('PY_VER','') }}_gcc4.8.2 # [linux]
     detect_binary_files_with_prefix: True

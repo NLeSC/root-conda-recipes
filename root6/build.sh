@@ -70,7 +70,6 @@ mkdir workdir
 cd workdir
 
 cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
--Dbuiltin_pcre=ON \
 -Dbuiltin_llvm=ON \
 -Dbuiltin-lzma=ON \
 -Dbuiltin_zlib=ON \
@@ -84,7 +83,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 #-DCMAKE_C_COMPILER=$PREFIX/bin/gcc \
 #-DCMAKE_CXX_COMPILER=$PREFIX/bin/c++ \
 
-
+#Dbuiltin_pcre
 #-Dbuiltin_gsl=ON \
 
 make -j2 || return 1;
