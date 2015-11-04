@@ -9,7 +9,6 @@ source:
 
 requirements:
   build:
-    number: 2
     - python
     - numpy
     - hdf5         [unix]
