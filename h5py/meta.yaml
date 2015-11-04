@@ -5,7 +5,7 @@ package:
 source:
   fn: h5py-2.5.0.tar.gz                                                  [unix]
   url: https://pypi.python.org/packages/source/h/h5py/h5py-2.5.0.tar.gz  [unix]
-  md5: 80c9a94ae31f84885cc2ebe1323d6758                                  [unix]
+  md5: 6e4301b5ad5da0d51b0a1e5ac19e3b74                                  [unix]
 
 build:
   number: 3
