@@ -4,16 +4,16 @@ package:
 
 source:
   fn: h5py-2.5.0.tar.gz                                                  [unix]
-  url: https://pypi.python.org/packages/source/h/h5py/h5py-2.4.0.tar.gz  [unix]
-  md5: 6e4301b5ad5da0d51b0a1e5ac19e3b74                                  [unix]
+  url: https://pypi.python.org/packages/source/h/h5py/h5py-2.5.0.tar.gz  [unix]
+  md5: 80c9a94ae31f84885cc2ebe1323d6758                                  [unix]
 
 build:
-    number: 32
-    detect_binary_files_with_prefix: True
-    string: h5py_25
+  number: 3
+  detect_binary_files_with_prefix: True
+
 requirements:
   build:
-    -python
+    - python
     - numpy
     - hdf5         [unix]
     - cython       [unix]
