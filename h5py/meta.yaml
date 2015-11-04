@@ -7,9 +7,13 @@ source:
   url: https://pypi.python.org/packages/source/h/h5py/h5py-2.4.0.tar.gz  [unix]
   md5: 80c9a94ae31f84885cc2ebe1323d6758                                  [unix]
 
+build:
+    number: 32
+    detect_binary_files_with_prefix: True
+
 requirements:
   build:
-    - python
+    -python
     - numpy
     - hdf5         [unix]
     - cython       [unix]
