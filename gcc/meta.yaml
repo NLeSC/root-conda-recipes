@@ -3,7 +3,7 @@ package:
   version: 4.8.2
 
 source:
-  fn: 9f699b42394bd2754d9f77427553d923
+  fn: gcc-4.8.2-20140120.tar.bz2
   #url: http://www.netgull.com/gcc/releases/gcc-4.8.2/gcc-4.8.2.tar.bz2
   url: http://pkgs.fedoraproject.org/repo/pkgs/cross-gcc/gcc-4.8.2-20140120.tar.bz2/9f699b42394bd2754d9f77427553d923/gcc-4.8.2-20140120.tar.bz2
   #md5: a3d7d63b9cb6b6ea049469a0c4a43c9d
