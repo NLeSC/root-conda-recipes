@@ -1,17 +1,17 @@
 package:
   name: pcre
-  version: !!str 8.37
+  version: !!str 8.35
 
 source:
-  fn: pcre-8.37.tar.bz2
-  url: http://ftp.cs.stanford.edu/pub/exim/pcre/pcre-8.37.tar.bz2
-  md5: ed91be292cb01d21bc7e526816c26981
+  fn: pcre-8.35.tar.bz2
+  url: http://ftp.cs.stanford.edu/pub/exim/pcre/pcre-8.35.tar.bz2
+  md5: 6aacb23986adccd9b3bc626c00979958
 #  patches:
    # List any patch files here
    # - fix.patch
 
 build:
-  number: 6
+  number: 7
   detect_binary_files_with_prefix: True
   # If this is a new build for the same version, increment the build
   # number. If you do not include this key, it defaults to 0.
