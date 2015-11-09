@@ -16,25 +16,6 @@ env:
   - ROOT=5
   - ROOT=6
 
-addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    packages:
-    - build-essential
-    - git
-    - dpkg-dev
-    - make
-    - binutils
-    - libx11-dev
-    - libxpm-dev
-    - libxft-dev
-    - libxext-dev
-    - gcc-multilib
-    - python-software-properties
-    - gcc-4.8
-    - g++-4.8
-
 os:
   - osx
   - linux
