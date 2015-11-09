@@ -67,13 +67,13 @@ class TestRoot(unittest.TestCase):
         a = ROOT.TH1D("a", "a", 10, -1, 1)
         histmap["a"] = a
 
-        StrHist = stl.pair(stl.string, "TH1*")
+        #StrHist = stl.pair(stl.string, "TH1*")
 
-        generate('pair<map<string,TH1*>::iterator,bool>', '<map>;<TH1.h>')
-        histptrmap = stl.map(stl.string, "TH1*")()
-        histptrmap.insert(StrHist("test", a))
+        #generate('pair<map<string,TH1*>::iterator,bool>', '<map>;<TH1.h>')
+        #histptrmap = stl.map(stl.string, "TH1*")()
+        #histptrmap.insert(StrHist("test", a))
 
-        self.assertTrue(histptrmap["test"] is a)
+        self.assertTrue(histmap["a"] is a)
 
 if __name__ == '__main__':
     unittest.main()
