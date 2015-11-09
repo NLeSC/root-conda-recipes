@@ -34,9 +34,9 @@ class TestRoot(unittest.TestCase):
     """
     def test_parse(self):
         for template in GOOD:
-            assert_equal(template, str(CPPType.from_string(template)))
+            self.assertEqual(template, str(CPPType.from_string(template)))
         for template in BAD:
-            assert_raises(ParseException, CPPType.from_string, template)
+            self.assertRaises(ParseException, CPPType.from_string, template)
 
 
 
