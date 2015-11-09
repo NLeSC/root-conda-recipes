@@ -153,6 +153,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dsqlite=OFF \
 -Dasimage=OFF \
 -Dbuiltin_afterimage=OFF \
+-Dastiff=OFF \
 || return 1;
 
 #-DFREETYPE_INCLUDE_DIR=$PREFIX/include \

@@ -48,7 +48,7 @@ requirements:
         - xz # [osx]
         #- freetype # [osx]
         - krb5 # [osx]
-        - libx11 2.7.7 # [osx]
+        #- libx11 2.7.7 # [osx]
 test:
     imports:
 
