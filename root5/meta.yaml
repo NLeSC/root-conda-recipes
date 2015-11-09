@@ -1,6 +1,6 @@
 package:
     name: root
-    version: 5.34.30
+    version: 5.34.32
     #version: {{ environ.get('GIT_DESCRIBE_TAG', '') }} # bug, doesn't work for now: https://github.com/conda/conda-build/issues/357
 source:
     #fn: root_v6.04.02.source.tar.gz
@@ -12,7 +12,7 @@ source:
     #    - python3_set.patch
     #path: /home/daniela/anaconda_backup/anaconda/root-6.04.02
 build:
-    number: 39
+    number: 40
     string: py{{ environ.get('PY_VER','') }}_clang503 # [osx]
     string: py{{ environ.get('PY_VER','') }}_gcc4.8.2 # [linux]
     detect_binary_files_with_prefix: True
