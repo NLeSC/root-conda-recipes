@@ -32,6 +32,9 @@ matrix:
     allow_failures:
         - os: osx
 
+before_script:
+    - if [ "$TRAVIS_OS_NAME" == "linux" ]; then  export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start; sleep 3; fi
+
 install:
   # Conda
   - if [ "${TRAVIS_OS_NAME}" == "osx" ]; then curl --silent http://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh -o miniconda.sh; fi
