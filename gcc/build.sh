@@ -17,7 +17,7 @@ if [ "$(uname)" == "Darwin" ]; then
     export LDFLAGS="-Wl,-headerpad_max_install_names"
     export BOOT_LDFLAGS="-Wl,-headerpad_max_install_names"
 
-     $PWD/../gcc-4.8.2/configure \
+     $PWD/../gcc-4.8.2-20140120/configure \
         --prefix=$PREFIX \
         --disable-multilib \
         --enable-languages=c,c++ 
@@ -36,7 +36,7 @@ else
     #mkdir -p ${PREFIX}/share
     #cat /etc/*-release > ${PREFIX}/share/conda-gcc-build-machine-os-details
     
-      $PWD/../gcc-4.8.2/configure \
+      $PWD/../gcc-4.8.2-20140120/configure \
         --prefix=$PREFIX \
         --libdir=$PREFIX/lib \
         --with-gmp=$PREFIX \

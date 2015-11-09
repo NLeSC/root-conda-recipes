@@ -70,7 +70,6 @@ mkdir workdir
 cd workdir
 
 cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
--Dbuiltin_pcre=ON \
 -Dbuiltin_llvm=ON \
 -Dbuiltin-lzma=ON \
 -Dbuiltin_zlib=ON \
@@ -83,7 +82,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 || return 1;
 #-DCMAKE_C_COMPILER=$PREFIX/bin/gcc \
 #-DCMAKE_CXX_COMPILER=$PREFIX/bin/c++ \
-
+#-Dbuiltin_pcre=ON \
 
 #-Dbuiltin_gsl=ON \
 
@@ -145,16 +144,16 @@ cd workdir
 cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dbuiltin_llvm=ON \
 -Dbuiltin_zlib=ON \
--Dbuiltin_pcre=ON \
 -Dbuiltin-lzma=ON \
 -Dcxx11=ON \
 -Drpath=ON \
 -Droofit=ON \
--Dopengl=OFF \
--Dgviz=OFF \
+-Dopengl=ON \
+-Dgviz=ON \
 -Dsqlite=OFF \
--Dasimage=OFF \
--Dbuiltin_afterimage=OFF \
+-Dasimage=ON \
+-Dbuiltin_afterimage=ON \
+-Dastiff=ON \
 || return 1;
 
 #-DFREETYPE_INCLUDE_DIR=$PREFIX/include \
@@ -162,6 +161,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 #-DFREETYPE_INCLUDE_DIR_freetype2=$PREFIX/include \
 #-DJPEG_INCLUDE_DIR=$PREFIX/include \
 #-DJPEG_LIBRARY=$PREFIX/lib \
+# -Dbuiltin_pcre=ON \
 
 #-Dbuiltin_gsl=ON \
 

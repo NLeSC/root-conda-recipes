@@ -1,5 +1,5 @@
 #!/bin/bash
 
-./configure --prefix="$PREFIX"
+./configure --enable-utf8 -enable-unicode-properties --prefix=$PREFIX
 make
 make install
