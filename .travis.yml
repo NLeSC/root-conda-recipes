@@ -63,8 +63,9 @@ install:
   - conda update -q conda
   - conda info -a # Useful for debugging any issues with conda
   - conda config --add channels http://conda.anaconda.org/NLeSC  
-  - conda create -q -n testenv python=$TRAVIS_PYTHON_VERSION root=${ROOT} numpy
+  - conda create -q -n testenv python=$TRAVIS_PYTHON_VERSION root=${ROOT} numpy rootpy
   - source activate testenv
 
 script:
   - python tests/test_root.py
+  - python tests/test_stl.py
