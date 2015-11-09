@@ -8,6 +8,7 @@ class TestRoot(unittest.TestCase):
     """
 
     def test_root_browser(self):
+        import ROOT
         b = ROOT.TBrowser()
         self.assertIsNotNone(b)
 
