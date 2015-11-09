@@ -7,6 +7,10 @@ class TestRoot(unittest.TestCase):
     """Test to see if python can use pyROOT
     """
 
+    def test_root_browser(self):
+        b = ROOT.TBrowser()
+        self.assertIsNotNone(b)
+
     def test_root_write(self):
         import ROOT
         file_out = ROOT.TFile("test_tree.root", "recreate")
