@@ -148,12 +148,12 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dcxx11=ON \
 -Drpath=ON \
 -Droofit=ON \
--Dopengl=OFF \
--Dgviz=OFF \
+-Dopengl=ON \
+-Dgviz=ON \
 -Dsqlite=OFF \
--Dasimage=OFF \
--Dbuiltin_afterimage=OFF \
--Dastiff=OFF \
+-Dasimage=ON \
+-Dbuiltin_afterimage=ON \
+-Dastiff=ON \
 || return 1;
 
 #-DFREETYPE_INCLUDE_DIR=$PREFIX/include \
