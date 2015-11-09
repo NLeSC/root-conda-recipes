@@ -33,7 +33,11 @@ matrix:
         - os: osx
 
 before_script:
-    - if [ "$TRAVIS_OS_NAME" == "linux" ]; then  export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start; sleep 3; fi
+    - if [ "$TRAVIS_OS_NAME" == "linux" ]; then  
+          export DISPLAY=:99.0; 
+          sh -e /etc/init.d/xvfb start; 
+          sleep 3; 
+      fi
 
 install:
   # Conda
@@ -49,8 +53,8 @@ install:
   - conda config --add channels http://conda.anaconda.org/NLeSC  
   - conda create -q -n testenv python=${PYTHON} root=${ROOT} numpy rootpy
   - source activate testenv
-  - conda uninstall -q sqlite libpng libx11
-  - root -b -q
+  #- conda uninstall -q sqlite libpng libx11
+  #- root -b -q
 
 script:
   - python tests/test_root.py
