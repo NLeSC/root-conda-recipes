@@ -68,4 +68,3 @@ install:
 
 script:
   - python tests/test_root.py
-  - make lint
