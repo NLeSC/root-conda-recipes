@@ -73,7 +73,7 @@ class TestRoot(unittest.TestCase):
         histptrmap = stl.map(stl.string, "TH1*")()
         histptrmap.insert(StrHist("test", a))
 
-        assert histptrmap["test"] is a
+        self.assertTrue(histptrmap["test"] is a)
 
 if __name__ == '__main__':
     unittest.main()
