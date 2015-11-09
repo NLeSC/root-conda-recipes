@@ -1,3 +1,7 @@
+
+
+[![Build Status](https://travis-ci.org/remenska/conda-recipes.svg)](https://travis-ci.org/remenska/conda-recipes)
+
 This repository contains Conda recipes for: *ROOT5/6* binaries, *root_numpy, rootpy, rooot_pandas* (and related dependencies), with Python 2/3 support. The goal is to provide a pythonic interface to the ROOT I/O format, primarily for loading and saving *Pandas DataFrames* in the *ROOT* format.
 
 The most painful thing for making things work is the ABI (binary) compatibility between different gcc(libstdc++)/glibc library versions, on various linux distributions.
