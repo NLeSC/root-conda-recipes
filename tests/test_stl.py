@@ -36,7 +36,7 @@ class TestRoot(unittest.TestCase):
         for template in GOOD:
             self.assertEqual(template, str(CPPType.from_string(template)))
         for template in BAD:
-            self.assertRaises(ParseException, CPPType.from_string(template))
+            self.assertRaises(ParseException, CPPType.from_string, template)
 
 
 

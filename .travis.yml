@@ -65,6 +65,7 @@ install:
   - conda config --add channels http://conda.anaconda.org/NLeSC  
   - conda create -q -n testenv python=$TRAVIS_PYTHON_VERSION root=${ROOT} numpy rootpy
   - source activate testenv
+  - root -b -q
 
 script:
   - python tests/test_root.py
