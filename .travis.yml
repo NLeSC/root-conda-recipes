@@ -1,0 +1,67 @@
+# Config file for automatic testing at travis-ci.org
+
+language: python
+
+sudo: false
+
+python:
+  - 2.7
+  - 3.4
+
+notifications:
+  email:
+    - remenska@gmail.com
+
+env:
+  - ROOT=5
+  - ROOT=6
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - build-essential
+    - git
+    - dpkg-dev
+    - make
+    - binutils
+    - libx11-dev
+    - libxpm-dev
+    - libxft-dev
+    - libxext-dev
+    - gcc-multilib
+    - python-software-properties
+    - gcc-4.8
+    - g++-4.8
+
+os:
+  - osx
+  - linux
+  
+matrix:
+  allow_failures:
+    - os: osx
+
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
+
+install:
+  - deactivate
+  - gcc --version
+
+  # Conda
+  - if [ "${TRAVIS_OS_NAME}" == "osx" ]; then curl --silent http://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh -o miniconda.sh; fi
+  - if [ "${TRAVIS_OS_NAME}" == "linux" ]; then wget -nv http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh; fi
+  
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  - conda info -a # Useful for debugging any issues with conda
+  - conda config --add channels http://conda.anaconda.org/NLeSC  
+  - conda create -q -n testenv python=$TRAVIS_PYTHON_VERSION root=${ROOT}
+  - source activate testenv
