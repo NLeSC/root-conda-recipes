@@ -45,6 +45,7 @@ install:
   - conda config --add channels http://conda.anaconda.org/NLeSC  
   - conda create -q -n testenv python=${TOXENV} root=${ROOT} numpy rootpy
   - source activate testenv
+  - conda uninstall -q sqlite
   - root -b -q
 
 script:
