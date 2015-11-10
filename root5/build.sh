@@ -114,6 +114,11 @@ export ASTIFFINCDIR="${PREFIX}/include"
 export SQLITELIBDIR="${PREFIX}/lib"
 export SQLITEINCDIR="${PREFIX}/lib"
 export ASPNGINCDIR="${PREFIX}/include"
+export SQLITE_INCLUDE_DIR="${PREFIX}/include"
+export PC_SQLITE_LIBDIR="${PREFIX}/lib"
+export PNG_LIBRARY="${PREFIX}/lib/libpng.dylib"
+export PNG_PNG_INCLUDE_DIR="${PREFIX}/include"
+export PNG_LIBRARY_RELEASE="${PREFIX}/lib/libpng.dylib"
 make distclean;
 
 #  ./configure \
