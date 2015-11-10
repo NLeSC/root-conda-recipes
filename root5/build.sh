@@ -163,6 +163,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dsqlite=OFF \
 -Dasimage=ON \
 -Dbuiltin_afterimage=ON \
+-Dbuiltin_freetype=ON \
 -Dastiff=ON \
 || return 1;
 
