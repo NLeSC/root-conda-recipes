@@ -22,7 +22,7 @@ requirements:
         - python  # [{{ environ.get('PY_VER') }}]     
         - openssl
         - qt # [linux]
-        - sqlite # [linux]
+        - sqlite 
         - fftw
         - pcre
         - libxml2
@@ -30,15 +30,18 @@ requirements:
         #- cmake >=3.2.3
         - gsl 1.16
         - xz # [osx]
-        #- freetype # [osx]
+        - freetype # [osx]
         - krb5 # [osx]
         #- libx11 2.7.7 #[osx]
+        - libpng #[osx]
+        - jpeg #[osx]
+        - libtiff #[osx]
         
     run:
         - python  # [{{ environ.get('PY_VER') }}]
         - openssl
         - qt # [linux]
-        - sqlite # [linux]
+        - sqlite
         - graphviz # [linux]
         - libxml2
         - fftw
@@ -46,9 +49,13 @@ requirements:
         - gsl 1.16
         - gcc 4.8.2 # [linux]
         - xz # [osx]
-        #- freetype # [osx]
+        - freetype # [osx]
         - krb5 # [osx]
         #- libx11 2.7.7 # [osx]
+        - libpng #[osx]
+        - jpeg #[osx]
+        - libtiff #[osx]
+        
 test:
     imports:
 
