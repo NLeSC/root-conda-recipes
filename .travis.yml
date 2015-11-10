@@ -53,7 +53,7 @@ install:
   - conda config --add channels http://conda.anaconda.org/NLeSC  
   - conda create -q -n testenv python=${PYTHON} root=${ROOT} numpy rootpy
   - source activate testenv
-  - conda uninstall -q sqlite libpng libx11 jpeg
+  - conda uninstall -q sqlite libpng libx11 jpeg libtiff
   - root -b -q
 
 script:
