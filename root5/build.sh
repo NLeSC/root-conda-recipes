@@ -107,12 +107,13 @@ export CXX=clang++
 export LD=clang++
 export SQLITELIBDIR="${PREFIX}/lib"
 export SQLITEINCDIR="${PREFIX}/include"
-#export ASEXTRALIB="${PREFIX}/lib/libpng.dylib;${PREFIX}/lib/libz.dylib"
+export ASEXTRALIB="${PREFIX}/lib/libpng.dylib;${PREFIX}/lib/libz.dylib"
 export ASEXTRALIBDIR="${PREFIX}/lib"
 export ASJPEGINCDIR="${PREFIX}/include"
 export ASTIFFINCDIR="${PREFIX}/include"
 export SQLITELIBDIR="${PREFIX}/lib"
 export SQLITEINCDIR="${PREFIX}/lib"
+export ASPNGINCDIR="${PREFIX}/include"
 make distclean;
 
 #  ./configure \
