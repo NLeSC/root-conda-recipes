@@ -102,7 +102,17 @@ export DYLD_FALLBACK_LIBRARY_PATH="${PREFIX}/lib"
 chmod +x configure;
 #export CC=clang
 export CFLAGS="${CFLAGS} -D_DARWIN_SOURCE"
-
+export CC=clang
+export CXX=clang++
+export LD=clang++
+export SQLITELIBDIR="${PREFIX}/lib"
+export SQLITEINCDIR="${PREFIX}/include"
+#export ASEXTRALIB="${PREFIX}/lib/libpng.dylib;${PREFIX}/lib/libz.dylib"
+export ASEXTRALIBDIR="${PREFIX}/lib"
+export ASJPEGINCDIR="${PREFIX}/include"
+export ASTIFFINCDIR="${PREFIX}/include"
+export SQLITELIBDIR="${PREFIX}/lib"
+export SQLITEINCDIR="${PREFIX}/lib"
 make distclean;
 
 #  ./configure \
