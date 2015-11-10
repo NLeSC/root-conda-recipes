@@ -20,11 +20,11 @@ matrix:
         - language: generic
           os: osx
           osx_image: xcode6.4
-          env: PYTHON=2.7 ROOT=6.04
+          env: PYTHON=3.4 ROOT=5.34.32
         - language: generic
           os: osx
           osx_image: xcode6.4
-          env: PYTHON=3.4 ROOT=5.34.32
+          env: PYTHON=2.7 ROOT=6.04
         - language: generic
           os: osx
           osx_image: xcode6.4
@@ -32,12 +32,12 @@ matrix:
     allow_failures:
         - os: osx
 
-before_script:
-    - if [ "$TRAVIS_OS_NAME" == "linux" ]; then  
-          export DISPLAY=:99.0; 
-          sh -e /etc/init.d/xvfb start; 
-          sleep 3; 
-      fi
+#before_script:
+#    - if [ "$TRAVIS_OS_NAME" == "linux" ]; then  
+#          export DISPLAY=:99.0; 
+#          sh -e /etc/init.d/xvfb start; 
+#          sleep 3; 
+#      fi
 
 install:
   # Conda
