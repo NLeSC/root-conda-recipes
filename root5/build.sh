@@ -107,14 +107,14 @@ export CXX=clang++
 export LD=clang++
 export SQLITELIBDIR="${PREFIX}/lib"
 export SQLITEINCDIR="${PREFIX}/include"
+export SQLITE_INCLUDE_DIR="${PREFIX}/include"
+export SQLITE_LIBRARIES="${PREFIX}/lib/libsqlite3.dylib"
 export ASEXTRALIB="${PREFIX}/lib/libpng.dylib;${PREFIX}/lib/libz.dylib"
 export ASEXTRALIBDIR="${PREFIX}/lib"
 export ASJPEGINCDIR="${PREFIX}/include"
 export ASTIFFINCDIR="${PREFIX}/include"
 export SQLITELIBDIR="${PREFIX}/lib"
-export SQLITEINCDIR="${PREFIX}/lib"
 export ASPNGINCDIR="${PREFIX}/include"
-export SQLITE_INCLUDE_DIR="${PREFIX}/include"
 export PC_SQLITE_LIBDIR="${PREFIX}/lib"
 export PNG_LIBRARY="${PREFIX}/lib/libpng.dylib"
 export PNG_PNG_INCLUDE_DIR="${PREFIX}/include"
@@ -171,6 +171,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dbuiltin_afterimage=ON \
 -Dbuiltin_freetype=ON \
 -Dastiff=ON \
+-Dsqlite=ON \
 || return 1;
 
 #-DFREETYPE_INCLUDE_DIR=$PREFIX/include \
