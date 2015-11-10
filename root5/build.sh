@@ -119,6 +119,8 @@ export PC_SQLITE_LIBDIR="${PREFIX}/lib"
 export PNG_LIBRARY="${PREFIX}/lib/libpng.dylib"
 export PNG_PNG_INCLUDE_DIR="${PREFIX}/include"
 export PNG_LIBRARY_RELEASE="${PREFIX}/lib/libpng.dylib"
+export FREETYPE_INCLUDE_DIR="${PREFIX}/include"
+export FREETYPE_LIBRARIES="${PREFIX}/lib/freetype.lib"
 make distclean;
 
 #  ./configure \
@@ -169,7 +171,6 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dsqlite=OFF \
 -Dasimage=ON \
 -Dbuiltin_afterimage=ON \
--Dbuiltin_freetype=ON \
 -Dastiff=ON \
 -Dsqlite=ON \
 || return 1;
@@ -180,7 +181,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 #-DJPEG_INCLUDE_DIR=$PREFIX/include \
 #-DJPEG_LIBRARY=$PREFIX/lib \
 # -Dbuiltin_pcre=ON \
-
+# -Dbuiltin_freetype=ON \
 #-Dbuiltin_gsl=ON \
 
 make -j2 || return 1;
