@@ -168,7 +168,6 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Droofit=ON \
 -Dopengl=ON \
 -Dgviz=ON \
--Dsqlite=OFF \
 -Dasimage=ON \
 -Dbuiltin_afterimage=ON \
 -Dastiff=ON \
