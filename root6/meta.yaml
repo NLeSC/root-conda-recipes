@@ -33,9 +33,9 @@ requirements:
         - freetype # [osx]
         - krb5 # [osx]
         #- libx11 2.7.7 #[osx]
-        - libpng #[osx]
-        - jpeg #[osx]
-        - libtiff #[osx]
+        #- libpng #[osx]
+        #- jpeg #[osx]
+        #- libtiff #[osx]
         
     run:
         - python  # [{{ environ.get('PY_VER') }}]
