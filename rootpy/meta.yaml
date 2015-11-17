@@ -30,7 +30,7 @@ requirements:
     - python # [{{ environ.get('PY_VER') }}]
     - setuptools 
     - pytables
-    - root_numpy
+    - root-numpy
     - matplotlib >=1.2
     - numpy >=1.6.1
 
@@ -38,7 +38,7 @@ requirements:
     - python # [{{ environ.get('PY_VER') }}]
     - setuptools
     - pytables
-    - root_numpy
+    - root-numpy
     - matplotlib >=1.2
     - numpy >=1.6.1
 
