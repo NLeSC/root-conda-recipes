@@ -1,4 +1,4 @@
-To build: (from the conda-recipes directory)
+To build: (from the base conda-recipes directory)
 ---------------
 ```
 CONDA_PY=x.x conda build root6
