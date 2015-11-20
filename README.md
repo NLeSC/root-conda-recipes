@@ -61,6 +61,7 @@ or
 this means that you deployed ROOT on a machine with a very old glibc version, and you need to upgrade your distro. 
 
 So far only there is only support for Linux 64bit. OSX is uncharted territory for me, and any help would be appreciated.
+**Update**: ROOT5 works on OSX now!
 
 *Please update your environment regularly, for new and more stable package releases*:
 
