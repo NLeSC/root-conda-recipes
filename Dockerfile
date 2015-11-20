@@ -1,4 +1,5 @@
 FROM ringo/scientific:6.5
+ENTRYPOINT ["/bin/bash"]
 RUN wget -O /etc/yum.repos.d/slc6-devtoolset.repo http://linuxsoft.cern.ch/cern/devtoolset/slc6-devtoolset.repo
 RUN yum install -y devtoolset-2
 RUN wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh
