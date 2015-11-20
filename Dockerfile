@@ -14,5 +14,5 @@ RUN conda/bin/conda config --set show_channel_urls yes
 RUN conda/bin/conda install --yes -q conda-build
 RUN conda/bin/conda install --yes jinja2
 RUN conda/bin/conda install --yes anaconda-client
-RUN git clone  https://github.com/remenska/conda-recipes
 RUN scl enable devtoolset-2 bash
+CMD git clone  https://github.com/remenska/conda-recipes
