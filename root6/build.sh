@@ -120,7 +120,7 @@ export PNG_LIBRARY="${PREFIX}/lib/libpng.dylib"
 export PNG_PNG_INCLUDE_DIR="${PREFIX}/include"
 export PNG_LIBRARY_RELEASE="${PREFIX}/lib/libpng.dylib"
 export FREETYPE_INCLUDE_DIR="${PREFIX}/include"
-export FREETYPE_LIBRARIES="${PREFIX}/lib/freetype.lib"
+export FREETYPE_LIBRARIES="${PREFIX}/lib/freetype.dylib"
 make distclean;
 
 #  ./configure \
