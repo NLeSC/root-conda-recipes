@@ -121,6 +121,8 @@ export PNG_PNG_INCLUDE_DIR="${PREFIX}/include"
 export PNG_LIBRARY_RELEASE="${PREFIX}/lib/libpng.dylib"
 export FREETYPE_INCLUDE_DIR="${PREFIX}/include"
 export FREETYPE_LIBRARIES="${PREFIX}/lib/freetype.dylib"
+export FREETYPE_LIBRARY="${PREFIX}/lib/freetype.dylib"
+export FREETYPE_INCLUDE_DIRS="${PREFIX}/include"
 make distclean;
 
 #  ./configure \
