@@ -96,8 +96,8 @@ MacInstallation() {
 export CPPFLAGS="-I${PREFIX}/include"
 export CPATH="${PREFIX}/include"
 export LIBPATH="${PREFIX}/lib"
-export CMAKE_OSX_DEPLOYMENT_TARGET=10.8
-export MACOSX_DEPLOYMENT_TARGET=10.8
+export CMAKE_OSX_DEPLOYMENT_TARGET=10.10
+export MACOSX_DEPLOYMENT_TARGET=10.10
 export DYLD_FALLBACK_LIBRARY_PATH="${PREFIX}/lib"
 chmod +x configure;
 #export CC=clang
@@ -105,22 +105,6 @@ export CFLAGS="${CFLAGS} -D_DARWIN_SOURCE"
 export CC=clang
 export CXX=clang++
 export LD=clang++
-export SQLITELIBDIR="${PREFIX}/lib"
-export SQLITEINCDIR="${PREFIX}/include"
-export SQLITE_INCLUDE_DIR="${PREFIX}/include"
-export SQLITE_LIBRARIES="${PREFIX}/lib/libsqlite3.dylib"
-export ASEXTRALIB="${PREFIX}/lib/libpng.dylib;${PREFIX}/lib/libz.dylib"
-export ASEXTRALIBDIR="${PREFIX}/lib"
-export ASJPEGINCDIR="${PREFIX}/include"
-export ASTIFFINCDIR="${PREFIX}/include"
-export SQLITELIBDIR="${PREFIX}/lib"
-export ASPNGINCDIR="${PREFIX}/include"
-export PC_SQLITE_LIBDIR="${PREFIX}/lib"
-export PNG_LIBRARY="${PREFIX}/lib/libpng.dylib"
-export PNG_PNG_INCLUDE_DIR="${PREFIX}/include"
-export PNG_LIBRARY_RELEASE="${PREFIX}/lib/libpng.dylib"
-export FREETYPE_INCLUDE_DIR="${PREFIX}/include"
-export FREETYPE_LIBRARIES="${PREFIX}/lib/freetype.dylib"
 make distclean;
 
 #  ./configure \
@@ -170,8 +154,7 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dgviz=ON \
 -Dasimage=ON \
 -Dbuiltin_afterimage=ON \
--Dastiff=ON \
--Dsqlite=ON \
+-Dpython=ON \
 || return 1;
 
 #-DFREETYPE_INCLUDE_DIR=$PREFIX/include \
