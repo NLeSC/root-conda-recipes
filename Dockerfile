@@ -20,7 +20,6 @@ RUN conda/bin/conda install --yes anaconda-client
 RUN scl enable devtoolset-2 bash
 ENV PATH /opt/rh/devtoolset-2/root/usr/bin:$PATH
 RUN gcc --version & conda --version
-RUN git clone  https://github.com/remenska/conda-recipes
 # RUN CONDA_PY=2.7 conda build conda-recipes/root5
 # RUN CONDA_PY=3.4 conda build conda-recipes/root5
 # RUN CONDA_PY=2.7 conda build conda-recipes/root6
