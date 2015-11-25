@@ -1,4 +1,6 @@
+# the image is also available ready-made on DockerHub: remenska/slc6-devtoolset-anaconda
 FROM ringo/scientific:6.5
+MAINTAINER Daniela Remenska <d.remenska@esciencecenter.nl>
 ENTRYPOINT ["/bin/bash"]
 RUN wget -O /etc/yum.repos.d/slc6-devtoolset.repo http://linuxsoft.cern.ch/cern/devtoolset/slc6-devtoolset.repo
 RUN yum install -y devtoolset-2
