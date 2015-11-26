@@ -22,12 +22,9 @@ RUN conda/bin/conda install --yes binstar
 RUN scl enable devtoolset-2 bash
 ENV PATH /opt/rh/devtoolset-2/root/usr/bin:$PATH
 RUN gcc --version & conda --version
-<<<<<<< Updated upstream
-=======
 RUN wget --no-check-certificate https://cmake.org/files/v3.4/cmake-3.4.0-Linux-x86_64.tar.gz
 RUN tar -xvf cmake-3.4.0-Linux-x86_64.tar.gz
 RUN ln -s /cmake-3.4.0-Linux-x86_64/bin/cmake /usr/bin/cmake
->>>>>>> Stashed changes
 # RUN CONDA_PY=2.7 conda build conda-recipes/root5
 # RUN CONDA_PY=3.4 conda build conda-recipes/root5
 # RUN CONDA_PY=2.7 conda build conda-recipes/root6
