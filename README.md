@@ -1,5 +1,4 @@
 
-
 [![Build Status](https://travis-ci.org/remenska/conda-recipes.svg)](https://travis-ci.org/remenska/conda-recipes)
 
 About
