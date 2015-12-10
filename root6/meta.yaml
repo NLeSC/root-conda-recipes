@@ -1,6 +1,6 @@
 package:
     name: root
-    version: v6-05-02
+    version: 6.04
     #version: {{ environ.get('GIT_DESCRIBE_TAG', '') }} # bug, doesn't work for now: https://github.com/conda/conda-build/issues/357
 source:
     #fn: root_v6.04.02.source.tar.gz
