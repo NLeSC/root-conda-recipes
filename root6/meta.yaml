@@ -6,9 +6,9 @@ source:
     #fn: root_v6.04.02.source.tar.gz
     #url: https://root.cern.ch/download/root_v6.04.02.source.tar.gz
     git_url: https://github.com/root-mirror/root
-    git_tag: v6-05-02
-    #patches:
-    #    - python3.patch
+    git_tag: v6-04-00-patches
+    patches:
+        - python34.patch
     #    - python3_set.patch
     #path: /home/daniela/anaconda_backup/anaconda/root-6.04.02
 build:
