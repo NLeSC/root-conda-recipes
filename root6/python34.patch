@@ -1,7 +1,7 @@
-diff --git a/bindings/pyroot/src/Utility.cxx b/bindings/pyroot/src/Utility.cxx
+diff --git bindings/pyroot/src/Utility.cxx bindings/pyroot/src/Utility.cxx
 index ffeae8e..6bceee3 100644
---- a/bindings/pyroot/src/Utility.cxx
-+++ b/bindings/pyroot/src/Utility.cxx
+--- bindings/pyroot/src/Utility.cxx
++++ bindings/pyroot/src/Utility.cxx
 @@ -560,6 +560,8 @@ int PyROOT::Utility::GetBuffer( PyObject* pyobject, char tc, int size, void*& bu
        (*(bufprocs->bf_getbuffer))( pyobject, &bufinfo, PyBUF_WRITABLE );
        buf = (char*)bufinfo.buf;
