@@ -7,12 +7,12 @@ source:
     #url: https://root.cern.ch/download/root_v6.04.02.source.tar.gz
     git_url: https://github.com/root-mirror/root
     git_tag: v5-34-32
-    #patches:
-    #    - python3.patch
-    #    - python3_set.patch
+    patches:
+        - python34.patch
+        - python34_1.patch
     #path: /home/daniela/anaconda_backup/anaconda/root-6.04.02
 build:
-    number: 40
+    number: 41
     string: py{{ environ.get('PY_VER','') }}_clang503 # [osx]
     string: py{{ environ.get('PY_VER','') }}_gcc4.8.2 # [linux]
     detect_binary_files_with_prefix: True
