@@ -9,7 +9,7 @@ source:
     git_tag: v6-04-00-patches
     patches:
         - python34.patch
-    #    - python3_set.patch
+        - python34_1.patch
     #path: /home/daniela/anaconda_backup/anaconda/root-6.04.02
 build:
     number: 40
