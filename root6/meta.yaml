@@ -6,7 +6,7 @@ source:
     #fn: root_v6.04.02.source.tar.gz
     #url: https://root.cern.ch/download/root_v6.04.02.source.tar.gz
     git_url: https://github.com/root-mirror/root
-    git_tag: v6-04-00-patches
+    git_tag: heads/v6-04-00-patches@v6-04-02-110-g264f10d
     patches:
         - python34.patch
         - python34_1.patch
