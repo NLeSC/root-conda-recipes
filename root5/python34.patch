@@ -1,0 +1,20 @@
+diff --git bindings/pyroot/src/PyBufferFactory.cxx bindings/pyroot/src/PyBufferFactory.cxx
+index 5dddf75..8b4b3c4 100644
+--- bindings/pyroot/src/PyBufferFactory.cxx
++++ b/bindings/pyroot/src/PyBufferFactory.cxx
+@@ -60,6 +60,7 @@ namespace {
+       Py_buffer bufinfo;
+       (*(Py_TYPE(self)->tp_as_buffer->bf_getbuffer))( self, &bufinfo, PyBUF_SIMPLE );
+       Py_ssize_t nlen = bufinfo.len;
++      PyBuffer_Release( &bufinfo );
+ #endif
+       if ( nlen != INT_MAX )  // INT_MAX is the default, i.e. unknown actual length
+          return nlen;
+@@ -99,6 +100,7 @@ namespace {
+       Py_buffer bufinfo;
+       (*(PyBuffer_Type.tp_as_buffer->bf_getbuffer))( self, &bufinfo, PyBUF_SIMPLE );
+       buf = (char*)bufinfo.buf;
++      PyBuffer_Release( &bufinfo );
+ #endif
+ 
+       if ( ! buf )
