@@ -1,0 +1,12 @@
+diff --git bindings/pyroot/src/Utility.cxx bindings/pyroot/src/Utility.cxx
+index a9b574e..4ce3665 100644
+--- bindings/pyroot/src/Utility.cxx
++++ bindings/pyroot/src/Utility.cxx
+@@ -511,6 +511,7 @@ int PyROOT::Utility::GetBuffer( PyObject* pyobject, char tc, int size, void*& bu
+       (*(bufprocs->bf_getbuffer))( pyobject, &bufinfo, PyBUF_WRITABLE );
+       buf = (char*)bufinfo.buf;
+       Py_ssize_t buflen = bufinfo.len;
++      PyBuffer_Release( &bufinfo );
+ #endif
+ 
+       if ( buf && check == kTRUE ) {
