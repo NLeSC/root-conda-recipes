@@ -57,9 +57,23 @@ requirements:
         #- libtiff #[osx]
         
 test:
-    imports:
 
-    commands:
+   files:
+         - ../tests/test_root.py
+         - ../tests/test_stl.py
+
+   commands:
+         - root -b -q
+         - which root
+         - source ${PREFIX}/bin/thisroot.sh
+         - python test_root.py
+         - python test_stl.py
+         
+   imports:
+        #- ROOT
+   requires:
+         - numpy
+         - rootpy
 
 about:
     home: http://root.cern.ch/
