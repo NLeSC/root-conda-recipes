@@ -5,7 +5,7 @@ if [ $# -eq 0 ]; then
 else
     ANACONDA_TOKEN=$1
     cd /code
-    CONDA_ENVS_PATH=$PWD/envs CONDA_BLD_PATH=$PWD/conda-bld conda build CONDA_PY=$CONDA_PY ./root$ROOT
+    CONDA_ENVS_PATH=$PWD/envs CONDA_BLD_PATH=$PWD/conda-bld conda build CONDA_PY=$PY ./root$ROOT
     retval=$?
     if [ $retval -eq 0 ]; then
         echo "Uploading to test channel...."
