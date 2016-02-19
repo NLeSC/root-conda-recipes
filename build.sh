@@ -1,10 +1,9 @@
 #!/bin/sh
 
-ANACONDA_TOKEN=$1
-
 if [ $# -eq 0 ]; then
     echo "No token supplied for Anaconda upload."
 else
+    ANACONDA_TOKEN=$1
     cd /code
     CONDA_ENVS_PATH=$PWD/envs CONDA_BLD_PATH=$PWD/conda-bld conda build CONDA_PY=$CONDA_PY ./root$ROOT
     retval=$?
