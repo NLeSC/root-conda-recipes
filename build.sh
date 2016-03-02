@@ -12,6 +12,7 @@ else
         chown -R $MYUID .
         anaconda -t $ANACONDA_TOKEN upload $PWD/conda-bld/*/root-$ROOT*.tar.bz2 --force --channel test
     else
-    echo "Building failed."
+        echo "Building failed."
+        exit $retval
     fi
 fi
