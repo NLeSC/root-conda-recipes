@@ -8,7 +8,7 @@ else
     CONDA_ENVS_PATH=$PWD/envs CONDA_BLD_PATH=$PWD/conda-bld CONDA_PY=$PY conda build ./root$ROOT
     retval=$?
     if [ $retval -eq 0 ]; then
-        echo "Uploading to test channel...."
+        echo "Uploading to Anaconda cloud, test channel...."
         chown -R $MYUID .
         anaconda -v -t $ANACONDA_TOKEN upload $PWD/conda-bld/*/root-$ROOT*.tar.bz2 --force --channel test
     else
