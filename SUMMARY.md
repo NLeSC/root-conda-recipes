@@ -7,4 +7,5 @@
 * [Continuous integration](continuous_integration.md)
    * Travis
    * Jenkins
+* Known issues
 
