@@ -1,8 +1,8 @@
 # Summary
 
 * [Introduction](README.md)
+* [Using the conda binary packages](using_the_conda_binary_packages.md)
 * [Updating the recipes](updating_the_recipes.md)
 * [Rebuilding Conda binaries](rebuilding_conda_binaries.md)
 * [Continuous integration](continuous_integration.md)
-* [Using the conda binary packages](using_the_conda_binary_packages.md)
 
