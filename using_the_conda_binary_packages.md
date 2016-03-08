@@ -1,3 +1,44 @@
 # Using the conda binary packages
 
-test 1 2 3 
+To use the conda binary packages from the NLeSC AnacondaCloud repository, you need to add the appropriate NLeSC channel.  
+```
+$ conda config --add channels https://conda.anaconda.org/NLeSC
+```
+Binary packages can have different labels, the default one being `main`. Sometimes binaries are labeled with `dev` (e.g., newer versions which are pending certain tests), which makes them invisible from your anaconda client, unless you explicitly add them to your configuration:
+
+```
+$ conda config --add channels https://conda.anaconda.org/nlesc/label/dev
+```
+**Beware**: means that when you update or install binaries, you may pickup a newer version of a package, which has not been tested and put in "production" yet. A safer way to grab a binary from such a non-standard channel is to rather use directly:
+
+```
+conda install -c https://conda.anaconda.org/nlesc/label/dev <package>
+```
+
+
+```
+$ conda create --name=testenv root=6 python=3
+$ source activate testenv
+$ root -b -q
+$ python
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import ROOT
+>>> f = ROOT.TFile.Open("test.root","recreate")
+```
+
+If you have other channels in your conda configuration (besides the defaults one), make sure that the following packages are picked up from the right one (NLeSC) when you create the new environment.
+(You may need to set ``` conda config --set show_channel_urls yes ```).
+```
+....
+    fftw:       3.3.4-0                https://conda.anaconda.org/NLeSC/linux-64/
+    gmp:        5.1.2-2                https://conda.anaconda.org/NLeSC/linux-64/
+    graphviz:   2.38.0-3               https://conda.anaconda.org/NLeSC/linux-64/
+    gsl:        1.16-1                 https://conda.anaconda.org/NLeSC/linux-64/
+    isl:        0.12.2-0               https://conda.anaconda.org/NLeSC/linux-64/
+    mpc:        1.0.1-0                https://conda.anaconda.org/NLeSC/linux-64/
+    mpfr:       3.1.2-0                https://conda.anaconda.org/NLeSC/linux-64/
+    ncurses:    5.9-5                  https://conda.anaconda.org/NLeSC/linux-64/
+    pcre:       8.35-0                 https://conda.anaconda.org/NLeSC/linux-64/
+    gcc:        4.8.2-20               https://conda.anaconda.org/NLeSC/linux-64/
+    readline:   6.2.5-11               https://conda.anaconda.org/NLeSC/linux-64/
+....
