@@ -37,6 +37,7 @@ root [0]
 ```
 ```
 python
+Python 3.4.3 |Continuum Analytics, Inc.| (default, Oct 19 2015, 21:52:17) 
 Type "help", "copyright", "credits" or "license" for more information.
 Anaconda is brought to you by Continuum Analytics.
 >>> import ROOT
