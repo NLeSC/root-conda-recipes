@@ -40,6 +40,7 @@ $ conda create --name=testenv root=6 python=3
 $ source activate testenv
 ```
 Test if ROOT works like it should:
+
 ```
 $ root -b -q
    ------------------------------------------------------------
