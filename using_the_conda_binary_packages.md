@@ -22,21 +22,41 @@ Currently the following ROOT binaries with Python support are provided for the f
 
 
 
+Upon request, we build binaries with updated versions of ROOT and Python and temporarily put them in the `dev` channel, until properly tested. 
+Fo example, ROOT 6.06 has new support for jupyter notebooks, or use JSROOT to implement ROOT graphics for web browsers. Currently in the `dev` channel we provide:
 
-Upon request, we build binaries with updated versions of ROOT and Python and temporarily put them in the `dev` channel, until properly tested. Currently we have:
+|   | ROOT
+| ---| ------------- |:-------------:| 
+| **Python**| 2.7 / 6.05.02 | 3.4 / 6.05.02 | 3.5 / 6.05.02| 
 
-ROOT 6.06 version has new support for jupyter notebooks
 
-http module so that I can use JSROOT in ipython notebook
-ROOT 6.05.02 in dev anaconda channel with enabled http module.
-Can be tested with serv = new THttpServer("http:8080");
+The server can be tested with:
+```
+serv = new THttpServer("http:8080");```
+
+To install ROOT in your conda environment, decide upon the ROOT and Python version you plan to use. **We discourage** installing everything in your default (*root*) environment, and rather creating a separate one. For example:
 
 ```
 $ conda create --name=testenv root=6 python=3
 $ source activate testenv
+```
+Test if ROOT works like it should:
+```
 $ root -b -q
+   ------------------------------------------------------------
+  | Welcome to ROOT 6.05/02                http://root.cern.ch |
+  |                               (c) 1995-2014, The ROOT Team |
+  | Built for linuxx8664gcc                                    |
+  | From tag v6-05-02, 14 September 2015                       |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q' |
+   ------------------------------------------------------------
+
+root [0] 
+```
+```
 $ python
 Type "help", "copyright", "credits" or "license" for more information.
+Anaconda is brought to you by Continuum Analytics.
 >>> import ROOT
 >>> f = ROOT.TFile.Open("test.root","recreate")
 ```
