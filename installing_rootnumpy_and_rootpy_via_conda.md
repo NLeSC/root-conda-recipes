@@ -1,6 +1,6 @@
 # Installing root_numpy and rootpy via conda
 
-We also provide conda distributions of [root-numpy](https://github.com/rootpy/root_numpy) (the interface between [ROOT](https://root.cern.ch/) and [NumPy](http://www.numpy.org/)) and [rootpy](https://github.com/rootpy/rootpy). When installing root-numpy, ROOT's latest version will be picked up as a dependency:
+We also provide conda distributions of [root-numpy](https://github.com/rootpy/root_numpy) (the interface between [ROOT](https://root.cern.ch/) and [NumPy](http://www.numpy.org/)) and [rootpy](https://github.com/rootpy/rootpy). **When installing root-numpy, ROOT's latest version will be picked up as a dependency:**
 
 ```
 $ conda install root-numpy
@@ -34,4 +34,4 @@ The following NEW packages will be INSTALLED:
     ...             
     
   ```
- When installing rootpy, both root-numpy and ROOT will be picked up as dependencies automatically. The same above holds for fixing your ROOT or Python version.
+ **When installing rootpy, both root-numpy and ROOT will be picked up as dependencies automatically.** The same above holds for fixing your ROOT or Python version.
