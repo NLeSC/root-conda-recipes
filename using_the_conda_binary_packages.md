@@ -1,6 +1,6 @@
 # Using the conda binary packages
 
-To use the conda binary packages from the NLeSC AnacondaCloud repository, you need to add the appropriate NLeSC channel.  
+To use the conda binary packages from the NLeSC AnacondaCloud repository, you need to add the appropriate NLeSC ```main``` channel.  
 ```
 $ conda config --add channels https://conda.anaconda.org/NLeSC
 ```
