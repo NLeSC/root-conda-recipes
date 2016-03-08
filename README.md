@@ -9,58 +9,7 @@ The most most important thing for making things work out of the box is the ABI (
 
 
 
-Using the conda binary packages
-=============
 
-```
-$ conda config --add channels https://conda.anaconda.org/NLeSC
-$ conda create --name=testenv root=6 python=3
-$ source activate testenv
-$ root -b -q
-$ python
-Type "help", "copyright", "credits" or "license" for more information.
->>> import ROOT
->>> f = ROOT.TFile.Open("test.root","recreate")
-```
-
-If you have other channels in your conda configuration (besides the defaults one), make sure that the following packages are picked up from the right one (NLeSC) when you create the new environment.
-(You may need to set ``` conda config --set show_channel_urls yes ```).
-```
-....
-    fftw:       3.3.4-0                https://conda.anaconda.org/NLeSC/linux-64/
-    gmp:        5.1.2-2                https://conda.anaconda.org/NLeSC/linux-64/
-    graphviz:   2.38.0-3               https://conda.anaconda.org/NLeSC/linux-64/
-    gsl:        1.16-1                 https://conda.anaconda.org/NLeSC/linux-64/
-    isl:        0.12.2-0               https://conda.anaconda.org/NLeSC/linux-64/
-    mpc:        1.0.1-0                https://conda.anaconda.org/NLeSC/linux-64/
-    mpfr:       3.1.2-0                https://conda.anaconda.org/NLeSC/linux-64/
-    ncurses:    5.9-5                  https://conda.anaconda.org/NLeSC/linux-64/
-    pcre:       8.35-0                 https://conda.anaconda.org/NLeSC/linux-64/
-    gcc:        4.8.2-20               https://conda.anaconda.org/NLeSC/linux-64/
-    readline:   6.2.5-11               https://conda.anaconda.org/NLeSC/linux-64/
-....
-```
-ROOT is dynamically linked against glibc. If you experience errors like the following:
-
-``` root: /lib64/libc.so.6: version `GLIBC_2.{some_old_version}' not found 
-(required by /anaconda/envs/testenv/bin/../lib/libstdc++.so.6) ```
-
-or
-
-``` ImportError: anaconda/envs/testenv/lib/libPyROOT.so: ELF file OS ABI invalid ```
-
-this means that you deployed ROOT on a machine with a very old glibc version, and you need to upgrade your distro. 
-
-So far only there is only support for Linux 64bit. OSX is uncharted territory for me, and any help would be appreciated.
-
-**Update**: ROOT5 works on OSX now!
-
-*Please update your environment regularly, for new and more stable package releases*:
-
-```
-$ conda update --all 
-$ conda update --yes -q conda
-```
 Thanks upfront for any feedback!
 
 Daniela
