@@ -31,7 +31,8 @@ Fo example, ROOT 6.06 has new support for jupyter notebooks, or use JSROOT to im
 
 The server can be tested with:
 ```
-serv = new THttpServer("http:8080");```
+serv = new THttpServer("http:8080");
+```
 
 To install ROOT in your conda environment, decide upon the ROOT and Python version you plan to use. **We discourage** installing everything in your default (*root*) environment, and rather creating a separate one. For example:
 
@@ -39,6 +40,7 @@ To install ROOT in your conda environment, decide upon the ROOT and Python versi
 $ conda create --name=testenv root=6 python=3
 $ source activate testenv
 ```
+
 Test if ROOT works like it should:
 
 ```
