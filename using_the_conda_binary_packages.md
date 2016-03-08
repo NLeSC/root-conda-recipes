@@ -64,7 +64,12 @@ Anaconda is brought to you by Continuum Analytics.
 ```
 
 If you have other channels in your conda configuration (besides the defaults one), make sure that the following packages are picked up from the right one (NLeSC) when you create the new environment.
-(You may need to set ``` conda config --set show_channel_urls yes ```).
+
+You may need to set:
+``` 
+conda config --set show_channel_urls yes 
+```
+in order to see the channels from which the binaries are installed.
 
 ```
 ....
