@@ -13,7 +13,7 @@ Currently the following ROOT binaries with Python support are provided for the f
 | **Python** | 2.7 / 6.04  | 3.4 / 6.04 |
 
 
-To install ROOT in your conda environment, decide upon the ROOT and Python version you plan to use. **We discourage** installing everything in your default (*root*) environment, and rather creating a separate one. For example:
+To install ROOT in your conda environment, decide upon the ROOT and Python version you plan to use. **We discourage** installing everything in your default conda (*root*) environment, and rather creating a separate one. For example:
 
 ```
 $ conda create --name=testenv root=6 python=3
