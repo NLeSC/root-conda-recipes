@@ -20,7 +20,7 @@ The following NEW packages will be INSTALLED:
 Proceed ([y]/n)? 
 
 ```
-If you rather want to have another ROOT version picked up as a dependency, use that versions specifically:
+If you rather want to have another ROOT version picked up as a dependency, specify that version explicitly:
 
 ```
 $ conda install root-numpy root=5
