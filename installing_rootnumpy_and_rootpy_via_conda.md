@@ -8,7 +8,6 @@ $ conda install root-numpy
 as can be seen from the conda installation plan, the currently-latest (6.04) ROOT version will be picked up:
 
 ```
-....
 The following NEW packages will be INSTALLED:
     ...
     numexpr:       2.4.6-np110py27_1    defaults                                 
