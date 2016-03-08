@@ -10,10 +10,22 @@ Binary packages can have different labels, the default one being `main`. Sometim
 $ conda config --add channels https://conda.anaconda.org/nlesc/label/dev
 ```
 **Beware**: means that when you update or install binaries, you may pickup a newer version of a package, which has not been tested and put in "production" yet. A safer way to grab a binary from such a non-standard channel is to rather use directly:
-
 ```
 conda install -c https://conda.anaconda.org/nlesc/label/dev <package>
 ```
+Currently the following ROOT binaries with Python support are provided for the following versions in the `main` channel: 
+
+|   | ROOT
+| ---| ------------- |:-------------:| 
+| Python | 2.7 / 5.34.32 | 2.7 / 6.04  |
+| | 3.4 / 5.34.32 | 3.4 / 6.04 |
+
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
 
 
 ```
