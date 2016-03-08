@@ -4,6 +4,15 @@ To use the conda binary packages from the NLeSC AnacondaCloud repository, you ne
 ```
 $ conda config --add channels https://conda.anaconda.org/NLeSC
 ```
+
+Currently the following ROOT binaries with Python support are provided for the following versions in the `main` channel: 
+
+|   | ROOT | ROOT |
+| ---| ------------- |:-------------:| 
+| **Python**| 2.7 / 5.34.32 | 3.4 / 5.34.32 |
+| **Python** | 2.7 / 6.04  | 3.4 / 6.04 |
+
+
 Binary packages can have different labels, the default one being `main`. Sometimes binaries are labeled with `dev` (e.g., newer versions which are pending certain tests), which makes them invisible from your anaconda client, unless you explicitly add the corresponding channel to that label, to your configuration:
 
 ```
@@ -13,15 +22,6 @@ $ conda config --add channels https://conda.anaconda.org/nlesc/label/dev
 ```
 conda install -c https://conda.anaconda.org/nlesc/label/dev <package>
 ```
-Currently the following ROOT binaries with Python support are provided for the following versions in the `main` channel: 
-
-|   | ROOT | ROOT |
-| ---| ------------- |:-------------:| 
-| **Python**| 2.7 / 5.34.32 | 3.4 / 5.34.32 |
-| **Python** | 2.7 / 6.04  | 3.4 / 6.04 |
-
-
-
 Upon request, we build binaries with updated versions of ROOT and Python and temporarily put them in the `dev` channel, until properly tested. 
 Fo example, ROOT 6.06 has new support for jupyter notebooks, or use JSROOT to implement ROOT graphics for web browsers. Currently in the `dev` channel we provide:
 
