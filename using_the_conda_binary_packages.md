@@ -4,12 +4,12 @@ To use the conda binary packages from the NLeSC AnacondaCloud repository, you ne
 ```
 $ conda config --add channels https://conda.anaconda.org/NLeSC
 ```
-Binary packages can have different labels, the default one being `main`. Sometimes binaries are labeled with `dev` (e.g., newer versions which are pending certain tests), which makes them invisible from your anaconda client, unless you explicitly add them to your configuration:
+Binary packages can have different labels, the default one being `main`. Sometimes binaries are labeled with `dev` (e.g., newer versions which are pending certain tests), which makes them invisible from your anaconda client, unless you explicitly add the corresponding channel to that label, to your configuration:
 
 ```
 $ conda config --add channels https://conda.anaconda.org/nlesc/label/dev
 ```
-**Beware**: means that when you update or install binaries, you may pickup a newer version of a package, which has not been tested and put in "production" yet. A safer way to grab a binary from such a non-standard channel is to rather use directly:
+**Beware**: means that when you update or install binaries, you may pickup a newer version of a package, which has not been tested and put in "production" yet. **A safer way** to grab a binary from such a non-standard channel is to rather use directly:
 ```
 conda install -c https://conda.anaconda.org/nlesc/label/dev <package>
 ```
@@ -21,12 +21,15 @@ Currently the following ROOT binaries with Python support are provided for the f
 | | 2.7 / 6.04  | 3.4 / 6.04 |
 
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
 
+
+Upon request, we build binaries with updated versions of ROOT and Python and temporarily put them in the `dev` channel, until properly tested. Currently we have:
+
+ROOT 6.06 version has new support for jupyter notebooks
+
+http module so that I can use JSROOT in ipython notebook
+ROOT 6.05.02 in dev anaconda channel with enabled http module.
+Can be tested with serv = new THttpServer("http:8080");
 
 ```
 $ conda create --name=testenv root=6 python=3
