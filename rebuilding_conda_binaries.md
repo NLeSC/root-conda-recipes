@@ -12,15 +12,22 @@ To be able to build conda packages, you need to have the conda-build package ins
 ```
 conda install conda-build
 ```
-From the top directory of this github repository, building a package is as easy as:
+From the top directory of this cloned github repository of recipes, building a package is as easy as:
 ```
-conda build ./directory-of-package
+conda build ./directory-of-package-recipe
 ```
 
-For packages which depend on Python (e.g., ROOT), you need to build a separate binary for each Python version you want to provide. 
+**For packages which depend on Python (e.g., ROOT)**, you need to build a separate binary for each Python version you want to provide. Simply pass the CONDA_PY variable to the same command:
 
 ```
-CONDA_PY={python-version} conda build ./directory-of-package
+CONDA_PY={python-version} conda build ./directory-of-package-recipe
 ```
+Remember, you need to build separately each such binary.
 
 Working ROOT has been tested on: Ubuntu 11.10, 12.04, 14.04, 15.04, SLC-6.7, SLC-7. Please try it out and let us know if you experience problems. 
+
+**For packages which depend on ROOT (e.g., root-numpy)**, you need to, in addition, pass the ROOT version against which they should be build. For example:
+
+```
+CONDA_PY=3.4 ROOT_VERSION=5.34 conda build ./root-numpy
+```
