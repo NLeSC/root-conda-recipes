@@ -7,6 +7,10 @@ The files in a conda recipe are:
 * **bld.bat** (Windows build script which is executed using cmd)
 
 In our conda github repository, each folder contains the recipe for a particular software package. For example:
-![test 1 2 3 ](gitbook1.png)
+![](gitbook2.png)
 There could also be other optional files, like patches, scripts for testing, and to optionally execute after installation etc. See more details on the official [conda guidelines page](http://conda.pydata.org/).
+
+The ```meta.yaml``` file  (more details [here](http://conda.pydata.org/docs/building/meta-yaml.html)) contains all the metadata: the package name, version, source code repository, build number, etc.
+
+
 
