@@ -15,7 +15,7 @@ conda install -c https://conda.anaconda.org/nlesc/label/dev <package>
 ```
 Currently the following ROOT binaries with Python support are provided for the following versions in the `main` channel: 
 
-|   | ROOT | ROOT 
+|   | ROOT | ROOT |
 | ---| ------------- |:-------------:| 
 | **Python**| 2.7 / 5.34.32 | 3.4 / 5.34.32 |
 | | 2.7 / 6.04  | 3.4 / 6.04 |
