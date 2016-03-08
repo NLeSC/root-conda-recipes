@@ -29,6 +29,15 @@ Fo example, ROOT 6.06 has new support for jupyter notebooks, or use JSROOT to im
 | ---| ------------- |:-------------:| 
 | **Python**| 2.7 / 6.05.02 | 3.4 / 6.05.02 | 3.5 / 6.05.02| 
 
+<table>
+  <tr>
+    <td>One</td>
+    <td>Two</td>
+  </tr>
+  <tr>
+    <td colspan="2">Three</td>
+  </tr>
+</table>
 
 The server can be tested with:
 ```
