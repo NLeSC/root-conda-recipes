@@ -19,6 +19,7 @@ To install ROOT in your conda environment, decide upon the ROOT and Python versi
 conda create --name=testenv root=6 python=3
 source activate testenv
 ```
+This will install ROOT6 and Python3 and all dependencies to make things work.
 
 Test if ROOT works like it should:
 
@@ -48,7 +49,7 @@ You may need to set:
 ``` 
 conda config --set show_channel_urls yes 
 ```
-in order to see the channels from which the binaries are installed.
+in order to see the channels from which the binaries are installed. 
 
 ```
 ....
