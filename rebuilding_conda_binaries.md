@@ -1,6 +1,6 @@
 # Rebuilding Conda binaries
 
-The binaries were built on a Scientific Linux 6.7 (Carbon). The default GCC (4.4.7) is too old for ROOT6, so I used the [Developer Toolset (v2) from CERN](http://linux.web.cern.ch/linux/devtoolset).
+The binaries were built on a Scientific Linux 6.7 (Carbon). The default GCC (4.4.7) is too old for ROOT6, so we used the [Developer Toolset (v2) from CERN](http://linux.web.cern.ch/linux/devtoolset).
 (provides everything you need to rebuild from the recipes: gcc/binutils/git/etc..)
 If you really want to rebuild your own binaries (typically not needed as we try keep them updated), you can:
  - use a VM: pickup a VirtualBox image from [here](https://virtualboximages.com/VirtualBox+Scientific+Linux+Images), or create your own based on the ISO images from [here](https://www.scientificlinux.org/downloads/). 
