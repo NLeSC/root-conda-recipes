@@ -57,6 +57,7 @@ return 0;
 * Keep the conda package version number intact with the version of the software you are building.
  
 Below are the most important parts of the ROOT recipe, what they mean, and how to change them:
+
 ![](image4198.png)
 
 
