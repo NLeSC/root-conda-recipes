@@ -26,7 +26,7 @@ Upon request, we build binaries with updated versions of ROOT and Python and tem
 Fo example, ROOT 6.06 has new support for jupyter notebooks, or use JSROOT to implement ROOT graphics for web browsers. Currently in the `dev` channel we provide:
 
 |   | ROOT | ROOT | ROOT |
-| ---| ------------- |:-------------:| 
+| ---| ------------- |-------------:| -------------:|
 | **Python**| 2.7 / 6.05.02 | 3.4 / 6.05.02 | 3.5 / 6.05.02| 
 
 The server can be tested with:
