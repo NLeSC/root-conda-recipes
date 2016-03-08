@@ -1,5 +1,5 @@
 # Summary
 
 * [Introduction](README.md)
-* Updating the recipes
+* [Updating the recipes](updating_the_recipes.md)
 
