@@ -17,8 +17,8 @@ Currently the following ROOT binaries with Python support are provided for the f
 
 |   | ROOT
 | ---| ------------- |:-------------:| 
-| Python | 2.7 / 5.34.32 | 2.7 / 6.04  |
-| | 3.4 / 5.34.32 | 3.4 / 6.04 |
+| **Python**| 2.7 / 5.34.32 | 3.4 / 5.34.32 |
+| | 2.7 / 6.04  | 3.4 / 6.04 |
 
 
 | Tables        | Are           | Cool  |
