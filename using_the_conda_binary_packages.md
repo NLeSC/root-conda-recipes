@@ -2,7 +2,7 @@
 
 To use the conda binary packages from the NLeSC AnacondaCloud repository, you need to add the appropriate NLeSC ```main``` channel.  
 ```
-$ conda config --add channels https://conda.anaconda.org/NLeSC
+conda config --add channels https://conda.anaconda.org/NLeSC
 ```
 
 Currently the following ROOT binaries with Python support are provided for the following versions in the `main` channel: 
@@ -16,8 +16,8 @@ Currently the following ROOT binaries with Python support are provided for the f
 To install ROOT in your conda environment, decide upon the ROOT and Python version you plan to use. **We discourage** installing everything in your default conda (*root*) environment, and rather creating a separate one. For example:
 
 ```
-$ conda create --name=testenv root=6 python=3
-$ source activate testenv
+conda create --name=testenv root=6 python=3
+source activate testenv
 ```
 
 Test if ROOT works like it should:
@@ -35,7 +35,7 @@ $ root -b -q
 root [0] 
 ```
 ```
-$ python
+python
 Type "help", "copyright", "credits" or "license" for more information.
 Anaconda is brought to you by Continuum Analytics.
 >>> import ROOT
@@ -69,7 +69,7 @@ in order to see the channels from which the binaries are installed.
 Binary packages can have different labels, the default one being `main`. Sometimes binaries are labeled with `dev` (e.g., newer versions which are pending certain tests), which makes them invisible from your anaconda client, unless you explicitly add the corresponding channel to that label, to your configuration:
 
 ```
-$ conda config --add channels https://conda.anaconda.org/nlesc/label/dev
+conda config --add channels https://conda.anaconda.org/nlesc/label/dev
 ```
 **Beware**: means that when you update or install binaries, you may pickup a newer version of a package, which has not been tested and put in "production" yet. **A safer way** to grab a binary from such a non-standard channel is to rather use directly:
 ```
@@ -90,6 +90,6 @@ serv = new THttpServer("http:8080");
 *Please update your environment regularly, for new and more stable package releases*:
 
 ```
-$ conda update --all 
-$ conda update --yes -q conda
+conda update --all 
+conda update --yes -q conda
 ```
