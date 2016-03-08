@@ -86,3 +86,10 @@ The server can be tested with:
 ```
 serv = new THttpServer("http:8080");
 ```
+
+*Please update your environment regularly, for new and more stable package releases*:
+
+```
+$ conda update --all 
+$ conda update --yes -q conda
+```
