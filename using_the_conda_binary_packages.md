@@ -78,3 +78,4 @@ If you have other channels in your conda configuration (besides the defaults one
     gcc:        4.8.2-20               https://conda.anaconda.org/NLeSC/linux-64/
     readline:   6.2.5-11               https://conda.anaconda.org/NLeSC/linux-64/
 ....
+```
