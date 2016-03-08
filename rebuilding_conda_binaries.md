@@ -1,3 +1,3 @@
 # Rebuilding Conda binaries
 
-test 1 2 3 
+/root-conda-recipes/details
