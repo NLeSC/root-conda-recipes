@@ -7,7 +7,6 @@ This repository contains Conda recipes for building CERN [ROOT](https://root.cer
 
 The most most important thing for making things work out of the box is the ABI (binary) compatibility between different gcc(libstdc++)/glibc library versions, on various linux distributions. Typically ROOT would even complain when the GCC headers are not of the same version as the one used for building it, so shipping the full GCC and glibc as a run dependency together with ROOT, seemed like the best solution.
 
-Rebuilding/Updating the binaries
 
 The binaries were built on a Scientific Linux 6.7 (Carbon). The default GCC (4.4.7) is too old for ROOT6, so I used the [Developer Toolset (v2) from CERN](http://linux.web.cern.ch/linux/devtoolset).
 (provides everything you need to rebuild from the recipes: gcc/binutils/git/etc..)
