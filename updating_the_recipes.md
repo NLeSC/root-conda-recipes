@@ -6,5 +6,7 @@ The files in a conda recipe are:
 * **build.sh** (Unix build script which is executed using bash)
 * **bld.bat** (Windows build script which is executed using cmd)
 
+In our conda github repository, each folder contains the recipe for a particular software package. For example:
 ![test 1 2 3 ](gitbook1.png)
 There could also be other optional files, like patches, scripts for testing, and to optionally execute after installation etc. See more details on the official [conda guidelines page](http://conda.pydata.org/).
+
