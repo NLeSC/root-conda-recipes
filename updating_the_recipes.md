@@ -13,7 +13,42 @@ There could also be other optional files, like patches, scripts for testing, and
 
 ```meta.yaml``` (more details [here](http://conda.pydata.org/docs/building/meta-yaml.html)) contains all the metadata: the package name, version, source code repository, build number, etc.
 ```build.sh``` is a script used for building the binary, as specified in the ```meta.yaml``` file. 
-The details of writing a recipe are beyond the scope of these guidelines, here we only point out some rules of thumb for updating the recipes.
+
+The details of writing a recipe are beyond the scope of these guidelines, here we only point out some rules of thumb for updating the recipes, especially those for building ROOT.
+
+* **Always update the build number** in ```meta.yaml``` whenever you change anything in the recipe and you plan on building and publishing a new conda package. If you do not update the build number, and publish your new package on the Anaconda Cloud, a user will not pickup your fresh binary. Conda will compare the build number of the user's installation with the one on the Anaconda Cloud, concluding that there is no new release. 
+* Keep the package name in ```meta.yaml``` consistent (aka don't change it). This is the name that will be used with ```conda install <package-name>``` so it should typically not contain version information or anything else.
+* The ```build.sh``` contains instructions like you would typically build a package/binary outside of the conda environment. For example, for ROOT, it contains:
+
+
+```
+cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
+-Dbuiltin_llvm=ON \
+-Dbuiltin-lzma=ON \
+-Dbuiltin_zlib=ON \
+-Dbuiltin_freetype=ON \
+-Dcxx11=ON \
+-Drpath=ON \
+-Droofit=ON \
+-Dopengl=OFF \
+-Dgviz=OFF \
+|| return 1;
+#-DCMAKE_C_COMPILER=$PREFIX/bin/gcc \
+#-DCMAKE_CXX_COMPILER=$PREFIX/bin/c++ \
+#-Dbuiltin_pcre=ON \
+
+#-Dbuiltin_gsl=ON \
+
+make -j2 || return 1;
+make install || return 1;
+
+return 0;
+```
+If you want to enable or disable some module of ROOT, this is where you should do it. 
+
+
+
+
 
 
 
