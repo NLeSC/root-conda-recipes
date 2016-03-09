@@ -54,7 +54,8 @@ install:
   - conda config --set show_channel_urls yes
   - conda create -q -n testenv python=${PYTHON} root=${ROOT} numpy rootpy
   - source activate testenv
-  - conda uninstall -q sqlite libpng libx11 jpeg libtiff
+  #- conda uninstall -q sqlite libpng libx11 jpeg libtiff
+  - conda uninstall --force --yes -q sqlite libpng libx11 jpeg libtiff
   - root -b -q
 
 script:
