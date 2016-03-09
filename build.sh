@@ -10,7 +10,7 @@ else
     if [ $retval -eq 0 ]; then
         echo "Uploading to Anaconda cloud, test channel...."
         chown -R $MYUID .
-        anaconda -v -t $ANACONDA_TOKEN upload $PWD/conda-bld/*/root-$ROOT*.tar.bz2 --force --channel test
+        anaconda -v -t $ANACONDA_TOKEN upload $PWD/conda-bld/*/root-$ROOT*.tar.bz2 --force --channel dev
     else
         echo "Building failed."
         exit $retval
