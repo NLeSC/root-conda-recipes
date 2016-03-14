@@ -14,7 +14,7 @@ gcc -v
 
 ARCH="$(uname 2>/dev/null)"
 
-export TMPDIR=`conda info --root`/tmpdir
+#export TMPDIR=`conda info --root`/tmpdir
 
 mkdir -p $PREFIX/etc/conda/activate.d
 mkdir -p $PREFIX/etc/conda/deactivate.d

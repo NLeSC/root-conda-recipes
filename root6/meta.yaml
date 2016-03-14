@@ -12,9 +12,9 @@ source:
         - python34_1.patch
     #path: /home/daniela/anaconda_backup/anaconda/root-6.04.02
 build:
-    number: 40
-    string: py{{ environ.get('PY_VER','') }}_clang503 # [osx]
-    string: py{{ environ.get('PY_VER','') }}_gcc4.8.2 # [linux]
+    number: 44
+    string: py{{ environ.get('PY_VER','') }}_clang503_test # [osx]
+    string: py{{ environ.get('PY_VER','') }}_gcc4.8.2_test # [linux]
     detect_binary_files_with_prefix: True
 
 requirements:
@@ -57,9 +57,23 @@ requirements:
         #- libtiff #[osx]
         
 test:
-    imports:
 
-    commands:
+   files:
+         - ../tests/test_root.py
+         - ../tests/test_stl.py
+
+   commands:
+         - root -b -q
+         - which root
+         - source ${PREFIX}/bin/thisroot.sh
+         - python test_root.py
+         - python test_stl.py
+         
+   imports:
+        #- ROOT
+   requires:
+         - numpy
+         - rootpy
 
 about:
     home: http://root.cern.ch/

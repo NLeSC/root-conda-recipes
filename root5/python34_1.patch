@@ -10,4 +10,3 @@ index a9b574e..4ce3665 100644
  #endif
  
        if ( buf && check == kTRUE ) {
-
