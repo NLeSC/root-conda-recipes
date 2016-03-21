@@ -13,7 +13,7 @@ Combine this with the fact that ROOT 6 requires GCC>=4.8, while we want things t
 
 Working ROOT has been tested on: Ubuntu 11.10, 12.04, 14.04, 15.04, SLC-6.7, SLC-7. Please try it out and let us know if you experience problems. 
 
-For details on how to maintain and update recipes, please refer to [this manual](https://www.gitbook.com/book/nlesc/cern-root-conda-recipes/details).
+**For details on how to use, maintain and update recipes, please refer to [this manual](https://www.gitbook.com/book/nlesc/cern-root-conda-recipes/details).**
 
 Thanks upfront for any feedback!
 
