@@ -15,19 +15,19 @@ matrix:
           env: PYTHON=3.4 ROOT=6.04
         - language: generic
           os: osx
-          osx_image: xcode6.1
+          osx_image: xcode6.3
           env: PYTHON=2.7 ROOT=5.34.32
         - language: generic
           os: osx
-          osx_image: xcode6.1
+          osx_image: xcode6.3
           env: PYTHON=3.4 ROOT=5.34.32
         - language: generic
           os: osx
-          osx_image: xcode6.1
+          osx_image: xcode6.3
           env: PYTHON=2.7 ROOT=6.04
         - language: generic
           os: osx
-          osx_image: xcode6.1
+          osx_image: xcode6.3
           env: PYTHON=3.4 ROOT=6.04
     allow_failures:
         - os: osx
