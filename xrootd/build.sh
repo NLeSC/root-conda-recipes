@@ -1,6 +1,8 @@
 #!/bin/bash
 
 mkdir -vp ${PREFIX}/bin;
+ln -s $PREFIX/lib $PREFIX/lib64
+
 echo $PREFIX
 export CFLAGS="-Wall -g -m64 -pipe -O2 -march=x86-64 -fPIC"
 export CXXLAGS="${CFLAGS}"
@@ -33,52 +35,18 @@ LinuxInstallation() {
 
 make distclean;
 
-#  ./configure \
-#      ${ARCH,,*}x8664gcc \
-#      --minimal \
-#      --enable-x11 \
-#      --enable-python \
-#      --enable-xml \
-#      --with-python-incdir=`python3.4-config --exec-prefix`/include/python3.4m \
-#      --with-python-libdir=`python3.4-config --exec-prefix`/lib \
-#      --etcdir=${PREFIX}/etc/root \
-#      --prefix=${PREFIX} \
-#      || return 1;
-#--enable-roofit \
-# --enable-x11 \
-#--enable-xml \
-# --prefix=${PREFIX} \
-#--enable-rpath \
-# --enable-soversion \
-#--enable-qt \
-#--enable-minuit2 \
-#--enable-shared \
-#--enable-sqlite \
-#--enable-ssl \
-#-	-with-qt-incdir=${PREFIX}/include/ \
-#--with-qt-libdir=${PREFIX}/lib/ \
-#--with-ssl-incdir=${PREFIX}/include/openssl/ \
-#--with-ssl-libdir=${PREFIX}/lib/ \
-#--with-ssl-shared=yes \
-#--with-sqlite-incdir=${PREFIX}/include/  \
-#--with-sqlite-libdir=${PREFIX}/lib/  \
-#--with-python-incdir=${PREFIX}/include/python${PY_VER}/ \
-#--with-python-libdir=${PREFIX}/lib/ \
-#--with-x11-libdir=${PREFIX}/lib/ \
-
 mkdir workdir
 cd workdir
 
 cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 || return 1;
-#-DCMAKE_C_COMPILER=$PREFIX/bin/gcc \
-#-DCMAKE_CXX_COMPILER=$PREFIX/bin/c++ \
-#-Dbuiltin_pcre=ON \
 
-#-Dbuiltin_gsl=ON \
 
 make -j2 || return 1;
 make install || return 1;
+
+cp -r $PREFIX/lib64/* $PREFIX/lib
+rm $PREFIX/lib64
 
 return 0;
 }
@@ -98,64 +66,14 @@ export CXX=clang++
 export LD=clang++
 make distclean;
 
-#  ./configure \
-#      ${ARCH,,*}x8664gcc \
-#      --minimal \
-#      --enable-x11 \
-#      --enable-python \
-#      --enable-xml \
-#      --with-python-incdir=`python3.4-config --exec-prefix`/include/python3.4m \
-#      --with-python-libdir=`python3.4-config --exec-prefix`/lib \
-#      --etcdir=${PREFIX}/etc/root \
-#      --prefix=${PREFIX} \
-#      || return 1;
-#--enable-roofit \
-# --enable-x11 \
-#--enable-xml \
-# --prefix=${PREFIX} \
-#--enable-rpath \
-# --enable-soversion \
-#--enable-qt \
-#--enable-minuit2 \
-#--enable-shared \
-#--enable-sqlite \
-#--enable-ssl \
-#--with-qt-incdir=${PREFIX}/include/ \
-#--with-qt-libdir=${PREFIX}/lib/ \
-#--with-ssl-incdir=${PREFIX}/include/openssl/ \
-#--with-ssl-libdir=${PREFIX}/lib/ \
-#--with-ssl-shared=yes \
-#--with-sqlite-incdir=${PREFIX}/include/  \
-#--with-sqlite-libdir=${PREFIX}/lib/  \
-#--with-python-incdir=${PREFIX}/include/python${PY_VER}/ \
-#--with-python-libdir=${PREFIX}/lib/ \
-#--with-x11-libdir=${PREFIX}/lib/ \
 
 mkdir workdir
 cd workdir
 
 cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
--Dbuiltin_llvm=ON \
--Dbuiltin_zlib=ON \
--Dbuiltin-lzma=ON \
--Dcxx11=ON \
--Drpath=ON \
--Droofit=ON \
--Dopengl=ON \
--Dgviz=ON \
--Dasimage=ON \
--Dbuiltin_afterimage=ON \
--Dpython=ON \
 || return 1;
 
-#-DFREETYPE_INCLUDE_DIR=$PREFIX/include \
-#-DFREETYPE_LIBRARY=$PREFIX/lib \
-#-DFREETYPE_INCLUDE_DIR_freetype2=$PREFIX/include \
-#-DJPEG_INCLUDE_DIR=$PREFIX/include \
-#-DJPEG_LIBRARY=$PREFIX/lib \
-# -Dbuiltin_pcre=ON \
-# -Dbuiltin_freetype=ON \
-#-Dbuiltin_gsl=ON \
+
 
 make -j2 || return 1;
 make install || return 1;
@@ -178,7 +96,3 @@ exit 1;
 ;;
 esac
 
-
-#POST_LINK="${PREFIX}/bin/.root-post-link.sh"
-#cp -v ${RECIPE_DIR}/post-link.sh ${POST_LINK};
-#chmod -v 0755 ${POST_LINK};
