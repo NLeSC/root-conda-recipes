@@ -1,6 +1,6 @@
 #!/bin/bash
-#source ${PREFIX}/bin/thisroot.sh
-source $(which thisroot.sh)
+source ${PREFIX}/bin/thisroot.sh
+#source $(which thisroot.sh)
 if [ -n "${CONDA_PREFIX}" ]; then
      source ${CONDA_PREFIX}/bin/thisroot.sh # in case already active in some environment
 fi
