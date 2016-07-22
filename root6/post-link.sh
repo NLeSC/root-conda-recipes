@@ -1,5 +1,8 @@
 #!/bin/bash
-source $PREFIX/bin/thisroot.sh
+source $(which thisroot.sh)
+if [ -n "${CONDA_PREFIX}" ]; then
+     source ${CONDA_PREFIX}/bin/thisroot.sh # in case already active in some environment
+fi
 
 echo "Postlink: ROOT has been sourced. Environment settings are ready. "
 echo "ROOTSYS="${ROOTSYS}
