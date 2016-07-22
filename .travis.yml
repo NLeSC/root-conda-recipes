@@ -53,6 +53,7 @@ install:
   - conda config --add channels http://conda.anaconda.org/NLeSC  
   - conda config --set show_channel_urls yes
   - conda create -q -n testenv python=${PYTHON} root=${ROOT} numpy rootpy
+  - export CONDA_ENV_PATH=$HOME/miniconda/envs/testenv # a workaround since CONDA_ENV_PATH magically dissapeared from Conda
   - source activate testenv
   #- conda uninstall -q sqlite libpng libx11 jpeg libtiff
   - conda uninstall --force --yes -q sqlite libpng libx11 jpeg libtiff

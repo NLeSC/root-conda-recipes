@@ -1,6 +1,7 @@
 #!/bin/bash
 #echo ${CONDA_ENV_PATH}
 source ${CONDA_ENV_PATH}/bin/thisroot.sh
+source $(which thisroot.sh)
 
 echo "Activate: ROOT has been sourced. Environment settings are ready. "
 echo "ROOTSYS="${ROOTSYS}
