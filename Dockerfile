@@ -1,9 +1,16 @@
 # the image is also available ready-made on DockerHub: remenska/slc6-devtoolset-anaconda
 FROM ringo/scientific:6.5
 MAINTAINER Daniela Remenska <d.remenska@esciencecenter.nl>
+RUN yum clean all
 RUN yum install -y libX11-devel libXft-devel libXpm-devel libXext-devel
 RUN wget -O /etc/yum.repos.d/slc6-devtoolset.repo http://linuxsoft.cern.ch/cern/devtoolset/slc6-devtoolset.repo
-RUN yum install -y devtoolset-2
+RUN yum install -y devtoolset-2-gcc devtoolset-2-gcc-c++ devtoolset-2-gcc-gfortran \
+      devtoolset-2-binutils \
+      devtoolset-2-libstdc++-devel devtoolset-2-libstdc++-devel.i686 \ 
+      devtoolset-2-libquadmath-devel devtoolset-2-libquadmath-devel.i686 \
+      glibc-devel glibc-devel.i686 \
+      glibc-devel.i686 \
+      libgfortran.i686
 RUN wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh
 RUN /bin/bash Miniconda-latest-Linux-x86_64.sh -b -p conda
 ENV PATH=/conda/bin:$PATH
