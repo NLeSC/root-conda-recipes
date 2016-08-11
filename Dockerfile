@@ -4,6 +4,8 @@ MAINTAINER Daniela Remenska <d.remenska@esciencecenter.nl>
 RUN rpm --rebuilddb
 RUN yum clean all
 RUN touch /var/lib/rpm/*
+RUN cat /etc/system-release-cpe
+RUN python -c 'import yum, pprint; yb = yum.YumBase(); pprint.pprint(yb.conf.yumvar, width=1)'
 RUN yum install -y libX11-devel libXft-devel libXpm-devel libXext-devel
 RUN wget -O /etc/yum.repos.d/slc6-devtoolset.repo http://linuxsoft.cern.ch/cern/devtoolset/slc6-devtoolset.repo
 RUN yum clean all
