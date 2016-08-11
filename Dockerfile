@@ -3,10 +3,12 @@ FROM ringo/scientific:6.5
 MAINTAINER Daniela Remenska <d.remenska@esciencecenter.nl>
 RUN rpm --rebuilddb
 RUN yum clean all
+RUN touch /var/lib/rpm/*
 RUN yum install -y libX11-devel libXft-devel libXpm-devel libXext-devel && yum clean all
 RUN wget -O /etc/yum.repos.d/slc6-devtoolset.repo http://linuxsoft.cern.ch/cern/devtoolset/slc6-devtoolset.repo
 RUN yum clean all
 RUN rpm --rebuilddb
+RUN touch /var/lib/rpm/*
 RUN yum install -y devtoolset-2-gcc devtoolset-2-gcc-c++ devtoolset-2-gcc-gfortran \
       devtoolset-2-binutils \
       devtoolset-2-libstdc++-devel devtoolset-2-libstdc++-devel.i686 \ 
