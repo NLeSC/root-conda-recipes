@@ -31,19 +31,20 @@ build:
   
 requirements:
   build:
-    - python  # [{{ environ.get('PY_VER') }}]
+    - python {{ environ.get('PY_VER') }}*
     - setuptools
     - pytables
     - root {{ environ.get('ROOT_VERSION') }}
   run:
-    - python  # [{{ environ.get('PY_VER') }}]
+    - python {{ environ.get('PY_VER') }}*
     - setuptools
     - pytables
     - root {{ environ.get('ROOT_VERSION') }}
-# test:
+
+#test:
   # Python imports
-  imports:
-    - root_numpy
+ #  imports:
+ #    - root_numpy
 
   # You can also put a file called run_test.py in the recipe that will be run
   # at test time.

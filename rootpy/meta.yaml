@@ -31,7 +31,7 @@ requirements:
     - setuptools 
     - pytables
     - root-numpy
-    - matplotlib >=1.2
+    - matplotlib
     - numpy >=1.6.1
 
   run:
@@ -39,7 +39,7 @@ requirements:
     - setuptools
     - pytables
     - root-numpy
-    - matplotlib >=1.2
+    - matplotlib
     - numpy >=1.6.1
 
 test:

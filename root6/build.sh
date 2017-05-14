@@ -71,8 +71,9 @@ cd workdir
 
 cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dbuiltin_llvm=ON \
--Dbuiltin-lzma=ON \
+-Dbuiltin_lzma=ON \
 -Dbuiltin_zlib=ON \
+-Dbuiltin_pcre=ON \
 -Dbuiltin_freetype=ON \
 -Dcxx11=ON \
 -Drpath=ON \
