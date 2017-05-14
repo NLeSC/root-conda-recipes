@@ -14,7 +14,7 @@ matrix:
         - python: 3.4
           env: PYTHON=3.4 ROOT=6.04
         - python: 3.6
-          env: PYTHON=3.6 ROOT=6.06
+          env: PYTHON=3.6 ROOT=6.05
         - language: generic
           os: osx
           osx_image: xcode6.3
