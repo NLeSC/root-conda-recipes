@@ -71,9 +71,9 @@ test:
          
    imports:
         #- ROOT
-   requires:
-         - numpy
-         - rootpy
+   #requires:
+   #      - numpy
+   #      - rootpy
 
 about:
     home: http://root.cern.ch/
