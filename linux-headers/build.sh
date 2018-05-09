@@ -1,1 +1,0 @@
-make ARCH=x86_64 INSTALL_HDR_PATH=${PREFIX} headers_install
