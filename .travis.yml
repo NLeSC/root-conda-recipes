@@ -19,6 +19,14 @@ matrix:
         - language: generic
           os: osx
           osx_image: xcode9.3
+          env: PYTHON=3.6 ROOT=5.34.36
+        - language: generic
+          os: osx
+          osx_image: xcode9.3
+          env: PYTHON=2.7 ROOT=6.12
+        - language: generic
+          os: osx
+          osx_image: xcode9.3
           env: PYTHON=3.6 ROOT=6.12
     allow_failures:
         - os: osx
@@ -37,9 +45,11 @@ install:
   - clang --version
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
-  - conda info -a # Useful for debugging any issues with conda
+  - conda info -a
   - conda config --add channels http://conda.anaconda.org/NLeSC  
+  #- conda config --add channels conda-forge
   - conda config --set show_channel_urls yes
+  - conda config --show channels 
   - conda create -q -n testenv python=${PYTHON} root=${ROOT} numpy rootpy
   - source activate testenv
   #- conda uninstall -q sqlite libpng libx11 jpeg libtiff
