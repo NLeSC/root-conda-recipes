@@ -1,7 +1,8 @@
 #!/bin/bash
-#echo ${CONDA_ENV_PATH}
-#source ${CONDA_ENV_PATH}/bin/thisroot.sh
-source $(which thisroot.sh)
+# cd is necessary in zsh
+cd ${CONDA_PREFIX}
+source ${CONDA_PREFIX}/bin/thisroot.sh
+cd -
 
 echo "Activate: ROOT has been sourced. Environment settings are ready. "
 echo "ROOTSYS="${ROOTSYS}
