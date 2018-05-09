@@ -1,0 +1,19 @@
+package:
+  name: snappy
+  version: 1.1.1
+
+source:
+  fn: snappy-1.1.1.tar.gz
+  url: https://snappy.googlecode.com/files/snappy-1.1.1.tar.gz
+  md5: 8887e3b7253b22a31f5486bca3cbc1c2
+
+build:
+  detect_binary_files_with_prefix: true
+  number: 15
+
+requirements:
+  build:
+
+  run:
+
+

@@ -1,0 +1,17 @@
+package:
+  name: glibc
+  version: 2.12.2
+
+build:
+  number: 3
+  detect_binary_files_with_prefix: True
+
+source:
+  fn: glibc-2.12.2.tar.gz
+  url: http://ftp.snt.utwente.nl/pub/software/gnu/glibc/glibc-2.12.2.tar.gz
+  sha1: 738ac9b88a7e89e2a9a419db13af8ee12a38f192
+
+about:
+  home: http://www.gnu.org/software/libc/
+  license: LGPL
+  summary: "Any Unix-like operating system needs a C library: the library which defines the ``system calls'' and other basic facilities such as open, malloc, printf, exit..."
