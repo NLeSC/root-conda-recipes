@@ -1,0 +1,25 @@
+build:
+  entry_points: []
+  features: []
+  number: 1
+  script_env: []
+  string: ''
+  track_features: []
+package: {name: cloog, version: 0.18.1}
+requirements:
+  build: [gmp >=5.0.2, isl]
+  conflicts: []
+  run: [gmp, isl]
+source:
+  fn: cloog-0.18.1.tar.gz
+  git_rev: ''
+  md5: ''
+  patches: []
+  path: ''
+  svn_rev: ''
+  url: http://www.bastoul.net/cloog/pages/download/count.php3?url=./cloog-0.18.1.tar.gz
+test:
+  commands: []
+  files: []
+  imports: []
+  requires: []

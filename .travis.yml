@@ -2,44 +2,26 @@ sudo: false
 
 language: python
 
-
 matrix:
     include:
         - python: 2.7
           env: PYTHON=2.7 ROOT=5.34.36
-        - python: 3.4
-          env: PYTHON=3.4 ROOT=5.34.36
+        - python: 3.6
+          env: PYTHON=2.7 ROOT=6.12          
         - python: 2.7
-          env: PYTHON=2.7 ROOT=6.12
-        - python: 3.4
-          env: PYTHON=3.4 ROOT=6.12
+          env: PYTHON=2.7 ROOT=5.34.36
         - python: 3.6
           env: PYTHON=3.6 ROOT=6.12
         - language: generic
           os: osx
-          osx_image: xcode6.3
+          osx_image: xcode9.3
           env: PYTHON=2.7 ROOT=5.34.36
         - language: generic
           os: osx
-          osx_image: xcode6.3
-          env: PYTHON=3.4 ROOT=5.34.36
-        - language: generic
-          os: osx
-          osx_image: xcode6.3
-          env: PYTHON=2.7 ROOT=6.12
-        - language: generic
-          os: osx
-          osx_image: xcode6.3
-          env: PYTHON=3.4 ROOT=6.12
+          osx_image: xcode9.3
+          env: PYTHON=3.6 ROOT=6.12
     allow_failures:
         - os: osx
-
-#before_script:
-#    - if [ "$TRAVIS_OS_NAME" == "linux" ]; then  
-#          export DISPLAY=:99.0; 
-#          sh -e /etc/init.d/xvfb start; 
-#          sleep 3; 
-#      fi
 
 install:
   # Conda
