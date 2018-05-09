@@ -62,6 +62,7 @@ install:
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
   - conda info -a
+  - conda install --yes -q conda-build
   # run scripts
   - cd $TRAVIS_BUILD_DIR && pwd && ls -asl && bash ./scripts/build_deps.sh
   # actual package installation
