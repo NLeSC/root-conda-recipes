@@ -2,7 +2,24 @@ sudo: false
 
 language: python
 
+addons: &addons
+  apt:
+    packages: timeout
+
+cache:
+  apt: true
+  ccache: true
+
+# Do not build our sync branch.
+branches:
+  only:
+    - master
+    - Travis*
+
 matrix:
+    # Abort all builds on a single failing matrix entry.
+    fast_finish: true
+
     include:
         - python: 2.7
           env: PYTHON=2.7 ROOT=5.34.36
@@ -35,7 +52,7 @@ install:
   # Conda
   - if [ "${TRAVIS_OS_NAME}" == "osx" ]; then curl --silent http://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh -o miniconda.sh; fi
   - if [ "${TRAVIS_OS_NAME}" == "linux" ]; then wget -nv http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh; fi
-  
+  - pwd && ls
   - bash miniconda.sh -b -p $HOME/miniconda
   - export PATH="$HOME/miniconda/bin:$PATH"
   - hash -r
@@ -60,3 +77,10 @@ script:
   - python tests/test_root.py
   - python tests/test_stl.py
 
+on_failure:
+  -|
+  echo "Showing current directory contents"
+  ls -la
+
+#after_success:
+#  - python myscript.py some args
