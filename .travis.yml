@@ -2,9 +2,9 @@ sudo: false
 
 language: python
 
-addons: &addons
-  apt:
-    packages: timeout
+#addons: &addons
+#  apt:
+#    packages: timeout
 
 cache:
   apt: true
