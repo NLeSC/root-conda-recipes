@@ -7,9 +7,9 @@ matrix:
         - python: 2.7
           env: PYTHON=2.7 ROOT=5.34.36
         - python: 3.6
-          env: PYTHON=2.7 ROOT=6.12          
+          env: PYTHON=3.6 ROOT=5.34.36
         - python: 2.7
-          env: PYTHON=2.7 ROOT=5.34.36
+          env: PYTHON=2.7 ROOT=6.12          
         - python: 3.6
           env: PYTHON=3.6 ROOT=6.12
         - language: generic
