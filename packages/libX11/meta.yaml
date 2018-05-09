@@ -1,7 +1,0 @@
-package:
-  name: libx11
-  version: 2.7.7
-
-build:
-    number: 1
-    detect_binary_files_with_prefix: True

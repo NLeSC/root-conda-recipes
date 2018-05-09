@@ -24,50 +24,12 @@ cp ${RECIPE_DIR}/deactivateROOT.sh $PREFIX/etc/conda/deactivate.d
 
 
 LinuxInstallation() {
-# Build dependencies:
-# - libXpm-devel
-# - libX11-devel
-
 
 chmod +x configure;
 
 make distclean;
 
-#  ./configure \
-#      ${ARCH,,*}x8664gcc \
-#      --minimal \
-#      --enable-x11 \
-#      --enable-python \
-#      --enable-xml \
-#      --with-python-incdir=`python3.4-config --exec-prefix`/include/python3.4m \
-#      --with-python-libdir=`python3.4-config --exec-prefix`/lib \
-#      --etcdir=${PREFIX}/etc/root \
-#      --prefix=${PREFIX} \
-#      || return 1;
-#--enable-roofit \
-# --enable-x11 \
-#--enable-xml \
-# --prefix=${PREFIX} \
-#--enable-rpath \
-# --enable-soversion \
-#--enable-qt \
-#--enable-minuit2 \
-#--enable-shared \
-#--enable-sqlite \
-#--enable-ssl \
-#-	-with-qt-incdir=${PREFIX}/include/ \
-#--with-qt-libdir=${PREFIX}/lib/ \
-#--with-ssl-incdir=${PREFIX}/include/openssl/ \
-#--with-ssl-libdir=${PREFIX}/lib/ \
-#--with-ssl-shared=yes \
-#--with-sqlite-incdir=${PREFIX}/include/  \
-#--with-sqlite-libdir=${PREFIX}/lib/  \
-#--with-python-incdir=${PREFIX}/include/python${PY_VER}/ \
-#--with-python-libdir=${PREFIX}/lib/ \
-#--with-x11-libdir=${PREFIX}/lib/ \
-
-mkdir workdir
-cd workdir
+mkdir workdir && cd workdir
 
 cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dbuiltin_llvm=ON \
@@ -86,13 +48,14 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 
 #-Dbuiltin_gsl=ON \
 
-make -j2 || return 1;
+make -j4 || return 1;
 make install || return 1;
 
 return 0;
 }
 
 MacInstallation() {
+
 export CPPFLAGS="-I${PREFIX}/include"
 export CPATH="${PREFIX}/include"
 export LIBPATH="${PREFIX}/lib"
@@ -123,41 +86,7 @@ export FREETYPE_INCLUDE_DIR="${PREFIX}/include"
 export FREETYPE_LIBRARIES="${PREFIX}/lib/freetype.lib"
 make distclean;
 
-#  ./configure \
-#      ${ARCH,,*}x8664gcc \
-#      --minimal \
-#      --enable-x11 \
-#      --enable-python \
-#      --enable-xml \
-#      --with-python-incdir=`python3.4-config --exec-prefix`/include/python3.4m \
-#      --with-python-libdir=`python3.4-config --exec-prefix`/lib \
-#      --etcdir=${PREFIX}/etc/root \
-#      --prefix=${PREFIX} \
-#      || return 1;
-#--enable-roofit \
-# --enable-x11 \
-#--enable-xml \
-# --prefix=${PREFIX} \
-#--enable-rpath \
-# --enable-soversion \
-#--enable-qt \
-#--enable-minuit2 \
-#--enable-shared \
-#--enable-sqlite \
-#--enable-ssl \
-#--with-qt-incdir=${PREFIX}/include/ \
-#--with-qt-libdir=${PREFIX}/lib/ \
-#--with-ssl-incdir=${PREFIX}/include/openssl/ \
-#--with-ssl-libdir=${PREFIX}/lib/ \
-#--with-ssl-shared=yes \
-#--with-sqlite-incdir=${PREFIX}/include/  \
-#--with-sqlite-libdir=${PREFIX}/lib/  \
-#--with-python-incdir=${PREFIX}/include/python${PY_VER}/ \
-#--with-python-libdir=${PREFIX}/lib/ \
-#--with-x11-libdir=${PREFIX}/lib/ \
-
-mkdir workdir
-cd workdir
+mkdir workdir && cd workdir
 
 cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dbuiltin_llvm=ON \
@@ -174,34 +103,24 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
 -Dsqlite=ON \
 || return 1;
 
-#-DFREETYPE_INCLUDE_DIR=$PREFIX/include \
-#-DFREETYPE_LIBRARY=$PREFIX/lib \
-#-DFREETYPE_INCLUDE_DIR_freetype2=$PREFIX/include \
-#-DJPEG_INCLUDE_DIR=$PREFIX/include \
-#-DJPEG_LIBRARY=$PREFIX/lib \
-# -Dbuiltin_pcre=ON \
-# -Dbuiltin_freetype=ON \
-#-Dbuiltin_gsl=ON \
-
-make -j2 || return 1;
+make -j4 || return 1;
 make install || return 1;
 
 return 0;
-
 }
 
 
 case ${ARCH} in
-'Linux')
-LinuxInstallation || exit 1;
-;;
-'Darwin')
-MacInstallation || exit 1;
-;;
-*)
-echo -e "Unsupported machine type: ${ARCH}";
-exit 1;
-;;
+    'Linux')
+        LinuxInstallation || exit 1;
+    ;;
+    'Darwin')
+        MacInstallation || exit 1;
+    ;;
+    *)
+        echo -e "Unsupported machine type: ${ARCH}";
+        exit 1;
+    ;;
 esac
 
 
