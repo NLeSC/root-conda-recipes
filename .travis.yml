@@ -6,31 +6,31 @@ language: python
 matrix:
     include:
         - python: 2.7
-          env: PYTHON=2.7 ROOT=5.34.32
+          env: PYTHON=2.7 CONDA_PY=2 ROOT=5.34.32
         - python: 3.4
-          env: PYTHON=3.4 ROOT=5.34.32
+          env: PYTHON=3.4 CONDA_PY=3 ROOT=5.34.32
         - python: 2.7
-          env: PYTHON=2.7 ROOT=6.04
+          env: PYTHON=2.7 CONDA_PY=2 ROOT=6.04
         - python: 3.4
-          env: PYTHON=3.4 ROOT=6.04
+          env: PYTHON=3.4 CONDA_PY=3 ROOT=6.04
         - python: 3.6
-          env: PYTHON=3.6 ROOT=6.05
+          env: PYTHON=3.6 CONDA_PY=3 ROOT=6.05
         - language: generic
           os: osx
           osx_image: xcode6.3
-          env: PYTHON=2.7 ROOT=5.34.32
+          env: PYTHON=2.7 CONDA_PY=2 ROOT=5.34.32
         - language: generic
           os: osx
           osx_image: xcode6.3
-          env: PYTHON=3.4 ROOT=5.34.32
+          env: PYTHON=3.4 CONDA_PY=3 ROOT=5.34.32
         - language: generic
           os: osx
           osx_image: xcode6.3
-          env: PYTHON=2.7 ROOT=6.04
+          env: PYTHON=2.7 CONDA_PY=2 ROOT=6.04
         - language: generic
           os: osx
           osx_image: xcode6.3
-          env: PYTHON=3.4 ROOT=6.04
+          env: PYTHON=3.4 CONDA_PY=3 ROOT=6.04
     allow_failures:
         - os: osx
 
@@ -43,8 +43,8 @@ matrix:
 
 install:
   # Conda
-  - if [ "${TRAVIS_OS_NAME}" == "osx" ]; then curl --silent http://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh -o miniconda.sh; fi
-  - if [ "${TRAVIS_OS_NAME}" == "linux" ]; then wget -nv http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh; fi
+  - if [ "${TRAVIS_OS_NAME}" == "osx" ]; then curl --silent http://repo.continuum.io/miniconda/Miniconda${CONDA_PY}-latest-MacOSX-x86_64.sh -o miniconda.sh; fi
+  - if [ "${TRAVIS_OS_NAME}" == "linux" ]; then wget -nv http://repo.continuum.io/miniconda/Miniconda${CONDA_PY}-latest-Linux-x86_64.sh -O miniconda.sh; fi
   
   - bash miniconda.sh -b -p $HOME/miniconda
   - export PATH="$HOME/miniconda/bin:$PATH"
