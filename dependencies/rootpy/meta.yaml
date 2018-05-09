@@ -45,7 +45,7 @@ requirements:
 test:
     
   imports:
-    #  - rootpy
+    - rootpy
     #- rootpy.batch
     #- rootpy.compiled
     #- rootpy.extern

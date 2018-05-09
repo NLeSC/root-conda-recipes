@@ -11,11 +11,10 @@ The most most important thing for making things work out of the box is the ABI (
 
 Combine this with the fact that ROOT 6 requires GCC>=4.8, while we want things to work on older platforms with no "sudo" required, **we decided to fix our GCC distribution to (a relatively recent one) 4.8.2, built against a rather old glibc version 2.12**, making it as cross platform as possible. 
 
-Working ROOT has been tested on: Ubuntu 11.10, 12.04, 14.04, 15.04, SLC-6.7, SLC-7. Please try it out and let us know if you experience problems. 
+Working ROOT has been tested on: Ubuntu 14.04, 15.04, 16.04,  SLC-6.7, SLC-7. Please try it out and let us know if you experience problems. 
 
 For details on how to maintain and update recipes, please refer to [this manual](https://www.gitbook.com/book/nlesc/cern-root-conda-recipes/details).
 
 Thanks upfront for any feedback!
 
-Daniela
-
+NLeSC ROOT-dev team.
