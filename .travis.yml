@@ -2,8 +2,24 @@ sudo: false
 
 language: python
 
+addons: &addons
+  apt:
+    packages: timeout
+
+cache:
+  apt: true
+  ccache: true
+
+# Do not build our sync branch.
+branches:
+  only:
+    - master
+    - Travis*
 
 matrix:
+    # Abort all builds on a single failing matrix entry.
+    fast_finish: true
+
     include:
         - python: 2.7
           env: PYTHON=2.7 ROOT=5.34.36
@@ -32,17 +48,10 @@ matrix:
     allow_failures:
         - os: osx
 
-#before_script:
-#    - if [ "$TRAVIS_OS_NAME" == "linux" ]; then  
-#          export DISPLAY=:99.0; 
-#          sh -e /etc/init.d/xvfb start; 
-#          sleep 3; 
-#      fi
-
 install:
   # Conda
-  - if [ "${TRAVIS_OS_NAME}" == "osx" ]; then curl --silent https://repo.continuum.io/miniconda/Miniconda${CONDA_PY}-latest-MacOSX-x86_64.sh -o miniconda.sh; fi
-  - if [ "${TRAVIS_OS_NAME}" == "linux" ]; then wget -nv https://repo.continuum.io/miniconda/Miniconda${CONDA_PY}-latest-Linux-x86_64.sh -O miniconda.sh; fi
+  - if [ "${TRAVIS_OS_NAME}" == "osx" ]; then curl --silent http://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh -o miniconda.sh; fi
+  - if [ "${TRAVIS_OS_NAME}" == "linux" ]; then wget -nv http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh; fi
   - pwd && ls
   - bash miniconda.sh -b -p $HOME/miniconda
   - export PATH="$HOME/miniconda/bin:$PATH"
@@ -53,9 +62,11 @@ install:
   - clang --version
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
-  - conda info -a # Useful for debugging any issues with conda
+  - conda info -a
   - conda config --add channels http://conda.anaconda.org/NLeSC  
+  #- conda config --add channels conda-forge
   - conda config --set show_channel_urls yes
+  - conda config --show channels 
   - conda create -q -n testenv python=${PYTHON} root=${ROOT} numpy rootpy
   - source activate testenv
   #- conda uninstall -q sqlite libpng libx11 jpeg libtiff
@@ -66,3 +77,10 @@ script:
   - python tests/test_root.py
   - python tests/test_stl.py
 
+on_failure:
+  -|
+  echo "Showing current directory contents"
+  ls -la
+
+#after_success:
+#  - python myscript.py some args
