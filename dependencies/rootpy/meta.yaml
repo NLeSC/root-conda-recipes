@@ -27,7 +27,7 @@ build:
   string: py{{ environ.get('PY_VER','') }}
 requirements:
   build:
-    - python # [{{ environ.get('PY_VER') }}]
+    - python
     - setuptools 
     - pytables
     - root-numpy
@@ -35,7 +35,7 @@ requirements:
     - numpy >=1.6.1
 
   run:
-    - python # [{{ environ.get('PY_VER') }}]
+    - python
     - setuptools
     - pytables
     - root-numpy
