@@ -52,7 +52,7 @@ install:
   # Conda
   - if [ "${TRAVIS_OS_NAME}" == "osx" ]; then curl --silent http://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh -o miniconda.sh; fi
   - if [ "${TRAVIS_OS_NAME}" == "linux" ]; then wget -nv http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh; fi
-  - pwd && cd $TRAVIS_BUILD_DIR ls -asl scripts/build_deps.sh
+  - cd $TRAVIS_BUILD_DIR && pwd && ls -asl scripts/build_deps.sh
   - bash miniconda.sh -b -p $HOME/miniconda
   - export PATH="$HOME/miniconda/bin:$PATH"
   - hash -r
