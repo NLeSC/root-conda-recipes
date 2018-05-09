@@ -10,11 +10,11 @@ cache:
   apt: true
   ccache: true
 
-# Do not build our sync branch.
-branches:
-  only:
-    - master
-    - Travis*
+## Do not build our sync branch.
+#branches:
+#  only:
+#    - master
+#    - Travis*
 
 matrix:
     # Abort all builds on a single failing matrix entry.
