@@ -63,8 +63,10 @@ install:
   - conda update -q conda
   - conda info -a
   - conda install --yes -q conda-build
-  # run scripts
-  - cd $TRAVIS_BUILD_DIR && pwd && ls -asl && bash ./scripts/build_deps.sh
+  # run build scripts
+  - cd $TRAVIS_BUILD_DIR && bash ./root5/build.sh
+  - cd $TRAVIS_BUILD_DIR && bash ./root6/build.sh
+  - cd $TRAVIS_BUILD_DIR && bash ./scripts/build_deps.sh
   # actual package installation
   - conda config --add channels http://conda.anaconda.org/NLeSC  
   #- conda config --add channels conda-forge
