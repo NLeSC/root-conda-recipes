@@ -64,8 +64,8 @@ install:
   - conda info -a
   - conda install --yes -q conda-build
   # run build scripts
-  - cd $TRAVIS_BUILD_DIR && PREFIX=$TRAVIS_BUILD_DIR bash ./root5/build.sh
-  - cd $TRAVIS_BUILD_DIR && PREFIX=$TRAVIS_BUILD_DIR bash ./root6/build.sh
+  - cd $TRAVIS_BUILD_DIR && CONDA_PY={[{{ environ.get('PY_VER') }}]} conda build ./root5/build.sh
+  - cd $TRAVIS_BUILD_DIR && CONDA_PY={[{{ environ.get('PY_VER') }}]} conda build ./root6/build.sh
   - cd $TRAVIS_BUILD_DIR && bash ./scripts/build_deps.sh
   # actual package installation
   - conda config --add channels http://conda.anaconda.org/NLeSC  
