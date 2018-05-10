@@ -67,6 +67,7 @@ install:
   - conda info -a
   - conda install --yes -q conda-build
   # run build scripts
+  - conda config --add channels conda-forge
   - cd $TRAVIS_BUILD_DIR && CONDA_PY=${PYTHON} conda build ./root5
   - cd $TRAVIS_BUILD_DIR && CONDA_PY=${PYTHON} conda build ./root6
   - cd $TRAVIS_BUILD_DIR && bash ./scripts/build_deps.sh
