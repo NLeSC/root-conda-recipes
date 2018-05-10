@@ -2,11 +2,11 @@
 
 echo "Running " $0
 
-echo "Building rootpy package"
-conda build ./dependencies/rootpy
-
-echo "Building root-numpy package"
+echo -e "Building root-numpy package\n"
 conda build ./dependencies/root-numpy
 
-echo "Building root-pandas package"
+echo -e "Building root-pandas package\n"
 conda build ./dependencies/root-pandas
+
+echo -e "Building rootpy package\n"
+conda build ./dependencies/rootpy
