@@ -1,6 +1,7 @@
 sudo: false
 
 language: python
+compiler: gcc
 
 #addons: &addons
 #  apt:
@@ -24,14 +25,30 @@ matrix:
     fast_finish: true
     include:
         - os: linux
-          # dist: trusty
+          dist: trusty
           sudo: false
-          env: PYTHON=${TRAVIS_PYTHON_VERSION}
+          addons:
+            apt:
+              sources:
+                - ubuntu-toolchain-r-test
+              packages:
+                - g++-7
+                - cmake-data
+                - cmake
+          env:
+            - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
+            - PYTHON=${TRAVIS_PYTHON_VERSION}
         - os: osx
-          osx_image: xcode10
-          env: PYTHON=${TRAVIS_PYTHON_VERSION}
+#          osx_image: xcode10
+          osx_image: xcode8
+          env:
+            - MATRIX_EVAL="brew install gcc && CC=gcc-7 && CXX=g++-7"
+            - PYTHON=${TRAVIS_PYTHON_VERSION}
     # allow_failures:
     #     - os: osx
+
+before_install:
+    - eval "${MATRIX_EVAL}"
 
 install:
   # Conda

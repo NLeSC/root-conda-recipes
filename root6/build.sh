@@ -68,7 +68,7 @@ LinuxInstallation() {
         -Dr=OFF \
         -Ddavix=OFF \
     || return 1;
-    make -j4 || return 1;
+    make -j2 || return 1;
     make install || return 1;
 
     return 0;
