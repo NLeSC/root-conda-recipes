@@ -34,7 +34,7 @@ LinuxInstallation() {
         -Dbuiltin_ftgl=ON \
         -Dbuiltin_fftw3=ON \
         -Dbuiltin_gl2ps=OFF \
-        -Dbuiltin_glew=OFF \
+        -Dbuiltin_glew=ON \
         -Dbuiltin_unuran=ON \
         -Dbuiltin_vc=ON \
         -Dbuiltin_vdt=ON \
