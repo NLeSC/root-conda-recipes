@@ -1,63 +1,35 @@
 package:
     name: root
-    version: 6.05
-    #version: {{ environ.get('GIT_DESCRIBE_TAG', '') }} # bug, doesn't work for now: https://github.com/conda/conda-build/issues/357
+    version: 6.14.04
+
+# source:
+#     git_url: https://github.com/root-mirror/root
+#     git_tag: v6-14-00
+#     # patches:
+
 source:
-    #fn: root_v6.04.02.source.tar.gz
-    #url: https://root.cern.ch/download/root_v6.04.02.source.tar.gz
-    git_url: https://github.com/root-mirror/root
-    git_tag: v6-05-02
-    patches:
-    #    - python34.patch
-    #    - python34_1.patch
-         - tarray_getitem.patch
-         - pyerr_clear_if_no_attribute.patch
-    #path: /home/daniela/anaconda_backup/anaconda/root-6.04.02
+  url: https://root.cern.ch/download/root_v6.14.04.source.tar.gz
+#   md5: 58d78513abdcba3f12f0c838d00987bb
+#   sha1: 52b4c8edc990a248dbe49b04915bd07a812154cc
+  sha256: 463ec20692332a422cfb5f38c78bedab1c40ab4d81be18e99b50cf9f53f596cf
+
 build:
-    number: 63
-    string: py{{ environ.get('PY_VER','') }}_clang503 # [osx]
-    string: py{{ environ.get('PY_VER','') }}_gcc4.8.2 # [linux]
+    number: 64
     detect_binary_files_with_prefix: True
 
 requirements:
     build:
-        - python  # [{{ environ.get('PY_VER') }}]     
-        - openssl
-        - qt 4.8.6 # [linux]
-        - sqlite 
-        - fftw
-        - pcre
-        - libxml2
-        - graphviz # [linux]
-        #- cmake >=3.2.3
-        - gsl 1.16
-        - xz # [osx]
-        - freetype # [osx]
-        - krb5 # [osx]
-        #- libx11 2.7.7 #[osx]
-        #- libpng #[osx]
-        #- jpeg #[osx]
-        #- libtiff #[osx]
-        
+        - python
+        - numpy==1.15.2
+        - cfitsio== 3.430
+        - qt==4.8.7
+
     run:
-        - python  # [{{ environ.get('PY_VER') }}]
-        - openssl
-        - qt  # [linux]
-        - sqlite # [linux]
-        - graphviz # [linux]
-        - libxml2
-        - fftw
-        - pcre
-        - gsl 1.16
-        - gcc 4.8.2 # [linux]
-        - xz # [osx]
-        - freetype # [osx]
-        - krb5 # [osx]
-        #- libx11 2.7.7 # [osx]
-        #- libpng #[osx]
-        #- jpeg #[osx]
-        #- libtiff #[osx]
-        
+        - python
+        - numpy==1.15.2
+        - cfitsio== 3.430
+        - qt==4.8.7
+
 #test:
 
    #files:

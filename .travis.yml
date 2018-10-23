@@ -6,47 +6,32 @@ language: python
 #  apt:
 #    packages: timeout
 
+os:
+  - linux
+  - osx
+
+python:
+  - 2.7
+  - 3.6
+  - 3.7
+
 cache:
   apt: true
   ccache: true
 
-## Do not build our sync branch.
-#branches:
-#  only:
-#    - master
-#    - Travis*
-
 matrix:
     # Abort all builds on a single failing matrix entry.
     fast_finish: true
-
     include:
-        - python: 2.7
-          env: PYTHON=2.7 ROOT=5.34.36
-        - python: 3.6
-          env: PYTHON=3.6 ROOT=5.34.36
-        - python: 2.7
-          env: PYTHON=2.7 ROOT=6.12          
-        - python: 3.6
-          env: PYTHON=3.6 ROOT=6.12
-        - language: generic
-          os: osx
-          osx_image: xcode9.3
-          env: PYTHON=2.7 ROOT=5.34.36
-        - language: generic
-          os: osx
-          osx_image: xcode9.3
-          env: PYTHON=3.6 ROOT=5.34.36
-        - language: generic
-          os: osx
-          osx_image: xcode9.3
-          env: PYTHON=2.7 ROOT=6.12
-        - language: generic
-          os: osx
-          osx_image: xcode9.3
-          env: PYTHON=3.6 ROOT=6.12
-    allow_failures:
+        - os: linux
+          # dist: trusty
+          sudo: false
+          env: PYTHON=${TRAVIS_PYTHON_VERSION} ROOT=6.14
         - os: osx
+          osx_image: xcode9.3
+          env: PYTHON=${TRAVIS_PYTHON_VERSION} ROOT=6.14
+    # allow_failures:
+    #     - os: osx
 
 install:
   # Conda
@@ -54,7 +39,7 @@ install:
   - if [ "${TRAVIS_OS_NAME}" == "linux" ]; then wget -nv http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh; fi
   - bash miniconda.sh -b -p $HOME/miniconda
   - export PATH="$HOME/miniconda/bin:$PATH"
-  - conda install --yes python=${PYTHON}
+  - conda install --yes python=${TRAVIS_PYTHON_VERSION}
   - hash -r
   - which python
   - python -V
@@ -68,18 +53,18 @@ install:
   - conda install --yes -q conda-build
   # run build scripts
   - conda config --add channels conda-forge
-  - cd $TRAVIS_BUILD_DIR && CONDA_PY=${PYTHON} conda build ./root5
-  - cd $TRAVIS_BUILD_DIR && CONDA_PY=${PYTHON} conda build ./root6
+  - cd $TRAVIS_BUILD_DIR && PY_VER=${TRAVIS_PYTHON_VERSION} conda build ./root5
+  - cd $TRAVIS_BUILD_DIR && PY_VER=${TRAVIS_PYTHON_VERSION} conda build ./root6
   - cd $TRAVIS_BUILD_DIR && bash ./scripts/build_deps.sh
   # actual package installation
   - conda config --add channels http://conda.anaconda.org/NLeSC  
   #- conda config --add channels conda-forge
   - conda config --set show_channel_urls yes
   - conda config --show channels 
-  - conda create -q -n testenv python=${PYTHON} root=${ROOT} numpy rootpy
+  - conda create -q -n testenv python=${TRAVIS_PYTHON_VERSION} root=${ROOT} numpy rootpy
   - source activate testenv
   #- conda uninstall -q sqlite libpng libx11 jpeg libtiff
-  - conda uninstall --force --yes -q sqlite libpng libx11 jpeg libtiff
+  # - conda uninstall --force --yes -q sqlite libpng libx11 jpeg libtiff
   - root -b -q
 
 script:
