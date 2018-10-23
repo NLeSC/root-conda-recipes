@@ -41,6 +41,7 @@ LinuxInstallation() {
         -Dbuiltin_veccore=ON \
         -Dbuiltin_xrootd=ON \
         -Dbuiltin_gsl=ON \
+        -Dbuiltin_tbb=ON \
         -Dall=ON \
         -Dcxx14=ON \
         -Dfail-on-missing=ON \
