@@ -1,6 +1,6 @@
 sudo: false
 
-language: python
+language: cpp
 compiler: gcc
 
 #addons: &addons
@@ -9,16 +9,16 @@ compiler: gcc
 
 os:
   - linux
-  - osx
+#  - osx
 
 python:
   - 2.7
   - 3.5
   - 3.6
 
-cache:
-  apt: true
-  ccache: true
+# cache:
+#   apt: true
+#   ccache: true
 
 matrix:
     # Abort all builds on a single failing matrix entry.
@@ -38,14 +38,14 @@ matrix:
           env:
             - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
             - PYTHON=${TRAVIS_PYTHON_VERSION}
-        - os: osx
-#          osx_image: xcode10
-          osx_image: xcode8
-          env:
-            - MATRIX_EVAL="brew install gcc && CC=gcc-7 && CXX=g++-7"
-            - PYTHON=${TRAVIS_PYTHON_VERSION}
-    # allow_failures:
-    #     - os: osx
+#         - os: osx
+# #          osx_image: xcode10
+#           osx_image: xcode8
+#           env:
+#             - MATRIX_EVAL="brew install gcc && CC=gcc-7 && CXX=g++-7"
+#             - PYTHON=${TRAVIS_PYTHON_VERSION}
+#     # allow_failures:
+#     #     - os: osx
 
 before_install:
     - eval "${MATRIX_EVAL}"
