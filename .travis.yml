@@ -26,10 +26,10 @@ matrix:
         - os: linux
           # dist: trusty
           sudo: false
-          env: PYTHON=${TRAVIS_PYTHON_VERSION} ROOT=6.14
+          env: PYTHON=${TRAVIS_PYTHON_VERSION}
         - os: osx
-          osx_image: xcode9.3
-          env: PYTHON=${TRAVIS_PYTHON_VERSION} ROOT=6.14
+          osx_image: xcode10
+          env: PYTHON=${TRAVIS_PYTHON_VERSION}
     # allow_failures:
     #     - os: osx
 
@@ -53,8 +53,8 @@ install:
   - conda install --yes -q conda-build
   # run build scripts
   - conda config --add channels conda-forge
-#  - cd $TRAVIS_BUILD_DIR && PY_VER=${TRAVIS_PYTHON_VERSION} conda build ./root5
-  - cd $TRAVIS_BUILD_DIR && PY_VER=${TRAVIS_PYTHON_VERSION} conda build ./root6
+#  - cd $TRAVIS_BUILD_DIR && conda build ./root5
+  - cd $TRAVIS_BUILD_DIR && conda build ./root6
   - cd $TRAVIS_BUILD_DIR && bash ./scripts/build_deps.sh
   # actual package installation
   - conda config --add channels http://conda.anaconda.org/NLeSC  
