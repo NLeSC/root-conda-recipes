@@ -30,6 +30,8 @@ LinuxInstallation() {
     cd workdir
 
     cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
+        -DCMAKE_C_COMPILER=gcc-7 -DCMAKE_CXX_COMPILER=g++-7 \
+        -Droofit=ON \
         -Dbuiltin_afterimage=OFF \
         -Dbuiltin_ftgl=ON \
         -Dbuiltin_fftw3=ON \
