@@ -7,10 +7,10 @@ export CXXLAGS="${CFLAGS}"
 export CPPFLAGS="-I${PREFIX}/include"
 export LDFLAGS="-L${PREFIX}/lib"
 
-echo 'gcc version'
+echo 'gcc info'
 gcc -v
 which gcc
-echo 'python version'
+echo 'python info'
 python --version
 which python
 
@@ -47,6 +47,7 @@ LinuxInstallation() {
         -Dgnuinstall=ON \
         -Drpath=ON \
         -Dopengl=ON \
+        -Dbonjour=OFF \
         -Darrow=OFF \
         -Dcastor=OFF \
         -Dchirp=OFF \
@@ -76,8 +77,8 @@ MacInstallation() {
     export CPPFLAGS="-I${PREFIX}/include"
     export CPATH="${PREFIX}/include"
     export LIBPATH="${PREFIX}/lib"
-    export CMAKE_OSX_DEPLOYMENT_TARGET=10.10
-    export MACOSX_DEPLOYMENT_TARGET=10.10
+    export CMAKE_OSX_DEPLOYMENT_TARGET=10.13
+    export MACOSX_DEPLOYMENT_TARGET=10.13
     export DYLD_FALLBACK_LIBRARY_PATH="${PREFIX}/lib"
     chmod +x configure;
     #export CC=clang
