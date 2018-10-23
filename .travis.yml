@@ -53,7 +53,7 @@ install:
   - conda install --yes -q conda-build
   # run build scripts
   - conda config --add channels conda-forge
-  - cd $TRAVIS_BUILD_DIR && PY_VER=${TRAVIS_PYTHON_VERSION} conda build ./root5
+#  - cd $TRAVIS_BUILD_DIR && PY_VER=${TRAVIS_PYTHON_VERSION} conda build ./root5
   - cd $TRAVIS_BUILD_DIR && PY_VER=${TRAVIS_PYTHON_VERSION} conda build ./root6
   - cd $TRAVIS_BUILD_DIR && bash ./scripts/build_deps.sh
   # actual package installation
@@ -63,8 +63,6 @@ install:
   - conda config --show channels 
   - conda create -q -n testenv python=${TRAVIS_PYTHON_VERSION} root=${ROOT} numpy rootpy
   - source activate testenv
-  #- conda uninstall -q sqlite libpng libx11 jpeg libtiff
-  # - conda uninstall --force --yes -q sqlite libpng libx11 jpeg libtiff
   - root -b -q
 
 script:
