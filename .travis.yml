@@ -60,8 +60,9 @@ install:
   - conda config --add channels http://conda.anaconda.org/NLeSC  
   #- conda config --add channels conda-forge
   - conda config --set show_channel_urls yes
-  - conda config --show channels 
-  - conda create -q -n testenv python=${TRAVIS_PYTHON_VERSION} root=${ROOT} numpy rootpy
+  - conda config --show channels
+  # - conda create -q -n testenvROOT5 python=${TRAVIS_PYTHON_VERSION} root=5 numpy rootpy
+  - conda create -q -n testenvROOT6 python=${TRAVIS_PYTHON_VERSION} root=6 numpy rootpy  
   - source activate testenv
   - root -b -q
 
