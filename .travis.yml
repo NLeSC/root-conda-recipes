@@ -15,7 +15,7 @@ notifications:
 cache:
   timeout: 1000
   directories:
-  - /home/travis/miniconda/conda-bld  # conda build directory
+  - /home/travis/miniconda/conda-bld/root_*/work/workdir*  # conda build directory
 
 os:
   - linux
