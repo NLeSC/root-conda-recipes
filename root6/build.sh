@@ -61,7 +61,7 @@ LinuxInstallation() {
         -Dbuiltin_vc=ON \
         -Dbuiltin_vdt=ON \
         -Dbuiltin_veccore=ON \
-        -Dbuiltin_xrootd=OFF \
+        -Dbuiltin_xrootd=ON \
         -Dbuiltin_tbb=ON \
         -Dall=ON \
         -Dcxx14=ON \
