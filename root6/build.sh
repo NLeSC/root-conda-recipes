@@ -28,15 +28,23 @@ echo "Conda-Travis environment info:"
 echo $PKG_NAME
 echo $PKG_VERSION
 echo $PKG_BUILD_STRING
-echo $TRAVIS_OS_NAME
+echo $ARCH
 echo $PKG_BUILDNUM
+echo $CONDA_BLD_PATH
+echo $CPU_COUNT
+echo $OSX_ARCH
+
+echo $TMPDIR
+echo $LD_LIBRARY_PATH # [linux]
+echo $DYLD_LIBRARY_PATH # [osx]
+
 
 
 LinuxInstallation() {
-
+    pwd
     mkdir workdir_$PKG_VERSION
     cd workdir_$PKG_VERSION
-
+    pwd
     cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
         -Dbuiltin_afterimage=OFF \
         -Dbuiltin_ftgl=OFF \
