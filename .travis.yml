@@ -11,9 +11,11 @@ compiler: gcc
 notifications:
   email: false
 
-#addons: &addons
-#  apt:
-#    packages: timeout
+
+cache:
+  timeout: 1000
+  directories:
+  - /home/travis/miniconda/conda-bld  # conda build directory
 
 os:
   - linux
@@ -87,8 +89,8 @@ install:
   - conda install --yes -q conda-build
   # run build scripts
   - conda config --add channels conda-forge
-#  - cd $TRAVIS_BUILD_DIR && CC=${CC} CXX=${CXX} conda build ./root5 > root5_build.log 2>&1
-  - cd $TRAVIS_BUILD_DIR && CC=${CC} CXX=${CXX} conda build ./root6  > root6_build.log 2>&1
+#  - timeout 40m cd $TRAVIS_BUILD_DIR && CC=${CC} CXX=${CXX} conda build ./root5 > root5_build.log 2>&1
+  - timeout 40m cd $TRAVIS_BUILD_DIR && CC=${CC} CXX=${CXX} conda build ./root6  > root6_build.log 2>&1
   - cd $TRAVIS_BUILD_DIR && bash ./scripts/build_deps.sh
   # actual package installation
   - conda config --add channels http://conda.anaconda.org/NLeSC  
@@ -96,13 +98,19 @@ install:
   - conda config --set show_channel_urls yes
   - conda config --show channels
   # - conda create -q -n testenvROOT5 python=${TRAVIS_PYTHON_VERSION} root=5 numpy rootpy
-  - conda create -q -n testenvROOT6 python=${TRAVIS_PYTHON_VERSION} root=6 numpy rootpy  
-  - source activate testenv
-  - root -b -q
+  # - source decativate && source activate testenvROOT5
+  # - root -b -q
+  - conda create -q -n testenvROOT6 python=${TRAVIS_PYTHON_VERSION} root=6 numpy rootpy
+  - source decativate && source activate testenvROOT6
+  - root -b -q  
 
 script:
   - python tests/test_root.py
   - python tests/test_stl.py
+
+before_cache:
+  -|
+  echo "Caching..."
 
 on_failure:
   -|
@@ -111,5 +119,7 @@ on_failure:
   - tail --lines=1000 root5_build.log
   - tail --lines=1000 root6_build.log
 
-#after_success:
-#  - python myscript.py some args
+after_success:
+  -|
+  echo "Build finished."
+  ls -la scripts
