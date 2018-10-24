@@ -46,8 +46,8 @@ echo "DYLD_LIBRARY_PATH: " $DYLD_LIBRARY_PATH
 
 LinuxInstallation() {
     CONDA_WORKDIR=$(pwd)
-    mkdir -p $ROOT_CACHE_DIR/$PKG_VERSION
-    cd $ROOT_CACHE_DIR/$PKG_VERSION
+    mkdir -p /home/travis/root_cache/$PKG_VERSION
+    cd /home/travis/root_cache/$PKG_VERSION
     echo "PWD: " $PWD
 
     cmake $CONDA_WORKDIR/ -DCMAKE_INSTALL_PREFIX=$PREFIX \
