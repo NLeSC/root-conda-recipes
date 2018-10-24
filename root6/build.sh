@@ -53,6 +53,7 @@ LinuxInstallation() {
     echo "PWD: " $PWD
 
     cmake $CONDA_WORKDIR/ -DCMAKE_INSTALL_PREFIX=$PREFIX \
+        -DCMAKE_C_COMPILER=gcc-7 -DCMAKE_CXX_COMPILER=g++-7 \
         -Dbuiltin_afterimage=OFF \
         -Dbuiltin_ftgl=OFF \
         -Dbuiltin_fftw3=ON \
