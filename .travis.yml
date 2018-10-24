@@ -1,7 +1,6 @@
 sudo: false
 
-language:
-  "python"
+language: python
 compiler: gcc
 
 # branches:
@@ -80,14 +79,16 @@ install:
   - gcc --version
   - which clang
   - clang --version
+  - echo "CC  --> " ${CC}
+  - echo "CXX --> " ${CXX}
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
   - conda info -a
   - conda install --yes -q conda-build
   # run build scripts
   - conda config --add channels conda-forge
-#  - cd $TRAVIS_BUILD_DIR && conda build ./root5
-  - cd $TRAVIS_BUILD_DIR && conda build ./root6
+#  - cd $TRAVIS_BUILD_DIR && CC=${CC} CXX=${CXX} conda build ./root5
+  - cd $TRAVIS_BUILD_DIR && CC=${CC} CXX=${CXX} conda build ./root6
   - cd $TRAVIS_BUILD_DIR && bash ./scripts/build_deps.sh
   # actual package installation
   - conda config --add channels http://conda.anaconda.org/NLeSC  
