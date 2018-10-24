@@ -87,8 +87,8 @@ install:
   - conda install --yes -q conda-build
   # run build scripts
   - conda config --add channels conda-forge
-#  - cd $TRAVIS_BUILD_DIR && CC=${CC} CXX=${CXX} conda build ./root5
-  - cd $TRAVIS_BUILD_DIR && CC=${CC} CXX=${CXX} conda build ./root6
+#  - cd $TRAVIS_BUILD_DIR && CC=${CC} CXX=${CXX} conda build ./root5 > root5_build.log 2>&1
+  - cd $TRAVIS_BUILD_DIR && CC=${CC} CXX=${CXX} conda build ./root6  > root6_build.log 2>&1
   - cd $TRAVIS_BUILD_DIR && bash ./scripts/build_deps.sh
   # actual package installation
   - conda config --add channels http://conda.anaconda.org/NLeSC  
@@ -108,6 +108,8 @@ on_failure:
   -|
   echo "Showing current directory contents"
   ls -la
+  - tail --lines=1000 root5_build.log
+  - tail --lines=1000 root6_build.log
 
 #after_success:
 #  - python myscript.py some args
