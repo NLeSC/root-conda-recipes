@@ -14,7 +14,7 @@ notifications:
 cache:
   timeout: 1000
   directories:
-  - /home/travis/miniconda/conda-bld/root_build/cache  # conda build directory
+  - /home/travis/root_cache  # conda build directory
 
 os:
   - linux
@@ -47,7 +47,7 @@ matrix:
           env:
             - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
             - PYTHON=${TRAVIS_PYTHON_VERSION}
-            - ROOT_CACHE_DIR=/home/travis/miniconda/conda-bld/root_build/cache
+            - ROOT_CACHE_DIR=/home/travis/root_cache
 #         - os: osx
 # #          osx_image: xcode10
 #           osx_image: xcode8
