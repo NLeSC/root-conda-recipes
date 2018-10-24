@@ -45,8 +45,9 @@ matrix:
                 - g++-7
                 - cmake
           env:
-            - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7 && ROOT_CACHE_DIR=/home/travis/root_cache"
+            - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
             - PYTHON=${TRAVIS_PYTHON_VERSION}
+            - ROOT_CACHE_DIR=/home/travis/root_cache
 
 #         - os: osx
 # #          osx_image: xcode10
@@ -114,7 +115,14 @@ before_cache:
   -|
   echo "Caching..."
 
-on_failure:
+# on_failure:
+#   -|
+#   echo "Showing current directory contents"
+#   ls -la
+#   - tail --lines=1000 root6_build.log
+#   # - tail --lines=1000 root5_build.log
+
+after_failure:
   -|
   echo "Showing current directory contents"
   ls -la
