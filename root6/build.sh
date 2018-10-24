@@ -45,12 +45,11 @@ echo "DYLD_LIBRARY_PATH: " $DYLD_LIBRARY_PATH
 
 
 LinuxInstallation() {
-    echo "PWD: " $PWD
-    mkdir workdir_$PKG_VERSION
-    cd workdir_$PKG_VERSION
+    mkdir -p $ROOT_CACHE_DIR/$PKG_VERSION
+    cd $ROOT_CACHE_DIR/$PKG_VERSION
     echo "PWD: " $PWD
 
-    cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
+    cmake $RECIPE_DIR/ -DCMAKE_INSTALL_PREFIX=$PREFIX \
         -Dbuiltin_afterimage=OFF \
         -Dbuiltin_ftgl=OFF \
         -Dbuiltin_fftw3=ON \

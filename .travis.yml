@@ -13,8 +13,8 @@ notifications:
 
 cache:
   timeout: 1000
-  # directories:
-  # - /home/travis/miniconda/conda-bld/root_build/cache/root6  # conda build directory
+  directories:
+  - /home/travis/miniconda/conda-bld/root_build/cache  # conda build directory
 
 os:
   - linux
@@ -24,6 +24,10 @@ python:
   - "2.7"
   - "3.5"
   - "3.6"
+
+# env:
+#   - ROOT_VERSION=5
+#   - ROOT_VERSION=6
 
 matrix:
     # Abort all builds on a single failing matrix entry.
@@ -87,7 +91,7 @@ install:
   - conda config --add channels conda-forge
 #  - timeout 40m cd $TRAVIS_BUILD_DIR && CC=${CC} CXX=${CXX} conda build --numpy 1.15 ./root5 > root5_build.log 2>&1
 #  - timeout 40m cd $TRAVIS_BUILD_DIR && CC=${CC} CXX=${CXX} conda build --dirty --numpy 1.15 --croot /home/travis/miniconda/conda-bld/root_build/work/root6 ./root6 2>&1 | tee root6_build.log
-  - cd $TRAVIS_BUILD_DIR && CC=${CC} CXX=${CXX} conda build --dirty --numpy 1.15 --croot /home/travis/miniconda/conda-bld/root_build/work/root6 ./root6 2>&1 | tee root6_build.log
+  - cd $TRAVIS_BUILD_DIR && CC=${CC} CXX=${CXX} ROOT_CACHE_DIR=${ROOT_CACHE_DIR} conda build --dirty --numpy 1.15 --croot /home/travis/miniconda/conda-bld/root_build/work/root6 ./root6 2>&1 | tee root6_build.log
   - cd $TRAVIS_BUILD_DIR && bash ./scripts/build_deps.sh
   # actual package installation
   - conda config --add channels http://conda.anaconda.org/NLeSC  
