@@ -34,8 +34,8 @@ echo $PKG_BUILDNUM
 
 LinuxInstallation() {
 
-    mkdir workdir
-    cd workdir
+    mkdir workdir_$PKG_VERSION
+    cd workdir_$PKG_VERSION
 
     cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
         -Dbuiltin_afterimage=OFF \
