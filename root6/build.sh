@@ -24,31 +24,38 @@ cp ${RECIPE_DIR}/scripts/activateROOT.sh $PREFIX/etc/conda/activate.d/
 cp ${RECIPE_DIR}/scripts/deactivateROOT.sh $PREFIX/etc/conda/deactivate.d/
 
 
+echo "Conda-Travis environment info:"
+echo $PKG_NAME
+echo $PKG_VERSION
+echo $PKG_BUILD_STRING
+echo $TRAVIS_OS_NAME
+echo $PKG_BUILDNUM
+
+
 LinuxInstallation() {
 
     mkdir workdir
     cd workdir
 
     cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
-        -Droofit=ON \
         -Dbuiltin_afterimage=OFF \
-        -Dbuiltin_ftgl=ON \
+        -Dbuiltin_ftgl=OFF \
         -Dbuiltin_fftw3=ON \
         -Dbuiltin_gl2ps=OFF \
-        -Dbuiltin_glew=ON \
+        -Dbuiltin_glew=OFF \
+        -Dbuiltin_gsl=ON \
         -Dbuiltin_unuran=ON \
         -Dbuiltin_vc=ON \
         -Dbuiltin_vdt=ON \
         -Dbuiltin_veccore=ON \
         -Dbuiltin_xrootd=ON \
-        -Dbuiltin_gsl=ON \
         -Dbuiltin_tbb=ON \
         -Dall=ON \
         -Dcxx14=ON \
         -Dfail-on-missing=ON \
         -Dgnuinstall=ON \
         -Drpath=ON \
-        -Dopengl=ON \
+        -Dopengl=OFF \
         -Dbonjour=OFF \
         -Darrow=OFF \
         -Dcastor=OFF \
@@ -68,6 +75,9 @@ LinuxInstallation() {
         -Ddcache=OFF \
         -Dr=OFF \
         -Ddavix=OFF \
+        -Dtesting=ON \
+        -Dminuit2=ON \
+        -Droofit=ON \
     || return 1;
     make -j4 || return 1;
     make install || return 1;
