@@ -28,6 +28,8 @@ LinuxInstallation() {
 
     mkdir workdir
     cd workdir
+    echo ${CC}
+    echo ${CXX}
 
     cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
         -DCMAKE_C_COMPILER=gcc-7 -DCMAKE_CXX_COMPILER=g++-7 \
@@ -70,7 +72,7 @@ LinuxInstallation() {
         -Dr=OFF \
         -Ddavix=OFF \
     || return 1;
-    make -j2 || return 1;
+    make -j4 || return 1;
     make install || return 1;
 
     return 0;
