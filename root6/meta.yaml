@@ -23,12 +23,14 @@ requirements:
         - numpy==1.15.2
         - cfitsio== 3.430
         - qt==4.8.7
+        - ncurses
 
     run:
         - python
         - numpy==1.15.2
         - cfitsio== 3.430
         - qt==4.8.7
+        - ncurses
 
 #test:
 
