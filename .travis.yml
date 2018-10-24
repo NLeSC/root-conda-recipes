@@ -11,10 +11,10 @@ compiler: gcc
 notifications:
   email: false
 
-cache:
-  timeout: 1000
-  directories:
-  - /home/travis/root_cache  # conda build directory
+# cache:
+#   timeout: 1000
+#   directories:
+#     - /home/travis/root_cache  # conda build directory
 
 os:
   - linux
@@ -111,9 +111,9 @@ script:
   - python tests/test_root.py
   - python tests/test_stl.py
 
-before_cache:
-  -|
-  echo "Caching..."
+# before_cache:
+#   -|
+#   echo "Caching..."
 
 # on_failure:
 #   -|
