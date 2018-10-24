@@ -27,6 +27,9 @@ cp ${RECIPE_DIR}/scripts/deactivateROOT.sh $PREFIX/etc/conda/deactivate.d/
 echo "Conda-Travis environment info:"
 echo "PREFIX: " $PREFIX
 echo "RECIPE_DIR: " $RECIPE_DIR
+echo "ROOT_CACHE_DIR: " $ROOT_CACHE_DIR
+echo "CC: " $CC
+echo "CXX: " $CXX
 echo "PKG_NAME: " $PKG_NAME
 echo "PKG_VERSION: " $PKG_VERSION
 echo "PKG_BUILD_STRING: " $PKG_BUILD_STRING
@@ -36,8 +39,8 @@ echo "CONDA_BLD_PATH: " $CONDA_BLD_PATH
 echo "CPU_COUNT: " $CPU_COUNT
 echo "OSX_ARCH: " $OSX_ARCH
 echo "TMPDIR: " $TMPDIR
-echo "LD_LIBRARY_PATH: " $LD_LIBRARY_PATH # [linux]
-echo "DYLD_LIBRARY_PATH: " $DYLD_LIBRARY_PATH # [osx]
+echo "LD_LIBRARY_PATH: " $LD_LIBRARY_PATH
+echo "DYLD_LIBRARY_PATH: " $DYLD_LIBRARY_PATH
 
 
 
