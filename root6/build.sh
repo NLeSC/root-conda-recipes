@@ -88,7 +88,6 @@ LinuxInstallation() {
         -Ddcache=OFF \
         -Dr=OFF \
         -Ddavix=OFF \
-        -Dtesting=ON \
         -Dminuit2=ON \
         -Droofit=ON \
     || return 1;

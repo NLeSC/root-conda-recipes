@@ -25,10 +25,6 @@ python:
   - "3.5"
   - "3.6"
 
-# cache:
-#   apt: true
-#   ccache: true
-
 matrix:
     # Abort all builds on a single failing matrix entry.
     fast_finish: true
@@ -119,7 +115,6 @@ on_failure:
   ls -la
   - tail --lines=1000 root6_build.log
   # - tail --lines=1000 root5_build.log
-
 
 after_success:
   -|
