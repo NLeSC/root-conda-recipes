@@ -28,11 +28,8 @@ LinuxInstallation() {
 
     mkdir workdir
     cd workdir
-    echo ${CC}
-    echo ${CXX}
 
     cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
-        -DCMAKE_C_COMPILER=gcc-7 -DCMAKE_CXX_COMPILER=g++-7 \
         -Droofit=ON \
         -Dbuiltin_afterimage=OFF \
         -Dbuiltin_ftgl=ON \
@@ -118,9 +115,11 @@ MacInstallation() {
 
 case ${ARCH} in
     'Linux')
+        echo "Building for Linux"
         LinuxInstallation || exit 1;
     ;;
     'Darwin')
+        echo "Building for OSX"
         MacInstallation || exit 1;
     ;;
     *)

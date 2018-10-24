@@ -1,7 +1,16 @@
 sudo: false
 
-language: python
+language:
+  "python"
 compiler: gcc
+
+# branches:
+#   only:
+#     - master
+#     - dev
+
+notifications:
+  email: false
 
 #addons: &addons
 #  apt:
@@ -32,9 +41,9 @@ matrix:
               sources:
                 - ubuntu-toolchain-r-test
               packages:
+                - gcc-7
                 - g++-7
                 - cmake
-                - libncurses5
           env:
             - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
             - PYTHON=${TRAVIS_PYTHON_VERSION}
@@ -49,11 +58,18 @@ matrix:
 
 before_install:
     - eval "${MATRIX_EVAL}"
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+        brew update ;
+      fi
 
 install:
   # Conda
   - if [ "${TRAVIS_OS_NAME}" == "osx" ]; then curl --silent http://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh -o miniconda.sh; fi
-  - if [ "${TRAVIS_OS_NAME}" == "linux" ]; then wget -nv http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      export CC=gcc-7 ;
+      export CXX=g++-7 ;
+      wget -nv http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh ;
+    fi
   - bash miniconda.sh -b -p $HOME/miniconda
   - export PATH="$HOME/miniconda/bin:$PATH"
   - conda install --yes python=${TRAVIS_PYTHON_VERSION}
