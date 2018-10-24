@@ -83,6 +83,7 @@ install:
   - clang --version
   - echo "CC  --> " ${CC}
   - echo "CXX --> " ${CXX}
+  - echo "ROOT_CACHE_DIR --> " ${ROOT_CACHE_DIR}
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
   - conda info -a
@@ -91,7 +92,7 @@ install:
   - conda config --add channels conda-forge
 #  - timeout 40m cd $TRAVIS_BUILD_DIR && CC=${CC} CXX=${CXX} conda build --numpy 1.15 ./root5 > root5_build.log 2>&1
 #  - timeout 40m cd $TRAVIS_BUILD_DIR && CC=${CC} CXX=${CXX} conda build --dirty --numpy 1.15 --croot /home/travis/miniconda/conda-bld/root_build/work/root6 ./root6 2>&1 | tee root6_build.log
-  - cd $TRAVIS_BUILD_DIR && CC=${CC} CXX=${CXX} ROOT_CACHE_DIR=${ROOT_CACHE_DIR} conda build --dirty --numpy 1.15 --croot /home/travis/miniconda/conda-bld/root_build/work/root6 ./root6 2>&1 | tee root6_build.log
+  - cd $TRAVIS_BUILD_DIR && CC=${CC} CXX=${CXX} ROOT_CACHE_DIR=${ROOT_CACHE_DIR} TRAVIS_BUILD_DIR=${TRAVIS_BUILD_DIR} conda build --dirty --numpy 1.15 --croot /home/travis/miniconda/conda-bld/root_build/work/root6 ./root6 2>&1 | tee root6_build.log
   - cd $TRAVIS_BUILD_DIR && bash ./scripts/build_deps.sh
   # actual package installation
   - conda config --add channels http://conda.anaconda.org/NLeSC  
