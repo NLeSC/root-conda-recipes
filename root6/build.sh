@@ -25,26 +25,28 @@ cp ${RECIPE_DIR}/scripts/deactivateROOT.sh $PREFIX/etc/conda/deactivate.d/
 
 
 echo "Conda-Travis environment info:"
-echo $PKG_NAME
-echo $PKG_VERSION
-echo $PKG_BUILD_STRING
-echo $ARCH
-echo $PKG_BUILDNUM
-echo $CONDA_BLD_PATH
-echo $CPU_COUNT
-echo $OSX_ARCH
-
-echo $TMPDIR
-echo $LD_LIBRARY_PATH # [linux]
-echo $DYLD_LIBRARY_PATH # [osx]
+echo "PREFIX: " $PREFIX
+echo "RECIPE_DIR: " $RECIPE_DIR
+echo "PKG_NAME: " $PKG_NAME
+echo "PKG_VERSION: " $PKG_VERSION
+echo "PKG_BUILD_STRING: " $PKG_BUILD_STRING
+echo "ARCH: " $ARCH
+echo "PKG_BUILDNUM: " $PKG_BUILDNUM
+echo "CONDA_BLD_PATH: " $CONDA_BLD_PATH
+echo "CPU_COUNT: " $CPU_COUNT
+echo "OSX_ARCH: " $OSX_ARCH
+echo "TMPDIR: " $TMPDIR
+echo "LD_LIBRARY_PATH: " $LD_LIBRARY_PATH # [linux]
+echo "DYLD_LIBRARY_PATH: " $DYLD_LIBRARY_PATH # [osx]
 
 
 
 LinuxInstallation() {
-    pwd
+    echo "PWD: " $PWD
     mkdir workdir_$PKG_VERSION
     cd workdir_$PKG_VERSION
-    pwd
+    echo "PWD: " $PWD
+
     cmake ../ -DCMAKE_INSTALL_PREFIX=$PREFIX \
         -Dbuiltin_afterimage=OFF \
         -Dbuiltin_ftgl=OFF \
