@@ -41,8 +41,8 @@ echo "OSX_ARCH: " $OSX_ARCH
 echo "TMPDIR: " $TMPDIR
 echo "LD_LIBRARY_PATH: " $LD_LIBRARY_PATH
 echo "DYLD_LIBRARY_PATH: " $DYLD_LIBRARY_PATH
-
-
+echo "CMAKE: " $(which cmake)
+echo "MAKE: " $(which make)
 
 LinuxInstallation() {
     CONDA_WORKDIR=$(pwd)
