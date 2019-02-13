@@ -1,3 +1,13 @@
+# Deprecated
+
+This package is no longer being actively maintained. Please switch to [the conda-forge package maintained and supported by ROOT users and ROOT core developers](https://github.com/conda-forge/root-feedstock/):
+
+```sh
+conda install root -c conda-forge
+```
+
+Below the original contents of this page.
+
 # Installing ROOT via conda
 
 Currently the following ROOT binaries with Python support are provided for the following versions in the `main` channel: 
