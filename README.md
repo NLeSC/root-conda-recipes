@@ -2,6 +2,15 @@
 
 [![Build Status](https://api.travis-ci.org/NLeSC/root-conda-recipes.svg)](https://travis-ci.org/NLeSC/root-conda-recipes/) [![DOI](https://zenodo.org/badge/20885/NLeSC/root-conda-recipes.svg)](https://zenodo.org/badge/latestdoi/20885/NLeSC/root-conda-recipes)
 
+Deprecated
+==========
+This package is no longer being actively maintained. Please switch to the conda-forge package maintained and supported by ROOT users and ROOT core developers:
+```sh
+conda install root -c conda-forge
+```
+
+Below the original contents of this readme.
+
 
 About
 =============
